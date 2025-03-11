@@ -1,0 +1,20 @@
+{
+  "filename": "282645_årsredovisning__brf_trädgården_1_gustavsberg.pdf_fixed_results.json",
+  "filesize": 932,
+  "timestamp": "2025-03-11T06:25:12.518129",
+  "success": true,
+  "categories": [
+    "property_info",
+    "costs",
+    "income_statement"
+  ],
+  "field_counts": {
+    "property_info": 8,
+    "costs": 3,
+    "income_statement": 6
+  },
+  "total_fields": 17,
+  "has_metadata": true,
+  "extraction_type": "sample",
+  "rich_extraction": true
+}

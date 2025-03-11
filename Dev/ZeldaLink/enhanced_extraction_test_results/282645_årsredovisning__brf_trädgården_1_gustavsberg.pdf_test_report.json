@@ -1,0 +1,29 @@
+{
+  "test_timestamp": "2025-03-11T06:25:12.519529",
+  "test_pdf": "raw_docs/282645_årsredovisning__brf_trädgården_1_gustavsberg.pdf",
+  "pdf_info": {
+    "filename": "282645_årsredovisning__brf_trädgården_1_gustavsberg.pdf",
+    "page_count": "Unknown",
+    "filesize": 7973184
+  },
+  "extraction_analysis": {
+    "success": true,
+    "total_fields": 17,
+    "categories": [
+      "property_info",
+      "costs",
+      "income_statement"
+    ],
+    "rich_extraction": true
+  },
+  "verification": {
+    "expected_fields": 11,
+    "found_fields": 11,
+    "success_rate": 1.0,
+    "missing_fields": []
+  },
+  "report_summary": {
+    "status": "SUCCESS",
+    "message": "Extracted 11 of 11 expected fields"
+  }
+}

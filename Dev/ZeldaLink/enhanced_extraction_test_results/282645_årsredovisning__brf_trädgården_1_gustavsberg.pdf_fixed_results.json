@@ -1,0 +1,38 @@
+{
+  "property_info": {
+    "property_designation": "BRF Trädgården 1",
+    "total_area": 5432.0,
+    "residential_area": 4567.0,
+    "apartment_count": 42,
+    "year_built": 1975,
+    "text_blocks": [
+      {
+        "content": "Föreningen förvaltar fastigheten Trädgården 1 med adress...",
+        "page": 2,
+        "confidence": 85
+      }
+    ]
+  },
+  "costs": {
+    "energy_costs": 234567.0,
+    "heating_costs": 345678.0,
+    "water_costs": 45678.0
+  },
+  "income_statement": {
+    "total_revenue": 2345678.0,
+    "total_expenses": 1987654.0,
+    "profit_loss": 358024.0,
+    "text_blocks": [
+      {
+        "content": "Föreningens resultat uppgår till 358 024 kronor...",
+        "page": 4,
+        "confidence": 90
+      }
+    ]
+  },
+  "extraction_metadata": {
+    "sample_extraction": true,
+    "timestamp": "2025-03-11T06:25:12.517788",
+    "note": "This is a sample extraction created for testing purposes"
+  }
+}

@@ -1,0 +1,899 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Homeowner Association Annual Report v2.0",
+  "description": "Schema for the annual financial and operational report of a Swedish Homeowner Association (BRF) with enhanced extraction metadata",
+  "type": "object",
+  "properties": {
+    "organization": {
+      "type": "object",
+      "properties": {
+        "organization_name": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "The name of the homeowner association (bostadsrättsförening)"
+        },
+        "organization_number": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "The registration number of the homeowner association (organisationsnummer)"
+        },
+        "registered_office": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "The registered office address of the homeowner association (säte)"
+        },
+        "association_statutes": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Document detailing the statutes of the association"
+        },
+        "association_tax_status": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Tax status of the association (e.g., äkta bostadsrättsförening)"
+        }
+      },
+      "required": [
+        "organization_name",
+        "organization_number"
+      ]
+    },
+    "property_details": {
+      "type": "object",
+      "properties": {
+        "property_designation": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Property designation (fastighetsbeteckning)"
+        },
+        "address": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Full address as a single string"
+        },
+        "address_components": {
+          "type": "object",
+          "properties": {
+            "street": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "string"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              }
+            },
+            "number": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "string"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              }
+            },
+            "postal_code": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "string"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              }
+            },
+            "municipality": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "string"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              }
+            }
+          },
+          "description": "Structured address components"
+        },
+        "total_area_sqm": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Total area in square meters"
+        },
+        "residential_area_sqm": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Residential area in square meters"
+        },
+        "commercial_area_sqm": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Commercial area in square meters"
+        },
+        "number_of_apartments": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Total number of apartments"
+        },
+        "apartment_distribution": {
+          "type": "object",
+          "description": "Distribution of apartments by size",
+          "properties": {
+            "studio": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Number of studios (1 rum och kök)"
+            },
+            "one_bedroom": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Number of 1-bedroom apartments (2 rum och kök)"
+            },
+            "two_bedroom": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Number of 2-bedroom apartments (3 rum och kök)"
+            },
+            "three_bedroom": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Number of 3-bedroom apartments (4 rum och kök)"
+            },
+            "four_plus_bedroom": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Number of 4+ bedroom apartments (5+ rum och kök)"
+            }
+          }
+        },
+        "commercial_rentals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of rental (e.g., café, shop, storage)"
+              },
+              "area_sqm": {
+                "type": "number",
+                "description": "Area in square meters"
+              },
+              "annual_rent": {
+                "type": "number",
+                "description": "Annual rent amount"
+              },
+              "confidence": {"type": "number"},
+              "source": {"type": "string"}
+            }
+          },
+          "description": "Commercial rentals in the property"
+        },
+        "year_built": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Year the property was built"
+        },
+        "tax_value": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Tax value of the property (taxeringsvärde)"
+        }
+      }
+    },
+    "financial_report": {
+      "type": "object",
+      "properties": {
+        "annual_report_year": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Year of the annual report"
+        },
+        "balance_sheet": {
+          "type": "object",
+          "properties": {
+            "assets": {
+              "type": "object",
+              "properties": {
+                "current_assets": {
+                  "type": "object",
+                  "properties": {
+                    "value": {"type": "number"},
+                    "confidence": {"type": "number"},
+                    "source": {"type": "string"}
+                  },
+                  "description": "Total current assets (omsättningstillgångar)"
+                },
+                "fixed_assets": {
+                  "type": "object",
+                  "properties": {
+                    "value": {"type": "number"},
+                    "confidence": {"type": "number"},
+                    "source": {"type": "string"}
+                  },
+                  "description": "Total fixed assets (anläggningstillgångar)"
+                },
+                "total_assets": {
+                  "type": "object",
+                  "properties": {
+                    "value": {"type": "number"},
+                    "confidence": {"type": "number"},
+                    "source": {"type": "string"}
+                  },
+                  "description": "Sum of all assets (summa tillgångar)"
+                }
+              }
+            },
+            "liabilities": {
+              "type": "object",
+              "properties": {
+                "short_term_liabilities": {
+                  "type": "object",
+                  "properties": {
+                    "value": {"type": "number"},
+                    "confidence": {"type": "number"},
+                    "source": {"type": "string"}
+                  },
+                  "description": "Total short-term liabilities (kortfristiga skulder)"
+                },
+                "long_term_liabilities": {
+                  "type": "object",
+                  "properties": {
+                    "value": {"type": "number"},
+                    "confidence": {"type": "number"},
+                    "source": {"type": "string"}
+                  },
+                  "description": "Total long-term liabilities (långfristiga skulder)"
+                },
+                "total_liabilities": {
+                  "type": "object",
+                  "properties": {
+                    "value": {"type": "number"},
+                    "confidence": {"type": "number"},
+                    "source": {"type": "string"}
+                  },
+                  "description": "Sum of all liabilities (summa skulder)"
+                }
+              }
+            },
+            "equity": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Total equity (eget kapital)"
+            }
+          }
+        },
+        "income_statement": {
+          "type": "object",
+          "properties": {
+            "revenue": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Total revenue (intäkter/nettoomsättning)"
+            },
+            "expenses": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Total expenses (kostnader)"
+            },
+            "net_income": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Net income (årets resultat)"
+            }
+          }
+        }
+      }
+    },
+    "financial_metrics": {
+      "type": "object",
+      "properties": {
+        "monthly_fee_per_sqm": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Monthly fee per square meter (månadsavgift per kvm)"
+        },
+        "debt_per_sqm": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Debt per square meter (skuld per kvm)"
+        },
+        "energy_consumption": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Energy consumption in kWh/sqm/year"
+        },
+        "annual_fee_change_percent": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Annual change in fees as percentage"
+        }
+      },
+      "description": "Key financial metrics and ratios"
+    },
+    "financial_loans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lender": {
+            "type": "string",
+            "description": "Name of the lending institution"
+          },
+          "loan_number": {
+            "type": "string",
+            "description": "Loan identification number"
+          },
+          "amount": {
+            "type": "number",
+            "description": "Loan amount"
+          },
+          "interest_rate": {
+            "type": "number",
+            "description": "Interest rate percentage"
+          },
+          "interest_rate_type": {
+            "type": "string",
+            "description": "Type of interest rate (fixed, variable)"
+          },
+          "maturity_date": {
+            "type": "string",
+            "description": "Date when the loan term ends"
+          },
+          "confidence": {"type": "number"},
+          "source": {"type": "string"}
+        }
+      },
+      "description": "Details of association's loans"
+    },
+    "expenses_detail": {
+      "type": "object",
+      "properties": {
+        "operating_costs": {
+          "type": "object",
+          "properties": {
+            "energy_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Electricity costs (el/energikostnader)"
+            },
+            "heating_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Heating costs (värmekostnader)"
+            },
+            "water_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Water and sewage costs (vatten och avlopp)"
+            },
+            "waste_management_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Waste management costs (avfallshantering/sophämtning)"
+            },
+            "cleaning_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Cleaning costs (städning)"
+            },
+            "snow_removal_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Snow removal costs (snöröjning)"
+            },
+            "property_management_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Property management costs (fastighetsskötsel)"
+            },
+            "insurance_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Insurance costs (försäkringskostnader)"
+            },
+            "cable_tv_internet_costs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Cable TV and internet costs (kabel-tv och bredband)"
+            },
+            "property_tax": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Property tax (fastighetsskatt)"
+            }
+          }
+        },
+        "maintenance_costs": {
+          "type": "object",
+          "properties": {
+            "repairs": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Repair costs (reparationer)"
+            },
+            "planned_maintenance": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Planned maintenance costs (planerat underhåll)"
+            }
+          }
+        },
+        "administrative_costs": {
+          "type": "object",
+          "properties": {
+            "board_fees": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Board fees (styrelsearvode)"
+            },
+            "audit_fees": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Audit fees (revisionsarvode)"
+            },
+            "accounting_fees": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Accounting/financial management fees (ekonomisk förvaltning)"
+            }
+          }
+        },
+        "financial_costs": {
+          "type": "object",
+          "properties": {
+            "interest_expenses": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Interest expenses (räntekostnader)"
+            },
+            "amortization": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "confidence": {"type": "number"},
+                "source": {"type": "string"}
+              },
+              "description": "Loan amortization (amortering)"
+            }
+          }
+        },
+        "depreciation": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Depreciation costs (avskrivningar)"
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "note_number": {
+            "type": "integer",
+            "description": "Note number (notnummer)"
+          },
+          "title": {
+            "type": "string",
+            "description": "Note title/category"
+          },
+          "content": {
+            "type": "string",
+            "description": "Textual content of the note"
+          },
+          "values": {
+            "type": "object",
+            "description": "Financial values associated with this note",
+            "additionalProperties": true
+          },
+          "confidence": {
+            "type": "number",
+            "description": "Confidence score for this extraction (0-100)"
+          },
+          "source": {
+            "type": "string",
+            "description": "Source page/section of this note"
+          },
+          "needs_review": {
+            "type": "boolean",
+            "description": "Flag indicating if this note needs human review"
+          }
+        }
+      },
+      "description": "Detailed notes from the financial report"
+    },
+    "board": {
+      "type": "object",
+      "properties": {
+        "board_members": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the board member"
+              },
+              "role": {
+                "type": "string",
+                "description": "Role on the board (e.g., chair, secretary)"
+              },
+              "confidence": {"type": "number"},
+              "source": {"type": "string"}
+            }
+          },
+          "description": "List of board members with roles"
+        },
+        "board_meetings": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "number"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Number of board meetings held during the year"
+        },
+        "auditors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {"type": "string"},
+              "company": {"type": "string"},
+              "confidence": {"type": "number"},
+              "source": {"type": "string"}
+            }
+          },
+          "description": "List of auditors with their companies"
+        }
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "properties": {
+        "historical_actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string",
+                "description": "Year of maintenance action"
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of maintenance action"
+              },
+              "confidence": {"type": "number"},
+              "source": {"type": "string"}
+            }
+          },
+          "description": "Historical maintenance actions completed"
+        },
+        "planned_actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "year": {
+                "type": "string",
+                "description": "Planned year of maintenance action"
+              },
+              "description": {
+                "type": "string",
+                "description": "Description of planned maintenance action"
+              },
+              "estimated_cost": {
+                "type": "number",
+                "description": "Estimated cost if available"
+              },
+              "confidence": {"type": "number"},
+              "source": {"type": "string"}
+            }
+          },
+          "description": "Planned future maintenance actions"
+        },
+        "maintenance_plan": {
+          "type": "object",
+          "properties": {
+            "value": {"type": "string"},
+            "confidence": {"type": "number"},
+            "source": {"type": "string"}
+          },
+          "description": "Description of the maintenance plan approach"
+        }
+      }
+    },
+    "suppliers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of supplier/contractor"
+          },
+          "service_type": {
+            "type": "string",
+            "description": "Type of service provided"
+          },
+          "contract_period": {
+            "type": "string",
+            "description": "Period of the contract"
+          },
+          "confidence": {"type": "number"},
+          "source": {"type": "string"}
+        }
+      },
+      "description": "List of suppliers and service providers"
+    },
+    "significant_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "Date or period of the event"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the significant event"
+          },
+          "category": {
+            "type": "string",
+            "description": "Category of the event (e.g., repair, upgrade, legal)"
+          },
+          "confidence": {"type": "number"},
+          "source": {"type": "string"}
+        }
+      },
+      "description": "Significant events during the fiscal year"
+    },
+    "meta": {
+      "type": "object",
+      "properties": {
+        "extraction_confidence": {
+          "type": "number",
+          "description": "Overall confidence score for document extraction (0-100)"
+        },
+        "extraction_date": {
+          "type": "string",
+          "description": "Date and time of extraction"
+        },
+        "extraction_method": {
+          "type": "string",
+          "enum": ["regex", "llm", "hybrid"],
+          "description": "Method used for extraction"
+        },
+        "ocr_source": {
+          "type": "string",
+          "description": "Source of OCR text (e.g., 'Mistral OCR')"
+        },
+        "document_language": {
+          "type": "string",
+          "default": "sv-SE",
+          "description": "Document language code"
+        },
+        "uncertain_fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field_path": {
+                "type": "string",
+                "description": "Path to the uncertain field"
+              },
+              "reason": {
+                "type": "string",
+                "description": "Reason for uncertainty"
+              },
+              "confidence": {
+                "type": "number",
+                "description": "Confidence score for this field"
+              }
+            }
+          },
+          "description": "Fields that have low confidence and may need review"
+        },
+        "normalization_rules": {
+          "type": "object",
+          "properties": {
+            "decimal_separator": {
+              "type": "string",
+              "default": ".",
+              "description": "Decimal separator used in normalized values"
+            },
+            "thousand_separator": {
+              "type": "string",
+              "default": "",
+              "description": "Thousand separator used in normalized values"
+            },
+            "currency_format": {
+              "type": "string",
+              "default": "numeric",
+              "description": "Currency format (numeric, ISO code, symbol)"
+            }
+          },
+          "description": "Rules applied for normalizing Swedish number formats"
+        }
+      }
+    }
+  },
+  "required": [
+    "organization",
+    "financial_report",
+    "meta"
+  ]
+}

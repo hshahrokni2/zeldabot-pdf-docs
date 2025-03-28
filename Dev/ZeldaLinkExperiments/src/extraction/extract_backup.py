@@ -1,0 +1,1331 @@
+#!/usr/bin/env python3
+"""
+Extraction functions for Swedish housing association (BRF) annual reports
+with schema improvement suggestions and confidence scoring.
+"""
+
+import os
+import json
+import re
+import datetime
+from typing import Dict, List, Any, Optional, Tuple, Union
+from pathlib import Path
+
+# Import necessary packages
+try:
+    from mistralai import Mistral
+    from openai import OpenAI
+    from anthropic import Anthropic
+except ImportError:
+    import subprocess
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "mistralai", "openai", "anthropic", "--break-system-packages"])
+    from mistralai import Mistral
+    from openai import OpenAI
+    from anthropic import Anthropic
+
+# Import pydantic models
+from src.extraction.schema import (
+    BRFExtraction, ExtractionMeta, SchemaImprovement,
+    SchemaImprovementSuggestion, StringField, NumberField,
+    IntegerField, create_field_with_confidence
+)
+
+
+class ExtractorBase:
+    """Base class for extraction functionality."""
+    
+    def __init__(self, ocr_text: str, model_name: str = "mistral-large-latest"):
+        """
+        Initialize the extractor with OCR text and model selection.
+        
+        Args:
+            ocr_text: OCR text to analyze
+            model_name: LLM model to use for extraction
+        """
+        self.ocr_text = ocr_text
+        self.model_name = model_name
+        self.extraction_timestamp = datetime.datetime.now().isoformat()
+        
+        # Pattern for Swedish number format
+        self.number_pattern = r'(?:(?:\d{1,3}(?: \d{3})*)|(?:\d+))(?:,\d{1,2})?(?: (?:kr|SEK|kronor))?'
+    
+    def _normalize_swedish_number(self, text: str) -> Optional[float]:
+        """
+        Convert Swedish formatted numbers to standard float values
+        
+        Args:
+            text: String containing Swedish formatted number (e.g. "1 234,56 kr")
+            
+        Returns:
+            Float value or None if conversion fails
+        """
+        if not text:
+            return None
+            
+        # Remove currency indicators
+        text = re.sub(r'(?:kr|SEK|kronor|:-)', '', text).strip()
+        
+        # Remove spaces (used as thousand separators)
+        text = text.replace(" ", "")
+        
+        # Replace comma with period for decimal point
+        text = text.replace(",", ".")
+        
+        # Convert to numeric value
+        try:
+            return float(text)
+        except ValueError:
+            return None
+    
+    def _find_text_with_pattern(self, pattern: str, text: str = None) -> List[Tuple[str, str, float]]:
+        """
+        Find text matching pattern in OCR text
+        
+        Args:
+            pattern: Regular expression pattern to search for
+            text: Text to search, or None to use the full OCR text
+            
+        Returns:
+            List of tuples (matched_text, source, confidence)
+        """
+        if text is None:
+            text = self.ocr_text
+        
+        results = []
+        matches = re.finditer(pattern, text, re.IGNORECASE | re.MULTILINE)
+        
+        for match in matches:
+            matched_text = match.group(0)
+            # Calculate basic confidence - can be improved
+            confidence = 0.7 if len(matched_text) > 3 else 0.5
+            results.append((matched_text, "pattern match", confidence))
+        
+        return results
+
+
+class MistralExtractor(ExtractorBase):
+    """Extract data using Mistral API."""
+    
+    def __init__(self, ocr_text: str, model_name: str = "mistral-large-latest", api_key: str = None):
+        """Initialize the Mistral extractor."""
+        super().__init__(ocr_text, model_name)
+        self.api_key = api_key or os.getenv("MISTRAL_API_KEY", "")
+        
+        # Check if running in test mode
+        self.test_mode = os.getenv("ZELDALINK_TEST_MODE", "false").lower() == "true"
+    
+    def extract_with_schema_improvements(self) -> Dict[str, Any]:
+        """
+        Extract data and suggest schema improvements using Mistral API
+        
+        Returns:
+            Dictionary with extraction results and schema improvement suggestions
+        """
+        print(f"Extracting data with {self.model_name}...")
+        
+        if self.test_mode:
+            print("Running in test mode - using mock data")
+            return self._generate_mock_extraction()
+        
+        # Prepare the prompt for extraction
+        prompt = self._create_extraction_prompt()
+        
+        try:
+            client = Mistral(api_key=self.api_key)
+            
+            response = client.chat.complete(
+                model=self.model_name,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                response_format={"type": "json_object"},
+                temperature=0
+            )
+            
+            # Parse the response
+            extraction_data = json.loads(response.choices[0].message.content)
+            
+            # Add metadata
+            extraction_data.setdefault("meta", {}).update({
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm",
+                "ocr_source": "Mistral OCR"
+            })
+            
+            return {
+                "extraction": extraction_data,
+                "schema_improvements": extraction_data.get("schema_improvements", {}).get("suggestions", []),
+                "tokens_used": response.usage.total_tokens,
+                "model": self.model_name
+            }
+            
+        except Exception as e:
+            print(f"Error extracting with Mistral: {e}")
+            return {
+                "error": str(e),
+                "extraction": self._generate_empty_extraction(),
+                "schema_improvements": [],
+                "tokens_used": 0,
+                "model": self.model_name
+            }
+    
+    def _create_extraction_prompt(self) -> str:
+        """Create the extraction prompt for Mistral API."""
+        return f"""
+        You are an expert financial analyzer specializing in Swedish housing association annual reports (BRF reports).
+        Analyze the following OCR text from a Swedish BRF annual report and extract structured data according to the provided schema.
+
+        IMPORTANT ADDITIONAL TASK: After extracting the data, suggest any additional fields or information that should be added to the schema that you found in the text but couldn't fit into the existing schema structure.
+
+        OCR TEXT:
+        {self.ocr_text[:15000]}  # Truncating to avoid token limits
+
+        EXTRACTION SCHEMA:
+        {{
+          "organization": {{
+            "organization_name": {{"value": string, "confidence": float, "source": string}},
+            "organization_number": {{"value": string, "confidence": float, "source": string}},
+            "registered_office": {{"value": string, "confidence": float, "source": string}},
+            "contact_details": {{
+              "phone": {{"value": string, "confidence": float, "source": string}},
+              "email": {{"value": string, "confidence": float, "source": string}},
+              "website": {{"value": string, "confidence": float, "source": string}}
+            }}
+          }},
+          "property_details": {{
+            "property_designation": {{"value": string, "confidence": float, "source": string}},
+            "address": {{"value": string, "confidence": float, "source": string}},
+            "total_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "residential_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "commercial_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "number_of_apartments": {{"value": number, "confidence": float, "source": string}},
+            "year_built": {{"value": string, "confidence": float, "source": string}}
+          }},
+          "financial_report": {{
+            "annual_report_year": {{"value": string, "confidence": float, "source": string}},
+            "balance_sheet": {{
+              "assets": {{
+                "total_assets": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "liabilities": {{
+                "total_liabilities": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "equity": {{"value": number, "confidence": float, "source": string}}
+            }},
+            "income_statement": {{
+              "revenue": {{"value": number, "confidence": float, "source": string}},
+              "expenses": {{"value": number, "confidence": float, "source": string}},
+              "net_income": {{"value": number, "confidence": float, "source": string}},
+              "revenue_breakdown": {{
+                "annual_fees": {{"value": number, "confidence": float, "source": string}},
+                "rental_income": {{"value": number, "confidence": float, "source": string}},
+                "other_income": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "expense_breakdown": {{
+                "electricity": {{"value": number, "confidence": float, "source": string}},
+                "heating": {{"value": number, "confidence": float, "source": string}},
+                "water_and_sewage": {{"value": number, "confidence": float, "source": string}},
+                "waste_management": {{"value": number, "confidence": float, "source": string}},
+                "property_maintenance": {{"value": number, "confidence": float, "source": string}},
+                "repairs": {{"value": number, "confidence": float, "source": string}},
+                "maintenance": {{"value": number, "confidence": float, "source": string}},
+                "property_tax": {{"value": number, "confidence": float, "source": string}},
+                "property_insurance": {{"value": number, "confidence": float, "source": string}},
+                "cable_tv_internet": {{"value": number, "confidence": float, "source": string}},
+                "board_costs": {{"value": number, "confidence": float, "source": string}},
+                "management_fees": {{"value": number, "confidence": float, "source": string}},
+                "other_operating_costs": {{"value": number, "confidence": float, "source": string}},
+                "financial_costs": {{"value": number, "confidence": float, "source": string}}
+              }}
+            }}
+          }},
+          "financial_metrics": {{
+            "monthly_fee_per_sqm": {{"value": number, "confidence": float, "source": string}},
+            "debt_per_sqm": {{"value": number, "confidence": float, "source": string}},
+            "loan_amortization_amount": {{"value": number, "confidence": float, "source": string}},
+            "total_debt": {{"value": number, "confidence": float, "source": string}}
+          }},
+          "financial_loans": [
+            {{
+              "lender": string,
+              "amount": number,
+              "interest_rate": number,
+              "maturity_date": string,
+              "confidence": float,
+              "source": string
+            }}
+          ],
+          "board": {{
+            "board_members": [
+              {{
+                "name": string,
+                "role": string,
+                "confidence": float,
+                "source": string
+              }}
+            ]
+          }},
+          "schema_improvements": {{
+            "suggestions": [
+              {{
+                "field_path": string,  // Where in the schema this field should be added (e.g., "financial_metrics.loan_amortization_amount")
+                "suggested_name": string,  // The suggested field name
+                "suggested_type": string,  // The data type (string, number, boolean, array, object)
+                "example_value": any,     // An example value found in the document
+                "reason": string,         // Why this field should be added
+                "confidence": float       // Confidence in this suggestion (0.0-1.0)
+              }}
+            ],
+            "model": string,
+            "timestamp": string
+          }},
+          "meta": {{
+            "extraction_confidence": float,
+            "extraction_date": string,
+            "extraction_method": string,
+            "ocr_source": string
+          }}
+        }}
+
+        IMPORTANT NOTES:
+        1. ALWAYS convert Swedish number formats (e.g., "1 234,56 kr") to standard format (1234.56)
+        2. Remove currency symbols and spaces from monetary values
+        3. Confidence should be between 0.0 and 1.0 (0.9 = high confidence, 0.5 = medium, 0.3 = low)
+        4. Use null instead of empty strings or 0 when information is not found
+        5. Pay special attention to dates, amounts, and financial data
+        6. Include at least 3-5 schema improvement suggestions based on information you found but couldn't fit in the schema
+        7. Return valid JSON that matches the schema format
+
+        Extract as much information as possible with the highest confidence you can.
+        """
+    
+    def _generate_mock_extraction(self) -> Dict[str, Any]:
+        """Generate mock extraction data for testing."""
+        mock_extraction = {
+            "organization": {
+                "organization_name": {"value": "Brf Trädgården 1 Gustavsberg", "confidence": 0.9, "source": "mock data"},
+                "organization_number": {"value": "769636-3808", "confidence": 0.9, "source": "mock data"},
+                "registered_office": {"value": "Värmdö kommun", "confidence": 0.8, "source": "mock data"}
+            },
+            "property_details": {
+                "property_designation": {"value": "Gustavsberg 1:71", "confidence": 0.9, "source": "mock data"},
+                "address": {"value": "Trädgårdsvägen 1, 134 41 Gustavsberg", "confidence": 0.8, "source": "mock data"},
+                "total_area_sqm": {"value": 3245.0, "confidence": 0.8, "source": "mock data"},
+                "residential_area_sqm": {"value": 2980.0, "confidence": 0.8, "source": "mock data"},
+                "number_of_apartments": {"value": 42, "confidence": 0.9, "source": "mock data"},
+                "year_built": {"value": "2020", "confidence": 0.9, "source": "mock data"}
+            },
+            "financial_report": {
+                "annual_report_year": {"value": "2023", "confidence": 0.9, "source": "mock data"},
+                "balance_sheet": {
+                    "assets": {
+                        "total_assets": {"value": 125750000.0, "confidence": 0.8, "source": "mock data"}
+                    },
+                    "liabilities": {
+                        "total_liabilities": {"value": 98500000.0, "confidence": 0.8, "source": "mock data"}
+                    },
+                    "equity": {"value": 27250000.0, "confidence": 0.8, "source": "mock data"}
+                },
+                "income_statement": {
+                    "revenue": {"value": 3788000.0, "confidence": 0.8, "source": "mock data"},
+                    "expenses": {"value": 2835200.0, "confidence": 0.8, "source": "mock data"},
+                    "net_income": {"value": 952800.0, "confidence": 0.8, "source": "mock data"}
+                }
+            },
+            "financial_metrics": {
+                "monthly_fee_per_sqm": {"value": 165.0, "confidence": 0.7, "source": "mock data"},
+                "debt_per_sqm": {"value": 33052.0, "confidence": 0.7, "source": "mock data"}
+            },
+            "financial_loans": [
+                {
+                    "lender": "Swedbank",
+                    "amount": 42500000.0,
+                    "interest_rate": 3.75,
+                    "maturity_date": "2024-09-25",
+                    "confidence": 0.8,
+                    "source": "mock data"
+                },
+                {
+                    "lender": "SEB",
+                    "amount": 56000000.0,
+                    "interest_rate": 4.25,
+                    "maturity_date": "2026-03-15",
+                    "confidence": 0.8,
+                    "source": "mock data"
+                }
+            ],
+            "board": {
+                "board_members": [
+                    {
+                        "name": "Anna Andersson",
+                        "role": "Ordförande",
+                        "confidence": 0.9,
+                        "source": "mock data"
+                    },
+                    {
+                        "name": "Bengt Bengtsson",
+                        "role": "Kassör",
+                        "confidence": 0.9,
+                        "source": "mock data"
+                    },
+                    {
+                        "name": "Carl Carlsson",
+                        "role": "Ledamot",
+                        "confidence": 0.9,
+                        "source": "mock data"
+                    }
+                ]
+            },
+            "meta": {
+                "extraction_confidence": 0.82,
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm_mock",
+                "ocr_source": "Mistral OCR (mock)"
+            }
+        }
+        
+        # Add schema improvement suggestions
+        mock_schema_improvements = {
+            "suggestions": [
+                {
+                    "field_path": "financial_metrics.loan_amortization_amount",
+                    "suggested_name": "loan_amortization_amount",
+                    "suggested_type": "number",
+                    "example_value": 1250000.0,
+                    "reason": "Annual loan amortization amount was found in the document but not captured in schema",
+                    "confidence": 0.8
+                },
+                {
+                    "field_path": "property_details.energy_classification",
+                    "suggested_name": "energy_classification",
+                    "suggested_type": "string",
+                    "example_value": "B",
+                    "reason": "Energy classification rating appears in the document but is not in schema",
+                    "confidence": 0.7
+                },
+                {
+                    "field_path": "maintenance.upcoming_projects",
+                    "suggested_name": "upcoming_projects",
+                    "suggested_type": "array",
+                    "example_value": ["Fasadrenovering 2025", "Byte av tvättmaskiner 2024"],
+                    "reason": "Document lists upcoming maintenance projects that should be captured",
+                    "confidence": 0.8
+                },
+                {
+                    "field_path": "financial_metrics.average_electricity_consumption",
+                    "suggested_name": "average_electricity_consumption",
+                    "suggested_type": "number",
+                    "example_value": 142.5,
+                    "reason": "Document contains electricity consumption figures in kWh/sqm",
+                    "confidence": 0.7
+                },
+                {
+                    "field_path": "property_details.parking_spaces",
+                    "suggested_name": "parking_spaces",
+                    "suggested_type": "number",
+                    "example_value": 36,
+                    "reason": "Number of parking spaces associated with the property",
+                    "confidence": 0.9
+                }
+            ],
+            "model": self.model_name,
+            "timestamp": self.extraction_timestamp
+        }
+        
+        mock_extraction["schema_improvements"] = mock_schema_improvements
+        
+        return {
+            "extraction": mock_extraction,
+            "schema_improvements": mock_schema_improvements["suggestions"],
+            "tokens_used": 4567,  # Mock token count
+            "model": self.model_name
+        }
+    
+    def _generate_empty_extraction(self) -> Dict[str, Any]:
+        """Generate empty extraction structure for error cases."""
+        return {
+            "organization": {
+                "organization_name": None,
+                "organization_number": None,
+                "registered_office": None
+            },
+            "property_details": None,
+            "financial_report": {
+                "annual_report_year": None,
+                "balance_sheet": None,
+                "income_statement": None
+            },
+            "financial_metrics": None,
+            "financial_loans": [],
+            "board": None,
+            "meta": {
+                "extraction_confidence": 0.0,
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm_error",
+                "ocr_source": "Mistral OCR"
+            }
+        }
+
+
+class GPT4Extractor(ExtractorBase):
+    """Extract data using OpenAI GPT-4 API."""
+    
+    def __init__(self, ocr_text: str, model_name: str = "gpt-4-0125-preview", api_key: str = None):
+        """Initialize the GPT-4 extractor."""
+        super().__init__(ocr_text, model_name)
+        self.api_key = api_key or os.getenv("OPENAI_API_KEY", "")
+        
+        # Check if running in test mode
+        self.test_mode = os.getenv("ZELDALINK_TEST_MODE", "false").lower() == "true"
+    
+    def extract_with_schema_improvements(self) -> Dict[str, Any]:
+        """
+        Extract data and suggest schema improvements using GPT-4 API
+        
+        Returns:
+            Dictionary with extraction results and schema improvement suggestions
+        """
+        print(f"Extracting data with {self.model_name}...")
+        
+        if self.test_mode:
+            print("Running in test mode - using mock data")
+            return self._generate_mock_extraction()
+        
+        # Prepare the prompt for extraction
+        prompt = self._create_extraction_prompt()
+        
+        try:
+            client = OpenAI(api_key=self.api_key)
+            
+            response = client.chat.completions.create(
+                model=self.model_name,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                response_format={"type": "json_object"},
+                temperature=0
+            )
+            
+            # Parse the response
+            extraction_data = json.loads(response.choices[0].message.content)
+            
+            # Add metadata
+            extraction_data.setdefault("meta", {}).update({
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm",
+                "ocr_source": "Mistral OCR"
+            })
+            
+            return {
+                "extraction": extraction_data,
+                "schema_improvements": extraction_data.get("schema_improvements", {}).get("suggestions", []),
+                "tokens_used": response.usage.total_tokens,
+                "model": self.model_name
+            }
+            
+        except Exception as e:
+            print(f"Error extracting with GPT-4: {e}")
+            return {
+                "error": str(e),
+                "extraction": self._generate_empty_extraction(),
+                "schema_improvements": [],
+                "tokens_used": 0,
+                "model": self.model_name
+            }
+    
+    def _create_extraction_prompt(self) -> str:
+        """Create the extraction prompt for OpenAI API."""
+        # Uses the same prompt structure as Mistral
+        return f"""
+        You are an expert financial analyzer specializing in Swedish housing association annual reports (BRF reports).
+        Analyze the following OCR text from a Swedish BRF annual report and extract structured data according to the provided schema.
+
+        IMPORTANT ADDITIONAL TASK: After extracting the data, suggest any additional fields or information that should be added to the schema that you found in the text but couldn't fit into the existing schema structure.
+
+        OCR TEXT:
+        {self.ocr_text[:15000]}  # Truncating to avoid token limits
+
+        EXTRACTION SCHEMA:
+        {{
+          "organization": {{
+            "organization_name": {{"value": string, "confidence": float, "source": string}},
+            "organization_number": {{"value": string, "confidence": float, "source": string}},
+            "registered_office": {{"value": string, "confidence": float, "source": string}},
+            "contact_details": {{
+              "phone": {{"value": string, "confidence": float, "source": string}},
+              "email": {{"value": string, "confidence": float, "source": string}},
+              "website": {{"value": string, "confidence": float, "source": string}}
+            }}
+          }},
+          "property_details": {{
+            "property_designation": {{"value": string, "confidence": float, "source": string}},
+            "address": {{"value": string, "confidence": float, "source": string}},
+            "total_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "residential_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "commercial_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "number_of_apartments": {{"value": number, "confidence": float, "source": string}},
+            "year_built": {{"value": string, "confidence": float, "source": string}}
+          }},
+          "financial_report": {{
+            "annual_report_year": {{"value": string, "confidence": float, "source": string}},
+            "balance_sheet": {{
+              "assets": {{
+                "total_assets": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "liabilities": {{
+                "total_liabilities": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "equity": {{"value": number, "confidence": float, "source": string}}
+            }},
+            "income_statement": {{
+              "revenue": {{"value": number, "confidence": float, "source": string}},
+              "expenses": {{"value": number, "confidence": float, "source": string}},
+              "net_income": {{"value": number, "confidence": float, "source": string}},
+              "revenue_breakdown": {{
+                "annual_fees": {{"value": number, "confidence": float, "source": string}},
+                "rental_income": {{"value": number, "confidence": float, "source": string}},
+                "other_income": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "expense_breakdown": {{
+                "electricity": {{"value": number, "confidence": float, "source": string}},
+                "heating": {{"value": number, "confidence": float, "source": string}},
+                "water_and_sewage": {{"value": number, "confidence": float, "source": string}},
+                "waste_management": {{"value": number, "confidence": float, "source": string}},
+                "property_maintenance": {{"value": number, "confidence": float, "source": string}},
+                "repairs": {{"value": number, "confidence": float, "source": string}},
+                "maintenance": {{"value": number, "confidence": float, "source": string}},
+                "property_tax": {{"value": number, "confidence": float, "source": string}},
+                "property_insurance": {{"value": number, "confidence": float, "source": string}},
+                "cable_tv_internet": {{"value": number, "confidence": float, "source": string}},
+                "board_costs": {{"value": number, "confidence": float, "source": string}},
+                "management_fees": {{"value": number, "confidence": float, "source": string}},
+                "other_operating_costs": {{"value": number, "confidence": float, "source": string}},
+                "financial_costs": {{"value": number, "confidence": float, "source": string}}
+              }}
+            }}
+          }},
+          "financial_metrics": {{
+            "monthly_fee_per_sqm": {{"value": number, "confidence": float, "source": string}},
+            "debt_per_sqm": {{"value": number, "confidence": float, "source": string}},
+            "loan_amortization_amount": {{"value": number, "confidence": float, "source": string}},
+            "total_debt": {{"value": number, "confidence": float, "source": string}}
+          }},
+          "financial_loans": [
+            {{
+              "lender": string,
+              "amount": number,
+              "interest_rate": number,
+              "maturity_date": string,
+              "confidence": float,
+              "source": string
+            }}
+          ],
+          "board": {{
+            "board_members": [
+              {{
+                "name": string,
+                "role": string,
+                "confidence": float,
+                "source": string
+              }}
+            ]
+          }},
+          "schema_improvements": {{
+            "suggestions": [
+              {{
+                "field_path": string,  // Where in the schema this field should be added (e.g., "financial_metrics.loan_amortization_amount")
+                "suggested_name": string,  // The suggested field name
+                "suggested_type": string,  // The data type (string, number, boolean, array, object)
+                "example_value": any,     // An example value found in the document
+                "reason": string,         // Why this field should be added
+                "confidence": float       // Confidence in this suggestion (0.0-1.0)
+              }}
+            ],
+            "model": string,
+            "timestamp": string
+          }},
+          "meta": {{
+            "extraction_confidence": float,
+            "extraction_date": string,
+            "extraction_method": string,
+            "ocr_source": string
+          }}
+        }}
+
+        IMPORTANT NOTES:
+        1. ALWAYS convert Swedish number formats (e.g., "1 234,56 kr") to standard format (1234.56)
+        2. Remove currency symbols and spaces from monetary values
+        3. Confidence should be between 0.0 and 1.0 (0.9 = high confidence, 0.5 = medium, 0.3 = low)
+        4. Use null instead of empty strings or 0 when information is not found
+        5. Pay special attention to dates, amounts, and financial data
+        6. Include at least 3-5 schema improvement suggestions based on information you found but couldn't fit in the schema
+        7. Return valid JSON that matches the schema format
+
+        Extract as much information as possible with the highest confidence you can.
+        """
+    
+    def _generate_mock_extraction(self) -> Dict[str, Any]:
+        """Generate mock extraction data for testing."""
+        # Similar to Mistral's mock data but with slight variations to show differences
+        mock_extraction = {
+            "organization": {
+                "organization_name": {"value": "Brf Trädgården 1 Gustavsberg", "confidence": 0.95, "source": "mock data (GPT-4)"},
+                "organization_number": {"value": "769636-3808", "confidence": 0.95, "source": "mock data (GPT-4)"},
+                "registered_office": {"value": "Värmdö kommun", "confidence": 0.9, "source": "mock data (GPT-4)"}
+            },
+            "property_details": {
+                "property_designation": {"value": "Gustavsberg 1:71", "confidence": 0.95, "source": "mock data (GPT-4)"},
+                "address": {"value": "Trädgårdsvägen 1, 134 41 Gustavsberg", "confidence": 0.9, "source": "mock data (GPT-4)"},
+                "total_area_sqm": {"value": 3245.0, "confidence": 0.9, "source": "mock data (GPT-4)"},
+                "residential_area_sqm": {"value": 2980.0, "confidence": 0.9, "source": "mock data (GPT-4)"},
+                "number_of_apartments": {"value": 42, "confidence": 0.95, "source": "mock data (GPT-4)"},
+                "year_built": {"value": "2020", "confidence": 0.95, "source": "mock data (GPT-4)"}
+            },
+            "financial_report": {
+                "annual_report_year": {"value": "2023", "confidence": 0.95, "source": "mock data (GPT-4)"},
+                "balance_sheet": {
+                    "assets": {
+                        "total_assets": {"value": 125750000.0, "confidence": 0.9, "source": "mock data (GPT-4)"}
+                    },
+                    "liabilities": {
+                        "total_liabilities": {"value": 98500000.0, "confidence": 0.9, "source": "mock data (GPT-4)"}
+                    },
+                    "equity": {"value": 27250000.0, "confidence": 0.9, "source": "mock data (GPT-4)"}
+                },
+                "income_statement": {
+                    "revenue": {"value": 3788000.0, "confidence": 0.9, "source": "mock data (GPT-4)"},
+                    "expenses": {"value": 2835200.0, "confidence": 0.9, "source": "mock data (GPT-4)"},
+                    "net_income": {"value": 952800.0, "confidence": 0.9, "source": "mock data (GPT-4)"}
+                }
+            },
+            "financial_metrics": {
+                "monthly_fee_per_sqm": {"value": 165.0, "confidence": 0.85, "source": "mock data (GPT-4)"},
+                "debt_per_sqm": {"value": 33052.0, "confidence": 0.85, "source": "mock data (GPT-4)"}
+            },
+            "financial_loans": [
+                {
+                    "lender": "Swedbank",
+                    "amount": 42500000.0,
+                    "interest_rate": 3.75,
+                    "maturity_date": "2024-09-25",
+                    "confidence": 0.9,
+                    "source": "mock data (GPT-4)"
+                },
+                {
+                    "lender": "SEB",
+                    "amount": 56000000.0,
+                    "interest_rate": 4.25,
+                    "maturity_date": "2026-03-15",
+                    "confidence": 0.9,
+                    "source": "mock data (GPT-4)"
+                }
+            ],
+            "board": {
+                "board_members": [
+                    {
+                        "name": "Anna Andersson",
+                        "role": "Ordförande",
+                        "confidence": 0.95,
+                        "source": "mock data (GPT-4)"
+                    },
+                    {
+                        "name": "Bengt Bengtsson",
+                        "role": "Kassör",
+                        "confidence": 0.95,
+                        "source": "mock data (GPT-4)"
+                    },
+                    {
+                        "name": "Carl Carlsson",
+                        "role": "Ledamot",
+                        "confidence": 0.95,
+                        "source": "mock data (GPT-4)"
+                    }
+                ]
+            },
+            "meta": {
+                "extraction_confidence": 0.92,
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm_mock",
+                "ocr_source": "Mistral OCR (mock)"
+            }
+        }
+        
+        # Add schema improvement suggestions - more detailed than Mistral
+        mock_schema_improvements = {
+            "suggestions": [
+                {
+                    "field_path": "financial_metrics.loan_amortization_amount",
+                    "suggested_name": "loan_amortization_amount",
+                    "suggested_type": "number",
+                    "example_value": 1250000.0,
+                    "reason": "Annual loan amortization amount was found in the document but not captured in schema",
+                    "confidence": 0.9
+                },
+                {
+                    "field_path": "property_details.energy_classification",
+                    "suggested_name": "energy_classification",
+                    "suggested_type": "string",
+                    "example_value": "B",
+                    "reason": "Energy classification rating appears in the document but is not in schema",
+                    "confidence": 0.85
+                },
+                {
+                    "field_path": "maintenance.upcoming_projects",
+                    "suggested_name": "upcoming_projects",
+                    "suggested_type": "array",
+                    "example_value": ["Fasadrenovering 2025", "Byte av tvättmaskiner 2024"],
+                    "reason": "Document lists upcoming maintenance projects that should be captured",
+                    "confidence": 0.9
+                },
+                {
+                    "field_path": "financial_metrics.average_electricity_consumption",
+                    "suggested_name": "average_electricity_consumption",
+                    "suggested_type": "number",
+                    "example_value": 142.5,
+                    "reason": "Document contains electricity consumption figures in kWh/sqm",
+                    "confidence": 0.85
+                },
+                {
+                    "field_path": "property_details.parking_spaces",
+                    "suggested_name": "parking_spaces",
+                    "suggested_type": "number",
+                    "example_value": 36,
+                    "reason": "Number of parking spaces associated with the property",
+                    "confidence": 0.95
+                },
+                {
+                    "field_path": "financial_metrics.maintenance_fund_per_sqm",
+                    "suggested_name": "maintenance_fund_per_sqm",
+                    "suggested_type": "number",
+                    "example_value": 425.0,
+                    "reason": "Document mentions maintenance fund per square meter which is important for financial health",
+                    "confidence": 0.85
+                },
+                {
+                    "field_path": "property_details.storage_units",
+                    "suggested_name": "storage_units",
+                    "suggested_type": "number",
+                    "example_value": 42,
+                    "reason": "Document lists number of storage units (förråd) for the association",
+                    "confidence": 0.9
+                }
+            ],
+            "model": self.model_name,
+            "timestamp": self.extraction_timestamp
+        }
+        
+        mock_extraction["schema_improvements"] = mock_schema_improvements
+        
+        return {
+            "extraction": mock_extraction,
+            "schema_improvements": mock_schema_improvements["suggestions"],
+            "tokens_used": 5128,  # Mock token count
+            "model": self.model_name
+        }
+    
+    def _generate_empty_extraction(self) -> Dict[str, Any]:
+        """Generate empty extraction structure for error cases."""
+        return {
+            "organization": {
+                "organization_name": None,
+                "organization_number": None,
+                "registered_office": None
+            },
+            "property_details": None,
+            "financial_report": {
+                "annual_report_year": None,
+                "balance_sheet": None,
+                "income_statement": None
+            },
+            "financial_metrics": None,
+            "financial_loans": [],
+            "board": None,
+            "meta": {
+                "extraction_confidence": 0.0,
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm_error",
+                "ocr_source": "Mistral OCR"
+            }
+        }
+
+
+class ClaudeExtractor(ExtractorBase):
+    """Extract data using Anthropic Claude API."""
+    
+    def __init__(self, ocr_text: str, model_name: str = "claude-3-sonnet-20240229", api_key: str = None):
+        """Initialize the Claude extractor."""
+        super().__init__(ocr_text, model_name)
+        self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY", "")
+        
+        # Check if running in test mode
+        self.test_mode = os.getenv("ZELDALINK_TEST_MODE", "false").lower() == "true"
+    
+    def extract_with_schema_improvements(self) -> Dict[str, Any]:
+        """
+        Extract data and suggest schema improvements using Claude API
+        
+        Returns:
+            Dictionary with extraction results and schema improvement suggestions
+        """
+        print(f"Extracting data with {self.model_name}...")
+        
+        if self.test_mode:
+            print("Running in test mode - using mock data")
+            return self._generate_mock_extraction()
+        
+        # Prepare the prompt for extraction
+        prompt = self._create_extraction_prompt()
+        
+        try:
+            client = Anthropic(api_key=self.api_key)
+            
+            response = client.messages.create(
+                model=self.model_name,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                temperature=0,
+                system="You are an expert in analyzing Swedish financial documents and extracting structured data.",
+                max_tokens=4096
+            )
+            
+            # Get the response text
+            content_text = response.content[0].text
+            
+            # Parse the JSON - Claude sometimes wraps JSON in markdown code blocks
+            try:
+                # Check if the response is JSON
+                if content_text.strip().startswith("{"):
+                    extraction_data = json.loads(content_text)
+                else:
+                    # Try to extract JSON from markdown code blocks
+                    import re
+                    json_match = re.search(r'```(?:json)?\n(.*?)\n```', content_text, re.DOTALL)
+                    if json_match:
+                        extraction_data = json.loads(json_match.group(1))
+                    else:
+                        # Create a minimal valid response with error
+                        extraction_data = self._generate_empty_extraction()
+                        extraction_data["error"] = "Failed to parse Claude response as JSON"
+            except Exception as e:
+                print(f"JSON parsing error: {e}")
+                print(f"Original content: {content_text}")
+                extraction_data = self._generate_empty_extraction()
+                extraction_data["error"] = f"JSON parsing failed: {str(e)}"
+            
+            # Add metadata
+            extraction_data.setdefault("meta", {}).update({
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm",
+                "ocr_source": "Mistral OCR"
+            })
+            
+            return {
+                "extraction": extraction_data,
+                "schema_improvements": extraction_data.get("schema_improvements", {}).get("suggestions", []),
+                "tokens_used": response.usage.input_tokens + response.usage.output_tokens,
+                "model": self.model_name
+            }
+            
+        except Exception as e:
+            print(f"Error extracting with Claude: {e}")
+            return {
+                "error": str(e),
+                "extraction": self._generate_empty_extraction(),
+                "schema_improvements": [],
+                "tokens_used": 0,
+                "model": self.model_name
+            }
+    
+    def _create_extraction_prompt(self) -> str:
+        """Create the extraction prompt for Claude API."""
+        # Uses the same prompt structure as other models
+        return f"""
+        You are an expert financial analyzer specializing in Swedish housing association annual reports (BRF reports).
+        Analyze the following OCR text from a Swedish BRF annual report and extract structured data according to the provided schema.
+
+        IMPORTANT ADDITIONAL TASK: After extracting the data, suggest any additional fields or information that should be added to the schema that you found in the text but couldn't fit into the existing schema structure.
+
+        OCR TEXT:
+        {self.ocr_text[:15000]}  # Truncating to avoid token limits
+
+        EXTRACTION SCHEMA:
+        {{
+          "organization": {{
+            "organization_name": {{"value": string, "confidence": float, "source": string}},
+            "organization_number": {{"value": string, "confidence": float, "source": string}},
+            "registered_office": {{"value": string, "confidence": float, "source": string}},
+            "contact_details": {{
+              "phone": {{"value": string, "confidence": float, "source": string}},
+              "email": {{"value": string, "confidence": float, "source": string}},
+              "website": {{"value": string, "confidence": float, "source": string}}
+            }}
+          }},
+          "property_details": {{
+            "property_designation": {{"value": string, "confidence": float, "source": string}},
+            "address": {{"value": string, "confidence": float, "source": string}},
+            "total_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "residential_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "commercial_area_sqm": {{"value": number, "confidence": float, "source": string}},
+            "number_of_apartments": {{"value": number, "confidence": float, "source": string}},
+            "year_built": {{"value": string, "confidence": float, "source": string}}
+          }},
+          "financial_report": {{
+            "annual_report_year": {{"value": string, "confidence": float, "source": string}},
+            "balance_sheet": {{
+              "assets": {{
+                "total_assets": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "liabilities": {{
+                "total_liabilities": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "equity": {{"value": number, "confidence": float, "source": string}}
+            }},
+            "income_statement": {{
+              "revenue": {{"value": number, "confidence": float, "source": string}},
+              "expenses": {{"value": number, "confidence": float, "source": string}},
+              "net_income": {{"value": number, "confidence": float, "source": string}},
+              "revenue_breakdown": {{
+                "annual_fees": {{"value": number, "confidence": float, "source": string}},
+                "rental_income": {{"value": number, "confidence": float, "source": string}},
+                "other_income": {{"value": number, "confidence": float, "source": string}}
+              }},
+              "expense_breakdown": {{
+                "electricity": {{"value": number, "confidence": float, "source": string}},
+                "heating": {{"value": number, "confidence": float, "source": string}},
+                "water_and_sewage": {{"value": number, "confidence": float, "source": string}},
+                "waste_management": {{"value": number, "confidence": float, "source": string}},
+                "property_maintenance": {{"value": number, "confidence": float, "source": string}},
+                "repairs": {{"value": number, "confidence": float, "source": string}},
+                "maintenance": {{"value": number, "confidence": float, "source": string}},
+                "property_tax": {{"value": number, "confidence": float, "source": string}},
+                "property_insurance": {{"value": number, "confidence": float, "source": string}},
+                "cable_tv_internet": {{"value": number, "confidence": float, "source": string}},
+                "board_costs": {{"value": number, "confidence": float, "source": string}},
+                "management_fees": {{"value": number, "confidence": float, "source": string}},
+                "other_operating_costs": {{"value": number, "confidence": float, "source": string}},
+                "financial_costs": {{"value": number, "confidence": float, "source": string}}
+              }}
+            }}
+          }},
+          "financial_metrics": {{
+            "monthly_fee_per_sqm": {{"value": number, "confidence": float, "source": string}},
+            "debt_per_sqm": {{"value": number, "confidence": float, "source": string}},
+            "loan_amortization_amount": {{"value": number, "confidence": float, "source": string}},
+            "total_debt": {{"value": number, "confidence": float, "source": string}}
+          }},
+          "financial_loans": [
+            {{
+              "lender": string,
+              "amount": number,
+              "interest_rate": number,
+              "maturity_date": string,
+              "confidence": float,
+              "source": string
+            }}
+          ],
+          "board": {{
+            "board_members": [
+              {{
+                "name": string,
+                "role": string,
+                "confidence": float,
+                "source": string
+              }}
+            ]
+          }},
+          "schema_improvements": {{
+            "suggestions": [
+              {{
+                "field_path": string,  // Where in the schema this field should be added (e.g., "financial_metrics.loan_amortization_amount")
+                "suggested_name": string,  // The suggested field name
+                "suggested_type": string,  // The data type (string, number, boolean, array, object)
+                "example_value": any,     // An example value found in the document
+                "reason": string,         // Why this field should be added
+                "confidence": float       // Confidence in this suggestion (0.0-1.0)
+              }}
+            ],
+            "model": string,
+            "timestamp": string
+          }},
+          "meta": {{
+            "extraction_confidence": float,
+            "extraction_date": string,
+            "extraction_method": string,
+            "ocr_source": string
+          }}
+        }}
+
+        IMPORTANT NOTES:
+        1. ALWAYS convert Swedish number formats (e.g., "1 234,56 kr") to standard format (1234.56)
+        2. Remove currency symbols and spaces from monetary values
+        3. Confidence should be between 0.0 and 1.0 (0.9 = high confidence, 0.5 = medium, 0.3 = low)
+        4. Use null instead of empty strings or 0 when information is not found
+        5. Pay special attention to dates, amounts, and financial data
+        6. Include at least 3-5 schema improvement suggestions based on information you found but couldn't fit in the schema
+        7. Return valid JSON that matches the schema format - DO NOT wrap it in markdown code blocks
+
+        Extract as much information as possible with the highest confidence you can.
+        """
+    
+    def _generate_mock_extraction(self) -> Dict[str, Any]:
+        """Generate mock extraction data for testing."""
+        # Similar to other mock data but with slight variations
+        mock_extraction = {
+            "organization": {
+                "organization_name": {"value": "Brf Trädgården 1 Gustavsberg", "confidence": 0.92, "source": "mock data (Claude)"},
+                "organization_number": {"value": "769636-3808", "confidence": 0.92, "source": "mock data (Claude)"},
+                "registered_office": {"value": "Värmdö kommun", "confidence": 0.85, "source": "mock data (Claude)"}
+            },
+            "property_details": {
+                "property_designation": {"value": "Gustavsberg 1:71", "confidence": 0.92, "source": "mock data (Claude)"},
+                "address": {"value": "Trädgårdsvägen 1, 134 41 Gustavsberg", "confidence": 0.85, "source": "mock data (Claude)"},
+                "total_area_sqm": {"value": 3245.0, "confidence": 0.85, "source": "mock data (Claude)"},
+                "residential_area_sqm": {"value": 2980.0, "confidence": 0.85, "source": "mock data (Claude)"},
+                "number_of_apartments": {"value": 42, "confidence": 0.92, "source": "mock data (Claude)"},
+                "year_built": {"value": "2020", "confidence": 0.92, "source": "mock data (Claude)"}
+            },
+            "financial_report": {
+                "annual_report_year": {"value": "2023", "confidence": 0.92, "source": "mock data (Claude)"},
+                "balance_sheet": {
+                    "assets": {
+                        "total_assets": {"value": 125750000.0, "confidence": 0.85, "source": "mock data (Claude)"}
+                    },
+                    "liabilities": {
+                        "total_liabilities": {"value": 98500000.0, "confidence": 0.85, "source": "mock data (Claude)"}
+                    },
+                    "equity": {"value": 27250000.0, "confidence": 0.85, "source": "mock data (Claude)"}
+                },
+                "income_statement": {
+                    "revenue": {"value": 3788000.0, "confidence": 0.85, "source": "mock data (Claude)"},
+                    "expenses": {"value": 2835200.0, "confidence": 0.85, "source": "mock data (Claude)"},
+                    "net_income": {"value": 952800.0, "confidence": 0.85, "source": "mock data (Claude)"}
+                }
+            },
+            "financial_metrics": {
+                "monthly_fee_per_sqm": {"value": 165.0, "confidence": 0.8, "source": "mock data (Claude)"},
+                "debt_per_sqm": {"value": 33052.0, "confidence": 0.8, "source": "mock data (Claude)"}
+            },
+            "financial_loans": [
+                {
+                    "lender": "Swedbank",
+                    "amount": 42500000.0,
+                    "interest_rate": 3.75,
+                    "maturity_date": "2024-09-25",
+                    "confidence": 0.85,
+                    "source": "mock data (Claude)"
+                },
+                {
+                    "lender": "SEB",
+                    "amount": 56000000.0,
+                    "interest_rate": 4.25,
+                    "maturity_date": "2026-03-15",
+                    "confidence": 0.85,
+                    "source": "mock data (Claude)"
+                }
+            ],
+            "board": {
+                "board_members": [
+                    {
+                        "name": "Anna Andersson",
+                        "role": "Ordförande",
+                        "confidence": 0.92,
+                        "source": "mock data (Claude)"
+                    },
+                    {
+                        "name": "Bengt Bengtsson",
+                        "role": "Kassör",
+                        "confidence": 0.92,
+                        "source": "mock data (Claude)"
+                    },
+                    {
+                        "name": "Carl Carlsson",
+                        "role": "Ledamot",
+                        "confidence": 0.92,
+                        "source": "mock data (Claude)"
+                    }
+                ]
+            },
+            "meta": {
+                "extraction_confidence": 0.88,
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm_mock",
+                "ocr_source": "Mistral OCR (mock)"
+            }
+        }
+        
+        # Add schema improvement suggestions - different format from others
+        mock_schema_improvements = {
+            "suggestions": [
+                {
+                    "field_path": "financial_report.income_statement.operating_costs",
+                    "suggested_name": "operating_costs",
+                    "suggested_type": "number",
+                    "example_value": 1875000.0,
+                    "reason": "Document separates operating costs from financial costs, providing more granularity",
+                    "confidence": 0.85
+                },
+                {
+                    "field_path": "property_details.property_tax_value",
+                    "suggested_name": "property_tax_value",
+                    "suggested_type": "number",
+                    "example_value": 62500000.0,
+                    "reason": "Property tax value (taxeringsvärde) is mentioned in document but not captured in schema",
+                    "confidence": 0.9
+                },
+                {
+                    "field_path": "financial_metrics.interest_coverage_ratio",
+                    "suggested_name": "interest_coverage_ratio",
+                    "suggested_type": "number",
+                    "example_value": 2.7,
+                    "reason": "Important financial health metric mentioned in document",
+                    "confidence": 0.8
+                },
+                {
+                    "field_path": "property_details.heating_system",
+                    "suggested_name": "heating_system",
+                    "suggested_type": "string",
+                    "example_value": "Fjärrvärme",
+                    "reason": "Type of heating system used in the property",
+                    "confidence": 0.85
+                },
+                {
+                    "field_path": "property_details.construction_year",
+                    "suggested_name": "construction_year",
+                    "suggested_type": "string",
+                    "example_value": "2018-2020",
+                    "reason": "Period of construction, which might differ from year_built that typically refers to completion",
+                    "confidence": 0.75
+                },
+                {
+                    "field_path": "board.board_meetings_count",
+                    "suggested_name": "board_meetings_count",
+                    "suggested_type": "number",
+                    "example_value": 12,
+                    "reason": "Number of board meetings held during the year is mentioned but not captured",
+                    "confidence": 0.9
+                }
+            ],
+            "model": self.model_name,
+            "timestamp": self.extraction_timestamp
+        }
+        
+        mock_extraction["schema_improvements"] = mock_schema_improvements
+        
+        return {
+            "extraction": mock_extraction,
+            "schema_improvements": mock_schema_improvements["suggestions"],
+            "tokens_used": 5328,  # Mock token count
+            "model": self.model_name
+        }
+    
+    def _generate_empty_extraction(self) -> Dict[str, Any]:
+        """Generate empty extraction structure for error cases."""
+        return {
+            "organization": {
+                "organization_name": None,
+                "organization_number": None,
+                "registered_office": None
+            },
+            "property_details": None,
+            "financial_report": {
+                "annual_report_year": None,
+                "balance_sheet": None,
+                "income_statement": None
+            },
+            "financial_metrics": None,
+            "financial_loans": [],
+            "board": None,
+            "meta": {
+                "extraction_confidence": 0.0,
+                "extraction_date": self.extraction_timestamp,
+                "extraction_method": "llm_error",
+                "ocr_source": "Mistral OCR"
+            }
+        }
+
+
+def extract_data(ocr_text: str, model: str = "mistral-large-latest") -> Dict[str, Any]:
+    """
+    Extract data from OCR text using the specified model
+    
+    Args:
+        ocr_text: OCR text to analyze
+        model: Model to use for extraction
+        
+    Returns:
+        Dictionary with extraction results and schema improvement suggestions
+    """
+    # Select the appropriate extractor based on the model
+    if model.startswith("gpt"):
+        extractor = GPT4Extractor(ocr_text, model_name=model)
+    elif model.startswith("claude"):
+        extractor = ClaudeExtractor(ocr_text, model_name=model)
+    else:
+        # Default to Mistral
+        extractor = MistralExtractor(ocr_text, model_name=model)
+    
+    # Extract data with schema improvements
+    return extractor.extract_with_schema_improvements()
+
+
+def validate_extraction(extraction_data: Dict[str, Any]) -> Tuple[bool, List[str]]:
+    """
+    Validate extraction data against the Pydantic models
+    
+    Args:
+        extraction_data: Extraction data to validate
+        
+    Returns:
+        Tuple of (is_valid, error_messages)
+    """
+    try:
+        # Convert to Pydantic model
+        BRFExtraction(**extraction_data)
+        return True, []
+    except Exception as e:
+        # Return validation errors
+        error_messages = []
+        if hasattr(e, "errors"):
+            for err in e.errors():
+                path = ".".join(str(p) for p in err["loc"])
+                error_messages.append(f"{path}: {err['msg']}")
+        else:
+            error_messages.append(str(e))
+        return False, error_messages
+
+
+def save_extraction_results(results: Dict[str, Any], output_path: str) -> bool:
+    """
+    Save extraction results to file
+    
+    Args:
+        results: Extraction results
+        output_path: Path to save results
+        
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        
+        # Save to file
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(results, f, ensure_ascii=False, indent=2)
+        
+        print(f"Saved extraction results to {output_path}")
+        return True
+    except Exception as e:
+        print(f"Error saving extraction results: {e}")
+        return False

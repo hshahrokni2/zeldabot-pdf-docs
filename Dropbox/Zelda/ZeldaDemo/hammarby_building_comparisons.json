@@ -1,0 +1,95 @@
+{
+  "energy_efficiency_ranking": [
+    {
+      "rank": 1,
+      "brf_name": "BRF Hammarby Kaj",
+      "energy_performance_kwh_m2": 127,
+      "efficiency_rating": "Good"
+    }
+  ],
+  "cost_efficiency_ranking": [],
+  "overall_performance_ranking": [
+    {
+      "rank": 1,
+      "brf_name": "BRF Hammarby Kaj",
+      "performance_score": 68.2,
+      "monthly_fee": 3588.93
+    },
+    {
+      "rank": 2,
+      "brf_name": "BRF Hammarby Port",
+      "performance_score": 61.5,
+      "monthly_fee": 3975.12
+    },
+    {
+      "rank": 3,
+      "brf_name": "BRF Sjöstadsparterren",
+      "performance_score": 61.0,
+      "monthly_fee": 4307.61
+    },
+    {
+      "rank": 4,
+      "brf_name": "BRF Hammarby Terrass",
+      "performance_score": 60.6,
+      "monthly_fee": 4552.58
+    },
+    {
+      "rank": 5,
+      "brf_name": "BRF Sjögläntan",
+      "performance_score": 57.5,
+      "monthly_fee": 5034.78
+    },
+    {
+      "rank": 6,
+      "brf_name": "BRF Hammarby Allé",
+      "performance_score": 50.9,
+      "monthly_fee": 4954.42
+    },
+    {
+      "rank": 7,
+      "brf_name": "BRF Lugnets Strand",
+      "performance_score": 50.7,
+      "monthly_fee": 4884.52
+    },
+    {
+      "rank": 8,
+      "brf_name": "BRF Hammarby Fabrik",
+      "performance_score": 47.5,
+      "monthly_fee": 3731.43
+    },
+    {
+      "rank": 9,
+      "brf_name": "BRF Sjöstadskajen",
+      "performance_score": 46.5,
+      "monthly_fee": 5012.95
+    },
+    {
+      "rank": 10,
+      "brf_name": "BRF Sjöstadshöjden",
+      "performance_score": 45.9,
+      "monthly_fee": 3942.27
+    },
+    {
+      "rank": 11,
+      "brf_name": "BRF Sjöstaden 1",
+      "performance_score": 37.6,
+      "monthly_fee": 4756.95
+    },
+    {
+      "rank": 12,
+      "brf_name": "BRF Sickla Strand",
+      "performance_score": 37.0,
+      "monthly_fee": 4270.23
+    }
+  ],
+  "peer_groups": {
+    "2000s": [
+      {
+        "name": "BRF Hammarby Kaj",
+        "energy_performance": 127,
+        "performance_score": 68.2,
+        "monthly_fee": 3588.93
+      }
+    ]
+  }
+}

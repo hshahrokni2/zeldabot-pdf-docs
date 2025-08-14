@@ -1,0 +1,327 @@
+[
+  {
+    "brf_name": "Brf Hammarby Kaj",
+    "building_id": "eghs_1",
+    "latitude": 59.3052,
+    "longitude": 18.1025,
+    "formatted_address": "Lugnets All\u00e9 12",
+    "postal_code": "120 65",
+    "postgres_name": "BRF Hammarby Kaj",
+    "postgres_id": 2,
+    "monthly_fee": 5430.17,
+    "total_income": 4805971.61,
+    "total_expenses": 4017444.43,
+    "postgres_energy_costs": 163300.52,
+    "postgres_water_costs": 111703.8,
+    "postgres_heating_costs": 232230.63,
+    "maintenance_fund": 1764954.82,
+    "loan_amount": 9249841.64,
+    "energy_performance": 147.0,
+    "energy_class": "E",
+    "construction_year": 2002,
+    "property_count": 3,
+    "epc_properties": [
+      {
+        "name": "B\u00e5dan 1",
+        "house_numbers": "{1}"
+      },
+      {
+        "name": "B\u00e5dan 1",
+        "house_numbers": "{2}"
+      },
+      {
+        "name": "B\u00e5dan 1",
+        "house_numbers": "{3}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 171277.0,
+    "cost_heating": 1069532.0,
+    "cost_internet_and_tv": 58056.0,
+    "cost_recycling": 235231.0,
+    "cost_snow_removal": 0.0,
+    "cost_water": 91180.0,
+    "total_cost": 1625276.0,
+    "performance_score": 51.5
+  },
+  {
+    "brf_name": "Brf Havet",
+    "building_id": "eghs_2",
+    "latitude": 59.305,
+    "longitude": 18.105,
+    "formatted_address": "Hammarby Sj\u00f6stad, Stockholm",
+    "postal_code": "120 XX",
+    "energy_performance": 93.0,
+    "energy_class": "D",
+    "construction_year": 2001,
+    "property_count": 1,
+    "epc_properties": [
+      {
+        "name": "Havet 1",
+        "house_numbers": "{1}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 1016886.0,
+    "cost_heating": 697129.0,
+    "cost_internet_and_tv": 116280.0,
+    "cost_recycling": 239496.0,
+    "cost_snow_removal": 127494.0,
+    "cost_water": 324308.0,
+    "total_cost": 2521593.0,
+    "performance_score": 78.5
+  },
+  {
+    "brf_name": "Brf Holmen",
+    "building_id": "eghs_3",
+    "latitude": 59.305,
+    "longitude": 18.105,
+    "formatted_address": "Hammarby Sj\u00f6stad, Stockholm",
+    "postal_code": "120 XX",
+    "energy_performance": 115.0,
+    "energy_class": "D",
+    "construction_year": 2002,
+    "property_count": 1,
+    "epc_properties": [
+      {
+        "name": "Holmen 2",
+        "house_numbers": "{1}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 706894.0,
+    "cost_heating": 784677.0,
+    "cost_internet_and_tv": 47574.0,
+    "cost_recycling": 109546.0,
+    "cost_snow_removal": 34343.0,
+    "cost_water": 337638.0,
+    "total_cost": 2020672.0,
+    "performance_score": 67.5
+  },
+  {
+    "brf_name": "Brf Sj\u00f6portalen 1",
+    "building_id": "eghs_4",
+    "latitude": 59.305,
+    "longitude": 18.105,
+    "formatted_address": "Hammarby Sj\u00f6stad, Stockholm",
+    "postal_code": "120 XX",
+    "energy_performance": 155.0,
+    "energy_class": "F",
+    "construction_year": 2003,
+    "property_count": 3,
+    "epc_properties": [
+      {
+        "name": "Kobben 1",
+        "house_numbers": "{1}"
+      },
+      {
+        "name": "Kobben 1",
+        "house_numbers": "{2}"
+      },
+      {
+        "name": "Kobben 1",
+        "house_numbers": "{3}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 320386.0,
+    "cost_heating": 976974.0,
+    "cost_internet_and_tv": 72305.0,
+    "cost_recycling": 69933.0,
+    "cost_snow_removal": 0.0,
+    "cost_water": 163992.0,
+    "total_cost": 1603590.0,
+    "performance_score": 47.5
+  },
+  {
+    "brf_name": "Brf Sj\u00f6staden 2",
+    "building_id": "eghs_5",
+    "latitude": 59.3045,
+    "longitude": 18.104,
+    "formatted_address": "Hammarby All\u00e9 45",
+    "postal_code": "120 63",
+    "postgres_name": "BRF Sj\u00f6staden 1",
+    "postgres_id": 1,
+    "monthly_fee": 4566.4,
+    "total_income": 4166080.31,
+    "total_expenses": 2767734.15,
+    "postgres_energy_costs": 231218.38,
+    "postgres_water_costs": 134675.93,
+    "postgres_heating_costs": 221156.04,
+    "maintenance_fund": 1810751.76,
+    "loan_amount": 7815665.55,
+    "energy_performance": 53.0,
+    "energy_class": "B",
+    "construction_year": 2003,
+    "property_count": 1,
+    "epc_properties": [
+      {
+        "name": "Br\u00e4dg\u00e5rden 9",
+        "house_numbers": "{1,2}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 1828349.0,
+    "cost_heating": 84077.0,
+    "cost_internet_and_tv": 258332.0,
+    "cost_recycling": 145159.0,
+    "cost_snow_removal": 157709.0,
+    "cost_water": 476731.0,
+    "total_cost": 2950357.0,
+    "performance_score": 98.5
+  },
+  {
+    "brf_name": "Brf Sj\u00f6stadsesplanaden 1",
+    "building_id": "eghs_6",
+    "latitude": 59.3042,
+    "longitude": 18.1048,
+    "formatted_address": "Sj\u00f6stadstorget 4",
+    "postal_code": "120 65",
+    "postgres_name": "BRF Sj\u00f6stadsparterren",
+    "postgres_id": 7,
+    "monthly_fee": 3967.1,
+    "total_income": 2249701.51,
+    "total_expenses": 3952542.12,
+    "postgres_energy_costs": 211346.8,
+    "postgres_water_costs": 85044.73,
+    "postgres_heating_costs": 385019.63,
+    "maintenance_fund": 1718793.28,
+    "loan_amount": 6435371.5,
+    "energy_performance": 73.0,
+    "energy_class": "C",
+    "construction_year": 2009,
+    "property_count": 1,
+    "epc_properties": [
+      {
+        "name": "Proppen 5",
+        "house_numbers": "{1}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 149464.0,
+    "cost_heating": 726485.0,
+    "cost_internet_and_tv": 321635.0,
+    "cost_recycling": 196824.0,
+    "cost_snow_removal": 0.0,
+    "cost_water": 196863.0,
+    "total_cost": 1591271.0,
+    "performance_score": 88.5
+  },
+  {
+    "brf_name": "Brf Sj\u00f6stadspiren",
+    "building_id": "eghs_7",
+    "latitude": 59.304,
+    "longitude": 18.1045,
+    "formatted_address": "Sj\u00f6stadskajen 33",
+    "postal_code": "120 63",
+    "postgres_name": "BRF Sj\u00f6stadskajen",
+    "postgres_id": 11,
+    "monthly_fee": 3583.04,
+    "total_income": 3286383.31,
+    "total_expenses": 4036938.87,
+    "postgres_energy_costs": 263628.52,
+    "postgres_water_costs": 136258.66,
+    "postgres_heating_costs": 338225.22,
+    "maintenance_fund": 664230.73,
+    "loan_amount": 5263474.92,
+    "energy_performance": 48.8,
+    "energy_class": "B",
+    "construction_year": 2010,
+    "property_count": 5,
+    "epc_properties": [
+      {
+        "name": "Sk\u00e4rg\u00e5rdsb\u00e5ten 4",
+        "house_numbers": "{1}"
+      },
+      {
+        "name": "Sk\u00e4rg\u00e5rdsb\u00e5ten 4",
+        "house_numbers": "{2}"
+      },
+      {
+        "name": "Sk\u00e4rg\u00e5rdsb\u00e5ten 4",
+        "house_numbers": "{3}"
+      },
+      {
+        "name": "Sk\u00e4rg\u00e5rdsb\u00e5ten 4",
+        "house_numbers": "{4}"
+      },
+      {
+        "name": "Sk\u00e4rg\u00e5rdsb\u00e5ten 4",
+        "house_numbers": "{5}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 2291599.0,
+    "cost_heating": 0.0,
+    "cost_internet_and_tv": 288873.0,
+    "cost_recycling": 63247.0,
+    "cost_snow_removal": 89689.0,
+    "cost_water": 225807.0,
+    "total_cost": 2959215.0,
+    "performance_score": 100.6
+  },
+  {
+    "brf_name": "Brf Strandkanten",
+    "building_id": "eghs_8",
+    "latitude": 59.3055,
+    "longitude": 18.1033,
+    "formatted_address": "Hammarby Terrassen 22",
+    "postal_code": "120 63",
+    "postgres_name": "BRF Lugnets Strand",
+    "postgres_id": 6,
+    "monthly_fee": 5154.15,
+    "total_income": 3001481.42,
+    "total_expenses": 2073233.93,
+    "postgres_energy_costs": 217062.13,
+    "postgres_water_costs": 104253.48,
+    "postgres_heating_costs": 387553.99,
+    "maintenance_fund": 1230270.21,
+    "loan_amount": 12984949.0,
+    "energy_performance": 73.0,
+    "energy_class": "C",
+    "construction_year": 2004,
+    "property_count": 1,
+    "epc_properties": [
+      {
+        "name": "Klabben 4",
+        "house_numbers": "{1,2}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 153803.0,
+    "cost_heating": 139209.0,
+    "cost_internet_and_tv": 69368.0,
+    "cost_recycling": 0.0,
+    "cost_snow_removal": 0.0,
+    "cost_water": 31319.0,
+    "total_cost": 393699.0,
+    "performance_score": 88.5
+  },
+  {
+    "brf_name": "Brf Sundet",
+    "building_id": "eghs_9",
+    "latitude": 59.305,
+    "longitude": 18.105,
+    "formatted_address": "Hammarby Sj\u00f6stad, Stockholm",
+    "postal_code": "120 XX",
+    "energy_performance": 51.0,
+    "energy_class": "B",
+    "construction_year": 2003,
+    "property_count": 1,
+    "epc_properties": [
+      {
+        "name": "Sundet 2",
+        "house_numbers": "{1,2}"
+      }
+    ],
+    "cost_cleaning": 0.0,
+    "cost_electricity": 569198.0,
+    "cost_heating": 64978.0,
+    "cost_internet_and_tv": 41116.0,
+    "cost_recycling": 6647.0,
+    "cost_snow_removal": 8225.0,
+    "cost_water": 71744.0,
+    "total_cost": 761908.0,
+    "performance_score": 99.5
+  }
+]

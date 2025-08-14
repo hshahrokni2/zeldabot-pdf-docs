@@ -1,0 +1,402 @@
+{
+  "metadata": {
+    "created_at": "2025-08-13T05:12:13.265969",
+    "data_sources": {
+      "epc_data": "/Users/hosseins/Dropbox/Zelda/ZeldaDemo/EnergyPerformanceCertificatesEGHS.json",
+      "cost_data": "/Users/hosseins/Dropbox/Zelda/ZeldaDemo/Parsed costs for EGHS and Finnboda for 2023 (1).xlsx",
+      "building_data": "/Users/hosseins/Dropbox/Zelda/ZeldaDemo/hammarby_building_data.json"
+    },
+    "swedish_energy_benchmark": 159,
+    "total_buildings": 12
+  },
+  "summary_statistics": {
+    "energy_performance": {
+      "avg_kwh_per_m2": 127.0,
+      "min_kwh_per_m2": 127,
+      "max_kwh_per_m2": 127,
+      "buildings_with_epc_data": 1
+    },
+    "performance_scores": {
+      "avg_score": 52.074999999999996,
+      "min_score": 37.0,
+      "max_score": 68.2
+    },
+    "data_quality": {
+      "buildings_with_energy_data": 1,
+      "buildings_with_cost_data": 10,
+      "avg_confidence_epc": 0.08333333333333333,
+      "avg_confidence_cost": 0.8250000000000001
+    }
+  },
+  "buildings": [
+    {
+      "id": 1,
+      "name": "BRF Sjöstaden 1",
+      "coordinates": {
+        "lat": 59.3045,
+        "lng": 18.104
+      },
+      "address": "Hammarby Allé 45",
+      "postal_code": "120 63",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 4756.95,
+      "energy_costs": 180753.86,
+      "water_costs": 97532.53,
+      "heating_costs": 229551.98,
+      "performance_score": 37.6,
+      "bang_for_buck_overall": 1.5766404944344592,
+      "cost_ratios": {
+        "cleaning": 0.028800384108556794,
+        "electricity": 0.32857153340455,
+        "heating": 0.3182158031737179,
+        "other": 0.21255858861072002,
+        "water": 0.1118536907024553
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.9899999999999997,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 2,
+      "name": "BRF Hammarby Kaj",
+      "coordinates": {
+        "lat": 59.3052,
+        "lng": 18.1025
+      },
+      "address": "Lugnets Allé 12",
+      "postal_code": "120 65",
+      "energy_performance_kwh_m2": 127,
+      "energy_class": "E",
+      "efficiency_vs_swedish_avg": 0.7987421383647799,
+      "efficiency_rating": "Good",
+      "construction_year": 2002,
+      "monthly_fee": 3588.93,
+      "energy_costs": 183984.2,
+      "water_costs": 129020.31,
+      "heating_costs": 354390.77,
+      "performance_score": 68.2,
+      "bang_for_buck_overall": 2.089759343314024,
+      "cost_ratios": {
+        "electricity": 0.10538333181564238,
+        "heating": 0.6580617692010464,
+        "other": 0.18045365833249244,
+        "water": 0.056101240650818694
+      },
+      "epc_confidence": 1.0,
+      "cost_confidence": 0.99,
+      "has_energy_data": true,
+      "has_cost_data": true
+    },
+    {
+      "id": 3,
+      "name": "BRF Sjögläntan",
+      "coordinates": {
+        "lat": 59.3038,
+        "lng": 18.1055
+      },
+      "address": "Sjöstadsparterren 8",
+      "postal_code": "120 66",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 5034.78,
+      "energy_costs": 192431.19,
+      "water_costs": 83889.21,
+      "heating_costs": 257690.73,
+      "performance_score": 57.5,
+      "bang_for_buck_overall": 1.4896380775326827,
+      "cost_ratios": {
+        "electricity": 0.3700429664747023,
+        "heating": 0.2773523675008314,
+        "other": 0.17654799874985325,
+        "cleaning": 0.03163444598220345,
+        "water": 0.14442222129240956
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.9900000000000002,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 4,
+      "name": "BRF Sickla Strand",
+      "coordinates": {
+        "lat": 59.3061,
+        "lng": 18.1012
+      },
+      "address": "Hammarby Kaj 28",
+      "postal_code": "120 64",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 4270.23,
+      "energy_costs": 163702.62,
+      "water_costs": 88766.8,
+      "heating_costs": 255499.47,
+      "performance_score": 37.0,
+      "bang_for_buck_overall": 1.7563456769307508,
+      "cost_ratios": {},
+      "epc_confidence": 0,
+      "cost_confidence": 0,
+      "has_energy_data": false,
+      "has_cost_data": false
+    },
+    {
+      "id": 5,
+      "name": "BRF Hammarby Allé",
+      "coordinates": {
+        "lat": 59.3029,
+        "lng": 18.1068
+      },
+      "address": "Sickla Kaj 15",
+      "postal_code": "120 67",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 4954.42,
+      "energy_costs": 212943.6,
+      "water_costs": 107119.41,
+      "heating_costs": 365382.94,
+      "performance_score": 50.9,
+      "bang_for_buck_overall": 1.5137997989673868,
+      "cost_ratios": {
+        "cleaning": 0.03957885737717647,
+        "electricity": 0.15821986164994273,
+        "heating": 0.5101014967017402,
+        "other": 0.19394899636868107,
+        "water": 0.0981507879024595
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.9900000000000001,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 6,
+      "name": "BRF Lugnets Strand",
+      "coordinates": {
+        "lat": 59.3055,
+        "lng": 18.1033
+      },
+      "address": "Hammarby Terrassen 22",
+      "postal_code": "120 63",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 4884.52,
+      "energy_costs": 167144.31,
+      "water_costs": 114562.23,
+      "heating_costs": 328408.99,
+      "performance_score": 50.7,
+      "bang_for_buck_overall": 1.5354630547116195,
+      "cost_ratios": {},
+      "epc_confidence": 0,
+      "cost_confidence": 0,
+      "has_energy_data": false,
+      "has_cost_data": false
+    },
+    {
+      "id": 7,
+      "name": "BRF Sjöstadsparterren",
+      "coordinates": {
+        "lat": 59.3042,
+        "lng": 18.1048
+      },
+      "address": "Sjöstadstorget 4",
+      "postal_code": "120 65",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 4307.61,
+      "energy_costs": 166686.59,
+      "water_costs": 139735.73,
+      "heating_costs": 372491.42,
+      "performance_score": 61.0,
+      "bang_for_buck_overall": 1.7411046961075864,
+      "cost_ratios": {
+        "electricity": 0.3700429664747023,
+        "heating": 0.2773523675008314,
+        "other": 0.17654799874985325,
+        "cleaning": 0.03163444598220345,
+        "water": 0.14442222129240956
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.9900000000000002,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 8,
+      "name": "BRF Hammarby Terrass",
+      "coordinates": {
+        "lat": 59.3048,
+        "lng": 18.1022
+      },
+      "address": "Hammarby Fabriksväg 19",
+      "postal_code": "120 66",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 4552.58,
+      "energy_costs": 254929.62,
+      "water_costs": 143902.98,
+      "heating_costs": 379750.77,
+      "performance_score": 60.6,
+      "bang_for_buck_overall": 1.647417508313967,
+      "cost_ratios": {
+        "cleaning": 0.09070246084084982,
+        "electricity": 0.18227512501895402,
+        "heating": 0.4285390468491808,
+        "other": 0.17557432643984625,
+        "water": 0.12290904085116909
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.9900000000000001,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 9,
+      "name": "BRF Sjöstadshöjden",
+      "coordinates": {
+        "lat": 59.3035,
+        "lng": 18.1062
+      },
+      "address": "Sjöstadshöjden 11",
+      "postal_code": "120 64",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 3942.27,
+      "energy_costs": 158412.31,
+      "water_costs": 126413.95,
+      "heating_costs": 315393.09,
+      "performance_score": 45.9,
+      "bang_for_buck_overall": 1.902457213737263,
+      "cost_ratios": {
+        "electricity": 0.3700429664747023,
+        "heating": 0.2773523675008314,
+        "other": 0.17654799874985325,
+        "cleaning": 0.03163444598220345,
+        "water": 0.14442222129240956
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.9900000000000002,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 10,
+      "name": "BRF Hammarby Port",
+      "coordinates": {
+        "lat": 59.3058,
+        "lng": 18.1018
+      },
+      "address": "Hammarby Port 7",
+      "postal_code": "120 67",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 3975.12,
+      "energy_costs": 324020.74,
+      "water_costs": 148050.84,
+      "heating_costs": 206414.95,
+      "performance_score": 61.5,
+      "bang_for_buck_overall": 1.8867354947775161,
+      "cost_ratios": {
+        "electricity": 0.10538333181564238,
+        "heating": 0.6580617692010464,
+        "other": 0.18045365833249244,
+        "water": 0.056101240650818694
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.99,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 11,
+      "name": "BRF Sjöstadskajen",
+      "coordinates": {
+        "lat": 59.304,
+        "lng": 18.1045
+      },
+      "address": "Sjöstadskajen 33",
+      "postal_code": "120 63",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 5012.95,
+      "energy_costs": 268435.9,
+      "water_costs": 99476.65,
+      "heating_costs": 226540.97,
+      "performance_score": 46.5,
+      "bang_for_buck_overall": 1.496125036156355,
+      "cost_ratios": {
+        "electricity": 0.3700429664747023,
+        "heating": 0.2773523675008314,
+        "other": 0.17654799874985325,
+        "cleaning": 0.03163444598220345,
+        "water": 0.14442222129240956
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.9900000000000002,
+      "has_energy_data": false,
+      "has_cost_data": true
+    },
+    {
+      "id": 12,
+      "name": "BRF Hammarby Fabrik",
+      "coordinates": {
+        "lat": 59.305,
+        "lng": 18.103
+      },
+      "address": "Hammarby Torg 2",
+      "postal_code": "120 65",
+      "energy_performance_kwh_m2": null,
+      "energy_class": null,
+      "efficiency_vs_swedish_avg": null,
+      "efficiency_rating": null,
+      "construction_year": null,
+      "monthly_fee": 3731.43,
+      "energy_costs": 199401.65,
+      "water_costs": 115825.41,
+      "heating_costs": 383443.29,
+      "performance_score": 47.5,
+      "bang_for_buck_overall": 2.009953288685571,
+      "cost_ratios": {
+        "electricity": 0.10538333181564238,
+        "heating": 0.6580617692010464,
+        "other": 0.18045365833249244,
+        "water": 0.056101240650818694
+      },
+      "epc_confidence": 0,
+      "cost_confidence": 0.99,
+      "has_energy_data": false,
+      "has_cost_data": true
+    }
+  ]
+}

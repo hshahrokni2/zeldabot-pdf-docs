@@ -1,0 +1,3306 @@
+[
+	{
+		"epc_id": 949317,
+		"year": 2019,
+		"property_owner": "Bostadsrättsföreningen Hammarby Kaj",
+		"property_name": "Bådan 1",
+		"house_numbers": "{1}",
+		"json_data": {
+			"conversionErrors": [],
+			"hasFullData": true,
+			"mainStreetAddress": "Korphoppsgatan 40",
+			"energyPerformanceCertificateId": 949317,
+			"datePerformed": "2019-05-15",
+			"dateValidTo": "2029-05-15",
+			"constructionYear": 2002,
+			"energyPerformance_kWh_per_m2": 127,
+			"energyPerformanceNewBuilding_kWh_per_m2": 85,
+			"specificEnergyUse_kWh_per_m2": 126,
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"energyClass": "E",
+			"energyPerformanceCertificateVersion": "2.6",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Bådan 1",
+			"ownName": "Korphoppsg 40,42",
+			"buildings": [
+				{
+					"houseNumber": "1",
+					"prefixBuildingId": "1",
+					"buildingId": "553764",
+					"addresses": [
+						{
+							"fullStreetAddress": "Korphoppsgatan 42",
+							"streetAddress": "Korphoppsgatan",
+							"streetNumber": "42",
+							"postalCode": "12065",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Korphoppsgatan 40",
+							"streetAddress": "Korphoppsgatan",
+							"streetNumber": "40",
+							"postalCode": "12065",
+							"city": "Stockholm",
+							"isMainAddress": true
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 4717,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 6,
+			"numberOfGates": 2,
+			"numberOfApartments": 43,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": null,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 100
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2017-12",
+			"measurementTo": "2018-11",
+			"energyUseHeating_kWh": {
+				"districtHeating": 383216
+			},
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 132172
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 13217,
+			"householdElectricity_kWh": 87538,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 592474,
+			"primaryEnergyConsumption_kWh": 600405,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 134,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"F"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": null,
+			"heatingSystemNominalPowerAssessmentBasis": null,
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": true,
+			"hasAC70kWOrLarger": null,
+			"ACNominalPowerAssessmentBasis": null,
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 50,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2014-01-04",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"heating_heatingSystemBalancing",
+						"heating_timeOrDemandControlledHeating"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 15000,
+					"costPerSavedkWh": 5.0,
+					"description": "Värmecentralen OK, dock är temp-skillnaden på sekundärsidan låg, ca 7-9 grC. \nDetta kan bero på för högt flöde i radiatorkretsen alt på begynnande \nbeläggning i värmeväxlare.\nTappvarmvatten, Tbör, höjs till 57 grC.\nEnergiprestanda ligger som förväntat, men överstiger de krav som \ngäller för dagens nybyggnation.\nRekommendation är att en noggrannare statusbestämning av \nvärmeanläggning inkl optimering av inställningar för reglering.  \nKartläggning obalanser i värmefördelningen i olika delar av \nbyggnaderna utgör därvid viktigt underlag.\nBesparing: 15000 kWh/år eller 14000 kr/år\nKostnad: 60000 kr\nPayback tid: 60000/14000 år = 4.3 år"
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": null,
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Kent",
+			"certifierLastName": "Östergård",
+			"certifierEmail": "ken@victorconsulting.se",
+			"certificateNumber": "98",
+			"certifierBody": "Incert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Victor Consulting AB"
+		}
+	},
+	{
+		"epc_id": 949316,
+		"year": 2019,
+		"property_owner": "Bostadsrättsföreningen Hammarby Kaj",
+		"property_name": "Bådan 1",
+		"house_numbers": "{2}",
+		"json_data": {
+			"conversionErrors": [],
+			"hasFullData": true,
+			"mainStreetAddress": "Styrbordsgatan 21",
+			"energyPerformanceCertificateId": 949316,
+			"datePerformed": "2019-05-15",
+			"dateValidTo": "2029-05-15",
+			"constructionYear": 2002,
+			"energyPerformance_kWh_per_m2": 127,
+			"energyPerformanceNewBuilding_kWh_per_m2": 85,
+			"specificEnergyUse_kWh_per_m2": 125,
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"energyClass": "E",
+			"energyPerformanceCertificateVersion": "2.6",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Bådan 1",
+			"ownName": "Styrbordsgatan 21,23",
+			"buildings": [
+				{
+					"houseNumber": "2",
+					"prefixBuildingId": "1",
+					"buildingId": "769190",
+					"addresses": [
+						{
+							"fullStreetAddress": "Styrbordsgatan 23",
+							"streetAddress": "Styrbordsgatan",
+							"streetNumber": "23",
+							"postalCode": "12065",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Styrbordsgatan 21",
+							"streetAddress": "Styrbordsgatan",
+							"streetNumber": "21",
+							"postalCode": "12065",
+							"city": "Stockholm",
+							"isMainAddress": true
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 4462,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 5,
+			"numberOfGates": 2,
+			"numberOfApartments": 39,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.35,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 100
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2018-01",
+			"measurementTo": "2018-12",
+			"energyUseHeating_kWh": {
+				"districtHeating": 362499
+			},
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 125026
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 12503,
+			"householdElectricity_kWh": 87538,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 559069,
+			"primaryEnergyConsumption_kWh": 566571,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 134,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"F"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": null,
+			"heatingSystemNominalPowerAssessmentBasis": null,
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": true,
+			"hasAC70kWOrLarger": null,
+			"ACNominalPowerAssessmentBasis": null,
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 50,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2014-01-04",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"heating_heatingSystemBalancing"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 15000,
+					"costPerSavedkWh": 4.0,
+					"description": "Värmecentralen OK, dock är temp-skillnaden på sekundärsidan låg, ca 7-9 grC. \nDetta kan bero på för högt flöde i radiatorkretsen alt på begynnande \nbeläggning i värmeväxlare.\nTappvarmvatten, Tbör, höjs till 57 grC.\nEnergiprestanda ligger som förväntat, men överstiger de krav som \ngäller för dagens nybyggnation.\nRekommendation är att en noggrannare statusbestämning av \nvärmeanläggning inkl optimering av inställningar för reglering.  \nKartläggning obalanser i värmefördelningen i olika delar av \nbyggnaderna utgör därvid viktigt underlag.\nBesparing: 15000 kWh/år eller 20000 kr/år\nKostnad: 60000 kr\nPayback tid: 60000/20000 år = 3 år"
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": null,
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Kent",
+			"certifierLastName": "Östergård",
+			"certifierEmail": "ken@victorconsulting.se",
+			"certificateNumber": "98",
+			"certifierBody": "Incert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Victor Consulting AB"
+		}
+	},
+	{
+		"epc_id": 925830,
+		"year": 2019,
+		"property_owner": "Bostadsrättsföreningen Hammarby Kaj",
+		"property_name": "Bådan 1",
+		"house_numbers": "{3}",
+		"json_data": {
+			"conversionErrors": [],
+			"hasFullData": true,
+			"mainStreetAddress": "Korphoppsgatan 42",
+			"energyPerformanceCertificateId": 925830,
+			"datePerformed": "2019-05-13",
+			"dateValidTo": "2029-05-13",
+			"constructionYear": 2002,
+			"energyPerformance_kWh_per_m2": 187,
+			"energyPerformanceNewBuilding_kWh_per_m2": 98,
+			"specificEnergyUse_kWh_per_m2": 180,
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"energyClass": "F",
+			"energyPerformanceCertificateVersion": "2.6",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Bådan 1",
+			"ownName": "Kajutan",
+			"buildings": [
+				{
+					"houseNumber": "3",
+					"prefixBuildingId": "2",
+					"buildingId": "140",
+					"addresses": [
+						{
+							"fullStreetAddress": "Korphoppsgatan 42",
+							"streetAddress": "Korphoppsgatan",
+							"streetNumber": "42",
+							"postalCode": "12065",
+							"city": "Stockholm",
+							"isMainAddress": true
+						}
+					]
+				}
+			],
+			"typeCode": "325 - Hyreshusenhet, lokaler",
+			"buildingCategoryString": "Lokalbyggnader",
+			"buildingCategory": "commercialBuilding",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 100,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 0,
+			"numberOfFloorsAboveGround": 1,
+			"numberOfGates": 0,
+			"numberOfApartments": 0,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.6,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"entertainment": 100
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2018-01",
+			"measurementTo": "2018-12",
+			"energyUseHeating_kWh": {
+				"districtHeating": 12124
+			},
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 2802
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 1100,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": 4500,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 18001,
+			"primaryEnergyConsumption_kWh": 18661,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 209,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"F"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": null,
+			"heatingSystemNominalPowerAssessmentBasis": null,
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": true,
+			"hasAC70kWOrLarger": null,
+			"ACNominalPowerAssessmentBasis": null,
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": false,
+			"radonAmount_Bq_per_m3": null,
+			"radonMeasurementType": null,
+			"dateRadonMeasured": null,
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"ventilation_timeControlledVentilation",
+						"heating_otherMeasure",
+						"ventilation_otherMeasure",
+						"installation_otherMeasure"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 5000,
+					"costPerSavedkWh": 4.0,
+					"description": "Dessa åtgärdsförslag avser endast lokal Kajutan.\n1) Öppna upp för förbättrat in/utflöde från fläktaggregat genom att \nexempelvis kapa av dörr i höjd med utblås. Detta förbättrar flödet.\n2) Sätt temperatur i lokal när den inte nyttjas till 18 grC. Är det många i \nlokalen bidrar detta värms denna snabbt upp. Alternativt se till att höja \nvärme i förväg till önskad högre temperatur.\n3) Montera höga gardinridåer för det enormt stora fönsterpartiet. Dessa kan \nvis behov öppnas upp.\n4) Överväg om en sk. tropikfläkt,med lämplig dimensionering, som startas när \naktivitet pågår, kan monteras i taket. Detta för ned den varma luften som \nsamlas närmast taket.\n5) Tidsstyr ventilation så att min.flöde tillämpas när lokal inte utnyttjas.\nDessa enkla åtgärder kan ge bättre energieffektivitet samt komfort."
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": null,
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Kent",
+			"certifierLastName": "Östergård",
+			"certifierEmail": "ken@victorconsulting.se",
+			"certificateNumber": "98",
+			"certifierBody": "Incert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Victor Consulting AB"
+		}
+	},
+	{
+		"epc_id": 1124120,
+		"year": 2020,
+		"property_owner": "Bostadsrättsföreningen Havet",
+		"property_name": "Havet 1",
+		"house_numbers": "{1}",
+		"json_data": {
+			"city": "Stockholm",
+			"hasPv": false,
+			"county": "Stockholm",
+			"ownName": "Sickla Kanalgata 21-43, Hus 1",
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildings": [
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "21",
+							"isMainAddress": true,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 21"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "23",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 23"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "25",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 25"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "27",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 27"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "29",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 29"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "31",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 31"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "33",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 33"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "35",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 35"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "37",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 37"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "39",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 39"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "41",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 41"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12067",
+							"streetNumber": "43",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 43"
+						}
+					],
+					"buildingId": "458217",
+					"houseNumber": "1",
+					"prefixBuildingId": "1"
+				}
+			],
+			"isComplex": false,
+			"pvArea_m2": null,
+			"dateValidTo": "2030-10-29",
+			"energyClass": "D",
+			"hasFullData": true,
+			"buildingType": "semiDetached",
+			"hasSolarHeat": false,
+			"municipality": "Stockholm",
+			"propertyName": "Havet 1",
+			"certifierBody": "Kiwa Swedcert",
+			"datePerformed": "2020-10-29",
+			"heatedArea_m2": 10699,
+			"measurementTo": "2019-12",
+			"numberOfGates": 10,
+			"certifierEmail": "rickard.berg@ricman.eu",
+			"certifierLevel": "Kvalificerad",
+			"heatingSystems": [
+				"districtHeating",
+				"heatPumpExhaustAir"
+			],
+			"isRadonMeasured": true,
+			"measurementFrom": "2019-01",
+			"buildingCategory": "multiFamilyDwelling",
+			"certifierCompany": "RicMan Energy",
+			"constructionYear": 2001,
+			"conversionErrors": [],
+			"protectionStatus": null,
+			"solarHeatArea_m2": null,
+			"ventilationTypes": [
+				"FT",
+				"F_with_recycling"
+			],
+			"certificateNumber": "7422",
+			"certifierLastName": "Berg",
+			"dateRadonMeasured": "2009-02-13",
+			"hasAC12kWOrLarger": false,
+			"inspectionComment": "Varmvatten är normaliserat enligt Boverkets direktiv.",
+			"certifierFirstName": "Rickard",
+			"numberOfApartments": 101,
+			"districtCooling_kWh": null,
+			"hasOnSiteInspection": true,
+			"heatedGarageArea_m2": 430,
+			"hygienicAirFlowRate": 0.41,
+			"energyUseHeating_kWh": {
+				"districtHeating": 358183,
+				"heatPumpExhaustAir": 197443
+			},
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"energyConsumption_kWh": 881111,
+			"radonAmount_Bq_per_m3": 50,
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingUseAreaPercent": {
+				"office": 1,
+				"housing": 99
+			},
+			"coolingElectricity_kWh": null,
+			"numberOfBasementFloors": 0,
+			"pvProductionYearly_kWh": null,
+			"businessElectricity_kWh": 50285,
+			"propertyElectricity_kWh": 47237,
+			"totalPropertyEnergy_kWh": 785565,
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 121314,
+				"hotWaterElectric": 61388
+			},
+			"hasMainlySmallApartments": false,
+			"householdElectricity_kWh": null,
+			"noOnSiteInspectionReason": null,
+			"numberOfFloorsAboveGround": 5,
+			"ventilationCheckedPercent": 100,
+			"isVentilationCheckApproved": true,
+			"otherEnvironmentalMeasures": [
+				"Undercentral: När värmepumparna ska bytas finns det tre alternativ: 1. Ersätt dem med maskiner med samma kylkapacitet. 2. Ersätt dem med maskiner där eltillförseln avgör, ger lite större maskiner. a. Betyder att kylkapaciteten ökar något och det bör då tas från energibrunnar. 3. Dimensionera upp anläggningen så att 60% av effekten kommer från värmepumpar. a. Då måste energibrunnar borras, hänsyn tas till befintlig kapacitet av frånluften."
+			],
+			"energyPerformance_kWh_per_m2": 93,
+			"primaryEnergyConsumption_kWh": 990801,
+			"specificEnergyUse_kWh_per_m2": 82,
+			"solarHeatProductionYearly_kWh": null,
+			"energyPerformanceCertificateId": 1124120,
+			"needsRecurringVentilationCheck": true,
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_installationOfSolarPanels"
+					],
+					"description": "Solpanelsinstallation, dimensioneringen ska baseras på timvärden från mätpunkten (el-mätaren) för att inte få för stor överproduktion. Inte antaget att något ev. solcellsbidrag antas.",
+					"costPerSavedkWh": 1.25,
+					"reducedYearlyEnergyConsumption_kWh": 106906
+				}
+			],
+			"energyPerformanceCertificateVersion": "2.8",
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false
+		}
+	},
+	{
+		"epc_id": 1021320,
+		"year": 2019,
+		"property_owner": "Bostadsrättsföreningen Holmen, Sickla Kaj.",
+		"property_name": "Holmen 2",
+		"house_numbers": "{1}",
+		"json_data": {
+			"city": "Stockholm",
+			"hasPv": true,
+			"county": "Stockholm",
+			"typeCode": "325 - Hyreshusenhet, lokaler",
+			"buildings": [
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "4",
+							"isMainAddress": false,
+							"streetAddress": "Babordsgatan",
+							"fullStreetAddress": "Babordsgatan 4"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "6",
+							"isMainAddress": false,
+							"streetAddress": "Babordsgatan",
+							"fullStreetAddress": "Babordsgatan 6"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "8",
+							"isMainAddress": true,
+							"streetAddress": "Babordsgatan",
+							"fullStreetAddress": "Babordsgatan 8"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "117",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 117"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "119",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 119"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "121",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 121"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "123",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 123"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "125",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 125"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "127",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 127"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "129",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 129"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "131",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 131"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "133",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 133"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "135",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 135"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "137",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 137"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "21",
+							"isMainAddress": false,
+							"streetAddress": "Korphoppsgatan",
+							"fullStreetAddress": "Korphoppsgatan 21"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12064",
+							"streetNumber": "23",
+							"isMainAddress": false,
+							"streetAddress": "Korphoppsgatan",
+							"fullStreetAddress": "Korphoppsgatan 23"
+						}
+					],
+					"buildingId": "22475",
+					"houseNumber": "1",
+					"prefixBuildingId": "2"
+				}
+			],
+			"isComplex": false,
+			"pvArea_m2": 300,
+			"dateValidTo": "2029-12-12",
+			"energyClass": "D",
+			"hasFullData": true,
+			"buildingType": "detached",
+			"hasSolarHeat": false,
+			"municipality": "Stockholm",
+			"propertyName": "Holmen 2",
+			"certifierBody": "RISE",
+			"datePerformed": "2019-12-12",
+			"heatedArea_m2": 12914,
+			"measurementTo": "2019-10",
+			"numberOfGates": 5,
+			"certifierEmail": "joakim.nordemo@bengtdahlgren.se",
+			"certifierLevel": "Kvalificerad",
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"isRadonMeasured": false,
+			"measurementFrom": "2018-11",
+			"buildingCategory": "commercialBuilding",
+			"certifierCompany": "Bengt Dahlgren Stockholm AB",
+			"constructionYear": 2002,
+			"conversionErrors": [],
+			"protectionStatus": null,
+			"solarHeatArea_m2": null,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"certificateNumber": "SCO672-17",
+			"certifierLastName": "Nordemo",
+			"dateRadonMeasured": null,
+			"hasAC12kWOrLarger": false,
+			"inspectionComment": "Korrigering har gjorts på fastighetsel, avdrag för markvärme med - 16338 kWh/år",
+			"certifierFirstName": "Joakim",
+			"numberOfApartments": 114,
+			"districtCooling_kWh": null,
+			"hasOnSiteInspection": true,
+			"hygienicAirFlowRate": null,
+			"energyUseHeating_kWh": {
+				"districtHeating": 568713
+			},
+			"radonMeasurementType": null,
+			"energyConsumption_kWh": 1289791,
+			"radonAmount_Bq_per_m3": null,
+			"buildingCategoryString": "Lokalbyggnader",
+			"buildingUseAreaPercent": {
+				"housing": 96,
+				"restaurant": 3,
+				"healthcareDaytime": 1
+			},
+			"coolingElectricity_kWh": null,
+			"numberOfBasementFloors": 1,
+			"pvProductionYearly_kWh": 26000,
+			"businessElectricity_kWh": null,
+			"propertyElectricity_kWh": 319625,
+			"totalPropertyEnergy_kWh": 1199307,
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 310969
+			},
+			"hasMainlySmallApartments": false,
+			"householdElectricity_kWh": null,
+			"noOnSiteInspectionReason": null,
+			"numberOfFloorsAboveGround": 6,
+			"ventilationCheckedPercent": 96,
+			"isVentilationCheckApproved": false,
+			"otherEnvironmentalMeasures": [],
+			"energyPerformance_kWh_per_m2": 115,
+			"primaryEnergyConsumption_kWh": 1481566,
+			"specificEnergyUse_kWh_per_m2": 100,
+			"solarHeatProductionYearly_kWh": null,
+			"energyPerformanceCertificateId": 1021320,
+			"needsRecurringVentilationCheck": true,
+			"performedEnergyEfficiencyMeasures": [
+				{
+					"year": 2018,
+					"measures": [
+						"installation_installationOfSolarPanels"
+					],
+					"description": "Installation av solcellsanlägging. Installerad effekt uppgår till 15,8 kWp."
+				},
+				{
+					"year": 2019,
+					"measures": [
+						"heating_otherMeasure",
+						"ventilation_otherMeasure",
+						"lightingAndCooling_otherMeasure"
+					],
+					"description": "Byte av överordnat styrsystem. Behandlar idag drifttbilder för värme, ventilation och utomhusbelysning."
+				}
+			],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"heating_otherMeasure"
+					],
+					"description": "Installation av tempgivare i aggregat. Saknas givare för avluftstemperatur\\noch tilluft efter värmeväxlare på samtliga aggregat. Med dessa mätpunkter\\nförenklas övervakning av låg verkningsgrad på värmeåtervinning.",
+					"costPerSavedkWh": 0,
+					"reducedYearlyEnergyConsumption_kWh": 0
+				},
+				{
+					"measures": [
+						"heating_otherMeasure"
+					],
+					"description": "Det överordnade styrsystemet har nyligen bytts ut pga att det tidigare systemet gick sönder, i samband med detta antas värmekurvor ha ställts upp för att säkra funktion. Inställningar för framledningstemperatur på VS1 är onormalt högt ställd på flera brytpunkter, kurvan antas kunna sänkas i snitt 7 %. Utetempgivaren visar 3 °C för lågt vilket resulterar i felaktig framledningstemperatur. Sammantaget antas dessa åtgärder spara ca 5 % på värmeanvändningen.",
+					"costPerSavedkWh": 0.07,
+					"reducedYearlyEnergyConsumption_kWh": 28436
+				},
+				{
+					"measures": [
+						"heating_timeOrDemandControlledHeating"
+					],
+					"description": "Trapphus och andra allmänna ytor är varma och saknar termostater. Installera termostater som begränsas till 20°C. Åtgärden antas sänka värmeanvändning för dessa ytor med 5 %.",
+					"costPerSavedkWh": 0.37,
+					"reducedYearlyEnergyConsumption_kWh": 8157
+				},
+				{
+					"measures": [
+						"installation_energyEfficientLighting"
+					],
+					"description": "Byt T5 belysning i tvättstuga mot LED. Antaget att varje armatur har 2 lysrör å 35 W , totalt 18 armaturer. Antagen drifttid 10 h/dygn.",
+					"costPerSavedkWh": 0.48,
+					"reducedYearlyEnergyConsumption_kWh": 2300
+				}
+			],
+			"energyPerformanceCertificateVersion": "2.6"
+		}
+	},
+	{
+		"epc_id": 970284,
+		"year": 2019,
+		"property_owner": "Bostadsrättsföreningen Sjöportalen 1",
+		"property_name": "Kobben 1",
+		"house_numbers": "{1}",
+		"json_data": {
+			"conversionErrors": [],
+			"hasFullData": true,
+			"mainStreetAddress": "Babordsgatan 20",
+			"energyPerformanceCertificateId": 970284,
+			"datePerformed": "2019-08-19",
+			"dateValidTo": "2029-08-19",
+			"constructionYear": 2003,
+			"energyPerformance_kWh_per_m2": 155,
+			"energyPerformanceNewBuilding_kWh_per_m2": 85,
+			"specificEnergyUse_kWh_per_m2": 147,
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"energyClass": "F",
+			"energyPerformanceCertificateVersion": "2.6",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Kobben 1",
+			"ownName": "Brf Sjöport,Babordsg20 by 590388(Hus B)",
+			"buildings": [
+				{
+					"houseNumber": "1",
+					"prefixBuildingId": "1",
+					"buildingId": "590388",
+					"addresses": [
+						{
+							"fullStreetAddress": "Babordsgatan 20",
+							"streetAddress": "Babordsgatan",
+							"streetNumber": "20",
+							"postalCode": "12064",
+							"city": "Stockholm",
+							"isMainAddress": true
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 4352,
+			"heatedGarageArea_m2": 0,
+			"numberOfBasementFloors": 0,
+			"numberOfFloorsAboveGround": 5,
+			"numberOfGates": 1,
+			"numberOfApartments": 44,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": null,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 100
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2018-03",
+			"measurementTo": "2019-02",
+			"energyUseHeating_kWh": {
+				"districtHeating": 396997
+			},
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 106582
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 60129,
+			"householdElectricity_kWh": 133662,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 639486,
+			"primaryEnergyConsumption_kWh": 675564,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 134,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": null,
+			"heatingSystemNominalPowerAssessmentBasis": null,
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": true,
+			"hasAC70kWOrLarger": null,
+			"ACNominalPowerAssessmentBasis": null,
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 35,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2013-04-17",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"heating_heatingSystemBalancing",
+						"ventilation_ventilationSystemBalancing"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 25000,
+					"costPerSavedkWh": 3.0,
+					"description": "Fjärrvärmecentral från 2003. Viss uppgradering har skett. \nGoda driftsdata som högt temperaturskillnad både primär- och sekundärsida \nradiator värmekrets. Temperaturnivå varmvatten cirkulationskrets 50-53 grC. \n(skall ligga över 50 grC)\nDock värmekrets VS1 (via shuntgrupp): Cirkulationspumpen går med mkt högt \ndriftsstryck och flöde - behöver omedelbar åtgärd.)\nVentilationsanläggningar är av FTX-typ och har godkända OVK. Fina \nreglerfunktioner med interaktivt grafiskt gränssnitt.\n(Dock: Vid besökstillfället rusade frånluftsfläkten i aggregat LBA1, behöver \nomedelbar åtgärd)\nEn översyn av reglerparametrar samt injustering både för värme- och \nventilationsanläggningarna rekommenderas. \nFörväntad energibesparing: 25 000 kWh/år el 20 000 kr/år\nKostnad: 40-60 000 kr.\nPayback-tid: c.a 3 år"
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": null,
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Kent",
+			"certifierLastName": "Östergård",
+			"certifierEmail": "ken@victorconsulting.se",
+			"certificateNumber": "98",
+			"certifierBody": "Incert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Victor Consulting AB"
+		}
+	},
+	{
+		"epc_id": 970283,
+		"year": 2019,
+		"property_owner": "Bostadsrättsföreningen Sjöportalen 1",
+		"property_name": "Kobben 1",
+		"house_numbers": "{2}",
+		"json_data": {
+			"conversionErrors": [],
+			"hasFullData": true,
+			"mainStreetAddress": "Babordsgatan 22",
+			"energyPerformanceCertificateId": 970283,
+			"datePerformed": "2019-08-19",
+			"dateValidTo": "2029-08-19",
+			"constructionYear": 2003,
+			"energyPerformance_kWh_per_m2": 155,
+			"energyPerformanceNewBuilding_kWh_per_m2": 84,
+			"specificEnergyUse_kWh_per_m2": 147,
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"energyClass": "F",
+			"energyPerformanceCertificateVersion": "2.6",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Kobben 1",
+			"ownName": "Babordsg 22, by 111",
+			"buildings": [
+				{
+					"houseNumber": "2",
+					"prefixBuildingId": "2",
+					"buildingId": "111",
+					"addresses": [
+						{
+							"fullStreetAddress": "Babordsgatan 22",
+							"streetAddress": "Babordsgatan",
+							"streetNumber": "22",
+							"postalCode": "12064",
+							"city": "Stockholm",
+							"isMainAddress": true
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 189,
+			"heatedGarageArea_m2": 0,
+			"numberOfBasementFloors": 0,
+			"numberOfFloorsAboveGround": 2,
+			"numberOfGates": 0,
+			"numberOfApartments": 0,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.4,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"entertainment": 100
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2018-03",
+			"measurementTo": "2019-02",
+			"energyUseHeating_kWh": {
+				"districtHeating": 17241
+			},
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 4629
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 2611,
+			"householdElectricity_kWh": 5805,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 27772,
+			"primaryEnergyConsumption_kWh": 29339,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 209,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": null,
+			"heatingSystemNominalPowerAssessmentBasis": null,
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": true,
+			"hasAC70kWOrLarger": null,
+			"ACNominalPowerAssessmentBasis": null,
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 35,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2013-04-17",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"heating_heatingSystemBalancing",
+						"ventilation_ventilationSystemBalancing"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 2000,
+					"costPerSavedkWh": 3.0,
+					"description": "Se beskrivning för Hus A/B."
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": null,
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Kent",
+			"certifierLastName": "Östergård",
+			"certifierEmail": "ken@victorconsulting.se",
+			"certificateNumber": "98",
+			"certifierBody": "Incert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Victor Consulting AB"
+		}
+	},
+	{
+		"epc_id": 970282,
+		"year": 2019,
+		"property_owner": "Bostadsrättsföreningen Sjöportalen 1",
+		"property_name": "Kobben 1",
+		"house_numbers": "{3}",
+		"json_data": {
+			"conversionErrors": [],
+			"hasFullData": true,
+			"mainStreetAddress": "Korphoppsgatan 33",
+			"energyPerformanceCertificateId": 970282,
+			"datePerformed": "2019-08-19",
+			"dateValidTo": "2029-08-19",
+			"constructionYear": 2003,
+			"energyPerformance_kWh_per_m2": 155,
+			"energyPerformanceNewBuilding_kWh_per_m2": 85,
+			"specificEnergyUse_kWh_per_m2": 147,
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"energyClass": "F",
+			"energyPerformanceCertificateVersion": "2.6",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Kobben 1",
+			"ownName": "Korphoppsgatan 33 by 112 (Hus A)",
+			"buildings": [
+				{
+					"houseNumber": "3",
+					"prefixBuildingId": "2",
+					"buildingId": "112",
+					"addresses": [
+						{
+							"fullStreetAddress": "Korphoppsgatan 33",
+							"streetAddress": "Korphoppsgatan",
+							"streetNumber": "33",
+							"postalCode": "12064",
+							"city": "Stockholm",
+							"isMainAddress": true
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 4732,
+			"heatedGarageArea_m2": 0,
+			"numberOfBasementFloors": 0,
+			"numberOfFloorsAboveGround": 5,
+			"numberOfGates": 1,
+			"numberOfApartments": 45,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": null,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 100
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2018-03",
+			"measurementTo": "2019-02",
+			"energyUseHeating_kWh": {
+				"districtHeating": 431662
+			},
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 115889
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 65379,
+			"householdElectricity_kWh": 145333,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": true,
+			"solarHeatArea_m2": 50,
+			"solarHeatProductionYearly_kWh": 15000,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 695325,
+			"primaryEnergyConsumption_kWh": 734553,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 134,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": null,
+			"heatingSystemNominalPowerAssessmentBasis": null,
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": true,
+			"hasAC70kWOrLarger": null,
+			"ACNominalPowerAssessmentBasis": null,
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 35,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2013-04-17",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"heating_heatingSystemBalancing",
+						"ventilation_ventilationSystemBalancing"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 25000,
+					"costPerSavedkWh": 3.0,
+					"description": "Fjärrvärmecentral från 2003. Viss uppgradering har skett. \nGoda driftsdata som högt temperaturskillnad både primär- och sekundärsida \nradiator värmekrets. Temperaturnivå varmvatten cirkulationskrets 50-53 grC. \n(skall ligga över 50 grC)\nDock värmekrets VS1 (via shuntgrupp): Cirkulationspumpen går med mkt högt \ndriftsstryck och flöde - behöver omedelbar åtgärd.)\nVentilationsanläggningar är av FTX-typ och har godkända OVK. Fina \nreglerfunktioner med interaktivt grafiskt gränssnitt.\n(Dock: Vid besökstillfället rusade frånluftsfläkten i aggregat LBA1, behöver \nomedelbar åtgärd)\nEn översyn av reglerparametrar samt injustering både för värme- och \nventilationsanläggningarna rekommenderas. \nFörväntad energibesparing: 25 000 kWh/år el 20 000 kr/år\nKostnad: 40-60 000 kr.\nPayback-tid: c.a 3 år"
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": null,
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Kent",
+			"certifierLastName": "Östergård",
+			"certifierEmail": "ken@victorconsulting.se",
+			"certificateNumber": "98",
+			"certifierBody": "Incert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Victor Consulting AB"
+		}
+	},
+	{
+		"epc_id": 1053847,
+		"year": 2020,
+		"property_owner": "Bostadsrättsföreningen Sjöstaden 2",
+		"property_name": "Brädgården 9",
+		"house_numbers": "{1,2}",
+		"json_data": {
+			"city": "Stockholm",
+			"hasPv": true,
+			"county": "Stockholm",
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildings": [
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "22",
+							"isMainAddress": true,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 22"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "24",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 24"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "26",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 26"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "28",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 28"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "30",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 30"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "32",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 32"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "34",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 34"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "36",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 36"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "38",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 38"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "40",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 40"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "42",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 42"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "44",
+							"isMainAddress": false,
+							"streetAddress": "Lugnets Allé",
+							"fullStreetAddress": "Lugnets Allé 44"
+						}
+					],
+					"buildingId": "28495",
+					"houseNumber": "1",
+					"prefixBuildingId": "2"
+				},
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "11",
+							"isMainAddress": false,
+							"streetAddress": "Aktergatan",
+							"fullStreetAddress": "Aktergatan 11"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "13",
+							"isMainAddress": false,
+							"streetAddress": "Aktergatan",
+							"fullStreetAddress": "Aktergatan 13"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "5",
+							"isMainAddress": false,
+							"streetAddress": "Aktergatan",
+							"fullStreetAddress": "Aktergatan 5"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "7",
+							"isMainAddress": false,
+							"streetAddress": "Aktergatan",
+							"fullStreetAddress": "Aktergatan 7"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "9",
+							"isMainAddress": false,
+							"streetAddress": "Aktergatan",
+							"fullStreetAddress": "Aktergatan 9"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "173",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 173"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12066",
+							"streetNumber": "175",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 175"
+						}
+					],
+					"buildingId": "28496",
+					"houseNumber": "2",
+					"prefixBuildingId": "2"
+				}
+			],
+			"isComplex": false,
+			"pvArea_m2": 500,
+			"dateValidTo": "2030-03-18",
+			"energyClass": "B",
+			"hasFullData": true,
+			"buildingType": "semiDetached",
+			"hasSolarHeat": false,
+			"municipality": "Stockholm",
+			"propertyName": "Brädgården 9",
+			"certifierBody": "Kiwa Swedcert",
+			"datePerformed": "2020-03-18",
+			"heatedArea_m2": 15350,
+			"measurementTo": "2019-12",
+			"numberOfGates": 7,
+			"certifierEmail": "isak.franzen@fastighetsagarna.se",
+			"certifierLevel": "Kvalificerad",
+			"heatingSystems": [
+				"heatPumpGroundSource",
+				"heatPumpExhaustAir"
+			],
+			"isRadonMeasured": true,
+			"measurementFrom": "2019-01",
+			"buildingCategory": "multiFamilyDwelling",
+			"certifierCompany": "Fastighetsägarna Service Stockholm AB",
+			"constructionYear": 2003,
+			"conversionErrors": [
+				"buildingCategoryString does not match any enum value in EnergyPerformanceCertificateBuildingCategory.",
+				"The certifierLevel is not provided in the document.",
+				"The energyPerformanceCertificateVersion is assumed to be 2.6 based on the structure of the document."
+			],
+			"protectionStatus": null,
+			"solarHeatArea_m2": null,
+			"ventilationTypes": [
+				"FTX",
+				"F_with_recycling",
+				"F"
+			],
+			"certificateNumber": "6718",
+			"certifierLastName": "Franzén",
+			"dateRadonMeasured": "2009-04-30",
+			"hasAC12kWOrLarger": false,
+			"inspectionComment": "Deklaration utförd enligt BFS 2017:6, BEN 2",
+			"certifierFirstName": "Isak",
+			"numberOfApartments": 110,
+			"districtCooling_kWh": null,
+			"hasOnSiteInspection": true,
+			"hygienicAirFlowRate": 0.35,
+			"energyUseHeating_kWh": {
+				"heatPumpExhaustAir": 30567,
+				"heatPumpGroundSource": 173215
+			},
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"energyConsumption_kWh": 512623,
+			"radonAmount_Bq_per_m3": 20,
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingUseAreaPercent": {
+				"office": 5,
+				"housing": 85,
+				"restaurant": 5,
+				"groceryStore": 5
+			},
+			"coolingElectricity_kWh": null,
+			"numberOfBasementFloors": 1,
+			"pvProductionYearly_kWh": 75000,
+			"businessElectricity_kWh": null,
+			"propertyElectricity_kWh": 163534,
+			"totalPropertyEnergy_kWh": 477580,
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 110264
+			},
+			"hasMainlySmallApartments": false,
+			"householdElectricity_kWh": null,
+			"noOnSiteInspectionReason": null,
+			"numberOfFloorsAboveGround": 7,
+			"ventilationCheckedPercent": 100,
+			"isVentilationCheckApproved": false,
+			"otherEnvironmentalMeasures": [
+				"Garaget värms upp med avluften från lokalernas FTX-aggregat."
+			],
+			"energyPerformance_kWh_per_m2": 53,
+			"primaryEnergyConsumption_kWh": 820196,
+			"specificEnergyUse_kWh_per_m2": 33,
+			"solarHeatProductionYearly_kWh": null,
+			"energyPerformanceCertificateId": 1053847,
+			"needsRecurringVentilationCheck": true,
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_replacementOrCompletionOfVentilationSystem"
+					],
+					"description": "Byt aggregat. Aggregat LB03 är ett FTX aggregat med vätskekopplad återvinning. Byt ut detta till ett nytt FTX aggregat med roterande värmeväxlare eller med motströmsvärmeväxlare med direktdrivna energieffektiva EC-fläktar. Återvinningsgraden höjs markant och fläktarna är energieffektivare. Besparing är beräknad till 10700 kWh per år. Investeringskostnad är antagen till 250000 kr med en kalkylränta på 4 procent med en beräkningsperiod på 30 år.",
+					"costPerSavedkWh": 1.19,
+					"reducedYearlyEnergyConsumption_kWh": 10700
+				}
+			],
+			"energyPerformanceCertificateVersion": "2.6"
+		}
+	},
+	{
+		"epc_id": 1373491,
+		"year": 2023,
+		"property_owner": "Bostadsrättsföreningen Sjöstadsesplanaden 1",
+		"property_name": "Proppen 5",
+		"house_numbers": "{1}",
+		"json_data": {
+			"city": "Stockholm",
+			"hasPv": true,
+			"county": "Stockholm",
+			"ownName": "Brf Sjöstadsesplanaden 1",
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildings": [
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "22",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 22"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "24",
+							"isMainAddress": true,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 24"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "26",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 26"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "28",
+							"isMainAddress": false,
+							"streetAddress": "Hammarby Allé",
+							"fullStreetAddress": "Hammarby Allé 28"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "10",
+							"isMainAddress": false,
+							"streetAddress": "Redargatan",
+							"fullStreetAddress": "Redargatan 10"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "2",
+							"isMainAddress": false,
+							"streetAddress": "Redargatan",
+							"fullStreetAddress": "Redargatan 2"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "4",
+							"isMainAddress": false,
+							"streetAddress": "Redargatan",
+							"fullStreetAddress": "Redargatan 4"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "6",
+							"isMainAddress": false,
+							"streetAddress": "Redargatan",
+							"fullStreetAddress": "Redargatan 6"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12061",
+							"streetNumber": "8",
+							"isMainAddress": false,
+							"streetAddress": "Redargatan",
+							"fullStreetAddress": "Redargatan 8"
+						}
+					],
+					"buildingId": "383098",
+					"houseNumber": "1",
+					"prefixBuildingId": "2"
+				}
+			],
+			"isComplex": false,
+			"pvArea_m2": 278,
+			"dateValidTo": "2033-04-27",
+			"energyClass": "C",
+			"hasFullData": true,
+			"buildingType": "semiDetached",
+			"hasSolarHeat": false,
+			"municipality": "Stockholm",
+			"propertyName": "Proppen 5",
+			"certifierBody": "Kiwa Swedcert",
+			"datePerformed": "2023-04-27",
+			"heatedArea_m2": 8667,
+			"measurementTo": "2022-12",
+			"numberOfGates": 6,
+			"certifierEmail": "jan.andersson@em-r.se",
+			"certifierLevel": "Kvalificerad",
+			"heatingSystems": [
+				"districtHeating"
+			],
+			"isRadonMeasured": true,
+			"measurementFrom": "2022-01",
+			"buildingCategory": "multiFamilyDwelling",
+			"certifierCompany": "Nabo Group AB",
+			"constructionYear": 2009,
+			"conversionErrors": [],
+			"protectionStatus": null,
+			"solarHeatArea_m2": null,
+			"ventilationTypes": [
+				"FTX",
+				"F_with_recycling"
+			],
+			"certificateNumber": "3709",
+			"certifierLastName": "Andersson",
+			"dateRadonMeasured": "2019-02-28",
+			"hasAC12kWOrLarger": false,
+			"inspectionComment": "Fastigheten platsbesiktigades den 7/3 -23",
+			"certifierFirstName": "Jan",
+			"numberOfApartments": 94,
+			"districtCooling_kWh": null,
+			"hasOnSiteInspection": true,
+			"hygienicAirFlowRate": 0.35,
+			"energyUseHeating_kWh": {
+				"districtHeating": 345720,
+				"heatPumpExhaustAir": 17142
+			},
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"energyConsumption_kWh": 643656,
+			"radonAmount_Bq_per_m3": 50,
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingUseAreaPercent": {
+				"housing": 97,
+				"otherRetail": 3
+			},
+			"coolingElectricity_kWh": null,
+			"numberOfBasementFloors": 0,
+			"pvProductionYearly_kWh": 54000,
+			"businessElectricity_kWh": null,
+			"propertyElectricity_kWh": 85000,
+			"totalPropertyEnergy_kWh": 619926,
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 108337,
+				"hotWaterElectric": 63727
+			},
+			"hasMainlySmallApartments": false,
+			"householdElectricity_kWh": null,
+			"noOnSiteInspectionReason": null,
+			"numberOfFloorsAboveGround": 7,
+			"ventilationCheckedPercent": 100,
+			"isVentilationCheckApproved": true,
+			"otherEnvironmentalMeasures": [],
+			"energyPerformance_kWh_per_m2": 73,
+			"primaryEnergyConsumption_kWh": 634248,
+			"specificEnergyUse_kWh_per_m2": 74,
+			"solarHeatProductionYearly_kWh": null,
+			"energyPerformanceCertificateId": 1373491,
+			"needsRecurringVentilationCheck": true,
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_energyEfficientLighting"
+					],
+					"description": "Föreningen har en mindre del lysrörsarmaturer som kommer att sluta säljas under hösten 2023. Belysningen är till största del närvarostyrd eller brytare på timer och sitter i sekundära utrymmen vilket medför att de inte är tända under någon längre period och den totala brinntiden blir därför ganska liten på ett år. Däremot vid källarförråd med mera så är det ganska stora sektioner som blir upplysta och att konvertera dessa till LED skulle ge en halvering från 2x28W till 2x16,5W. Med en uppskattad brinntid på 2 h per dag så blir en rak återbetalningstid ca 10-15 år på ett lysrör beroende på elpris. Energibesparingen i åtgärden är räknad på en konvertering av 100st lysrör till en kostnad av 300 kr/st. och en brinntid på 2 h per dag.",
+					"costPerSavedkWh": 3.84,
+					"reducedYearlyEnergyConsumption_kWh": 700
+				},
+				{
+					"measures": [
+						"ventilation_timeControlledVentilation"
+					],
+					"description": "FTX-aggregatet som betjänar lokalerna har tidsinställningar med ett schema då aggregatet ska vara i gång, dock ser aggregatet ut att tappat sina egna tidsinställningar perioden. Aggregatet bör därför få en översyn där samtliga inställningar kontrolleras så att de fungerar enligt tilltänkt. I och med att det är ett så stort temperaturöverskott, bör även övriga lokaler kontrolleras så att den sänkta tilluftstemperaturen inte skapar för kalla lokaler till över hyresgäster.",
+					"costPerSavedkWh": 0.5,
+					"reducedYearlyEnergyConsumption_kWh": 1000
+				}
+			],
+			"energyPerformanceCertificateVersion": "2.8",
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false
+		}
+	},
+	{
+		"epc_id": 1172756,
+		"year": 2021,
+		"property_owner": "Bostadsrättsföreningen Sjöstadspiren",
+		"property_name": "Skärgårdsbåten 4",
+		"house_numbers": "{1}",
+		"json_data": {
+			"conversionErrors": [
+				"ventilation_and_radon: heatingSystemIsInspectionRequired: Could not find block with label 'Omfattas byggnaden av inspektionsskyldighet?'",
+				"ventilation_and_radon: heatingSystemIsSizeAppropriate: Could not find block with label 'Är värmegeneratorns storlek och verkningsgrad lämplig för byggnadens behov?'",
+				"ventilation_and_radon: heatingSystemInspectionExemptionReasons: Could not find block with label 'Markera vilket/vilka undantag som åberopas'"
+			],
+			"hasFullData": true,
+			"mainStreetAddress": "Henriksdalskajen 12",
+			"energyPerformanceCertificateId": 1172756,
+			"datePerformed": "2021-03-10",
+			"dateValidTo": "2031-03-10",
+			"constructionYear": 2010,
+			"energyPerformance_kWh_per_m2": 45,
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"specificEnergyUse_kWh_per_m2": 25,
+			"heatingSystems": [
+				"heatPumpGroundSource"
+			],
+			"energyClass": "B",
+			"energyPerformanceCertificateVersion": "2.8",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Skärgårdsbåten 4",
+			"ownName": "Hus 1",
+			"buildings": [
+				{
+					"houseNumber": "1",
+					"prefixBuildingId": "2",
+					"buildingId": "401840",
+					"addresses": [
+						{
+							"fullStreetAddress": "Henriksdalskajen 12",
+							"streetAddress": "Henriksdalskajen",
+							"streetNumber": "12",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": true
+						},
+						{
+							"fullStreetAddress": "Jan Inghes Torg 2",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "2",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 1711,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 7,
+			"numberOfGates": 2,
+			"numberOfApartments": 10,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.35,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": true,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 94,
+				"office": 6
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": true,
+			"measurementFrom": null,
+			"measurementTo": null,
+			"energyUseHeating_kWh": {
+				"heatPumpGroundSource": 15098
+			},
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 7761
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 19895,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": null,
+			"energyConsumption_kWh": 42754,
+			"primaryEnergyConsumption_kWh": 76957,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 87,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": false,
+			"hasHeatingSystem70kWOrLarger": false,
+			"heatingSystemNominalPowerAssessmentBasis": "Märkplåt",
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": null,
+			"hasAC70kWOrLarger": false,
+			"ACNominalPowerAssessmentBasis": "Märkplåt",
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 37,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2011-04-04",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_energyEfficientLighting"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 14000,
+					"costPerSavedkWh": 0.1,
+					"description": "I dagsläget har fasadbelysningen en effekt på 42 W.\nDessa kan med fördel bytas till varmvita LED på endast 4 W. Mer ljus jämfört \nmed idag kan 6 W användas.\nNuförtiden finns det LED som påminner om nuvarande både utseende- och \nfärgmässigt. \nBeräkningsexemplet är baserat på att. 100 st byts(gäller samtliga hus).\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka \n5 gånger längre än nuvarande.\nUppskattat kostnad för nya ljuspunkter: Cirka 100 000kr . Eventuella \nkostnadsbesparingar för minskat underhåll och produktinköp tillkommer."
+				}
+			],
+			"hasOnSiteInspection": false,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": "Besiktning är utförd på Stapelsgatan 9",
+			"otherEnvironmentalMeasures": [
+				"Byggnaden har inga solceller men byggnaden får ta del av solenergin som\nproduceras.\nEn energiberäkning har upprättats eftersom att bergvärme och solcellerna inte\nhar varit i drift i 12 månader.\nNominella effekten på värmepumparna fördelas på alla byggnader, vilket\nunderstiger 70 kW.",
+				"Gårdsbelysningen består av delvis pollare med 36 W . Vår bedömning är att LED\npå 12 W skulle passa.\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka\n5 gånger längre än nuvarande.\nBeräknad besparing 2200 kWh/år\nKostnad för nya ljuspunkter: Svårbedömt\n-\nT8-lysrör som ej är bytta i allmänna utrymmen kan med fördel bytas till LED\nsom passar i befintliga armaturer. Besparing cirka 60 %. T8-lysrör kommer att\nfasas ut med start i år."
+			],
+			"certifierFirstName": "Christoffer",
+			"certifierLastName": "Gustafsson",
+			"certifierEmail": "info@energisam.se",
+			"certificateNumber": "SC0084-15",
+			"certifierBody": "RISE",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Energisam AB"
+		}
+	},
+	{
+		"epc_id": 1172929,
+		"year": 2021,
+		"property_owner": "Bostadsrättsföreningen Sjöstadspiren",
+		"property_name": "Skärgårdsbåten 4",
+		"house_numbers": "{2}",
+		"json_data": {
+			"conversionErrors": [
+				"ventilation_and_radon: heatingSystemIsInspectionRequired: Could not find block with label 'Omfattas byggnaden av inspektionsskyldighet?'",
+				"ventilation_and_radon: heatingSystemIsSizeAppropriate: Could not find block with label 'Är värmegeneratorns storlek och verkningsgrad lämplig för byggnadens behov?'",
+				"ventilation_and_radon: heatingSystemInspectionExemptionReasons: Could not find block with label 'Markera vilket/vilka undantag som åberopas'"
+			],
+			"hasFullData": true,
+			"mainStreetAddress": "Henriksdalskajen 10",
+			"energyPerformanceCertificateId": 1172929,
+			"datePerformed": "2021-03-10",
+			"dateValidTo": "2031-03-10",
+			"constructionYear": 2010,
+			"energyPerformance_kWh_per_m2": 50,
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"specificEnergyUse_kWh_per_m2": 28,
+			"heatingSystems": [
+				"heatPumpGroundSource"
+			],
+			"energyClass": "B",
+			"energyPerformanceCertificateVersion": "2.8",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Skärgårdsbåten 4",
+			"ownName": "Hus 2",
+			"buildings": [
+				{
+					"houseNumber": "2",
+					"prefixBuildingId": "2",
+					"buildingId": "401841",
+					"addresses": [
+						{
+							"fullStreetAddress": "Henriksdalskajen 10",
+							"streetAddress": "Henriksdalskajen",
+							"streetNumber": "10",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": true
+						},
+						{
+							"fullStreetAddress": "Henriksdalskajen 10A",
+							"streetAddress": "Henriksdalskajen",
+							"streetNumber": "10A",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Henriksdalskajen 8",
+							"streetAddress": "Henriksdalskajen",
+							"streetNumber": "8",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 3605,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 7,
+			"numberOfGates": 3,
+			"numberOfApartments": 23,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.46,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": true,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 92,
+				"restaurant": 8
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": true,
+			"measurementFrom": null,
+			"measurementTo": null,
+			"energyUseHeating_kWh": {
+				"heatPumpGroundSource": 32543
+			},
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 16676
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 50831,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": true,
+			"pvArea_m2": 239,
+			"pvProductionYearly_kWh": 28771,
+			"city": null,
+			"energyConsumption_kWh": 100050,
+			"primaryEnergyConsumption_kWh": 180090,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 96,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": false,
+			"heatingSystemNominalPowerAssessmentBasis": "Märkplåt",
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": null,
+			"hasAC70kWOrLarger": false,
+			"ACNominalPowerAssessmentBasis": "Märkplåt",
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 38,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2011-04-05",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_energyEfficientLighting"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 14000,
+					"costPerSavedkWh": 0.1,
+					"description": "I dagsläget har fasadbelysningen en effekt på 42 W.\nDessa kan med fördel bytas till varmvita LED på endast 4 W. Mer ljus jämfört \nmed idag kan 6 W användas.\nNuförtiden finns det LED som påminner om nuvarande både utseende- och \nfärgmässigt. \nBeräkningsexemplet är baserat på att. 100 st byts(gäller samtliga hus).\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka \n5 gånger längre än nuvarande.\nUppskattat kostnad för nya ljuspunkter: Cirka 100 000kr . Eventuella \nkostnadsbesparingar för minskat underhåll och produktinköp tillkommer."
+				}
+			],
+			"hasOnSiteInspection": false,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": "Besiktning är utförd på Stapelsgatan 9",
+			"otherEnvironmentalMeasures": [
+				"En energiberäkning har upprättats eftersom att bergvärme och solcellerna inte\nhar varit i drift i 12 månader.\nNominella effekten på värmepumparna fördelas på alla byggnader, vilket\nunderstiger 70 kW.",
+				"Gårdsbelysningen består av delvis pollare med 36 W . Vår bedömning är att LED\npå 12 W skulle passa.\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka\n5 gånger längre än nuvarande.\nBeräknad besparing 2200 kWh/år\nKostnad för nya ljuspunkter: Svårbedömt\n-\nT8-lysrör som ej är bytta i allmänna utrymmen kan med fördel bytas till LED\nsom passar i befintliga armaturer. Besparing cirka 60 %. T8-lysrör kommer att\nfasas ut med start i år."
+			],
+			"certifierFirstName": "Christoffer",
+			"certifierLastName": "Gustafsson",
+			"certifierEmail": "info@energisam.se",
+			"certificateNumber": "SC0084-15",
+			"certifierBody": "RISE",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Energisam AB"
+		}
+	},
+	{
+		"epc_id": 1172933,
+		"year": 2021,
+		"property_owner": "Bostadsrättsföreningen Sjöstadspiren",
+		"property_name": "Skärgårdsbåten 4",
+		"house_numbers": "{3}",
+		"json_data": {
+			"conversionErrors": [
+				"ventilation_and_radon: heatingSystemIsInspectionRequired: Could not find block with label 'Omfattas byggnaden av inspektionsskyldighet?'",
+				"ventilation_and_radon: heatingSystemIsSizeAppropriate: Could not find block with label 'Är värmegeneratorns storlek och verkningsgrad lämplig för byggnadens behov?'",
+				"ventilation_and_radon: heatingSystemInspectionExemptionReasons: Could not find block with label 'Markera vilket/vilka undantag som åberopas'"
+			],
+			"hasFullData": true,
+			"mainStreetAddress": "Jan Inghes Torg 10",
+			"energyPerformanceCertificateId": 1172933,
+			"datePerformed": "2021-03-10",
+			"dateValidTo": "2031-03-10",
+			"constructionYear": 2010,
+			"energyPerformance_kWh_per_m2": 50,
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"specificEnergyUse_kWh_per_m2": 28,
+			"heatingSystems": [
+				"heatPumpGroundSource"
+			],
+			"energyClass": "B",
+			"energyPerformanceCertificateVersion": "2.8",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Skärgårdsbåten 4",
+			"ownName": "Hus 3",
+			"buildings": [
+				{
+					"houseNumber": "3",
+					"prefixBuildingId": "2",
+					"buildingId": "401842",
+					"addresses": [
+						{
+							"fullStreetAddress": "Jan Inghes Torg 10",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "10",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": true
+						},
+						{
+							"fullStreetAddress": "Jan Inghes Torg 12",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "12",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Jan Inghes Torg 6",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "6",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Jan Inghes Torg 8",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "8",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 2287,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 6,
+			"numberOfGates": 4,
+			"numberOfApartments": 19,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.46,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": true,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 97,
+				"restaurant": 3
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": true,
+			"measurementFrom": null,
+			"measurementTo": null,
+			"energyUseHeating_kWh": {
+				"heatPumpGroundSource": 20923
+			},
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 10717
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 32247,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": true,
+			"pvArea_m2": 128,
+			"pvProductionYearly_kWh": 18252,
+			"city": null,
+			"energyConsumption_kWh": 63887,
+			"primaryEnergyConsumption_kWh": 114997,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 90,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": false,
+			"heatingSystemNominalPowerAssessmentBasis": "Märkplåt",
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": null,
+			"hasAC70kWOrLarger": false,
+			"ACNominalPowerAssessmentBasis": "Märkplåt",
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 30,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2011-04-05",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_energyEfficientLighting"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 14000,
+					"costPerSavedkWh": 0.1,
+					"description": "I dagsläget har fasadbelysningen en effekt på 42 W.\nDessa kan med fördel bytas till varmvita LED på endast 4 W. Mer ljus jämfört \nmed idag kan 6 W användas.\nNuförtiden finns det LED som påminner om nuvarande både utseende- och \nfärgmässigt. \nBeräkningsexemplet är baserat på att. 100 st byts(gäller samtliga hus).\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka \n5 gånger längre än nuvarande.\nUppskattat kostnad för nya ljuspunkter: Cirka 100 000kr . Eventuella \nkostnadsbesparingar för minskat underhåll och produktinköp tillkommer."
+				}
+			],
+			"hasOnSiteInspection": false,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": "Besiktning är utförd på Stapelsgatan 9",
+			"otherEnvironmentalMeasures": [
+				"En energiberäkning har upprättats eftersom att bergvärme och solcellerna inte\nhar varit i drift i 12 månader.\nNominella effekten på värmepumparna fördelas på alla byggnader, vilket\nunderstiger 70 kW.",
+				"Gårdsbelysningen består av delvis pollare med 36 W . Vår bedömning är att LED\npå 12 W skulle passa.\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka\n5 gånger längre än nuvarande.\nBeräknad besparing 2200 kWh/år\nKostnad för nya ljuspunkter: Svårbedömt\n-\nT8-lysrör som ej är bytta i allmänna utrymmen kan med fördel bytas till LED\nsom passar i befintliga armaturer. Besparing cirka 60 %. T8-lysrör kommer att\nfasas ut med start i år."
+			],
+			"certifierFirstName": "Christoffer",
+			"certifierLastName": "Gustafsson",
+			"certifierEmail": "info@energisam.se",
+			"certificateNumber": "SC0084-15",
+			"certifierBody": "RISE",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Energisam AB"
+		}
+	},
+	{
+		"epc_id": 1172935,
+		"year": 2021,
+		"property_owner": "Bostadsrättsföreningen Sjöstadspiren",
+		"property_name": "Skärgårdsbåten 4",
+		"house_numbers": "{4}",
+		"json_data": {
+			"conversionErrors": [
+				"ventilation_and_radon: heatingSystemIsInspectionRequired: Could not find block with label 'Omfattas byggnaden av inspektionsskyldighet?'",
+				"ventilation_and_radon: heatingSystemIsSizeAppropriate: Could not find block with label 'Är värmegeneratorns storlek och verkningsgrad lämplig för byggnadens behov?'",
+				"ventilation_and_radon: heatingSystemInspectionExemptionReasons: Could not find block with label 'Markera vilket/vilka undantag som åberopas'"
+			],
+			"hasFullData": true,
+			"mainStreetAddress": "Jan Inghes Torg 14",
+			"energyPerformanceCertificateId": 1172935,
+			"datePerformed": "2021-03-10",
+			"dateValidTo": "2031-03-10",
+			"constructionYear": 2010,
+			"energyPerformance_kWh_per_m2": 49,
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"specificEnergyUse_kWh_per_m2": 27,
+			"heatingSystems": [
+				"heatPumpGroundSource"
+			],
+			"energyClass": "B",
+			"energyPerformanceCertificateVersion": "2.8",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Skärgårdsbåten 4",
+			"ownName": "Hus 4",
+			"buildings": [
+				{
+					"houseNumber": "4",
+					"prefixBuildingId": "2",
+					"buildingId": "401843",
+					"addresses": [
+						{
+							"fullStreetAddress": "Jan Inghes Torg 14",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "14",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": true
+						},
+						{
+							"fullStreetAddress": "Jan Inghes Torg 16",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "16",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Jan Inghes Torg 18",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "18",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Jan Inghes Torg 20",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "20",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 2255,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 6,
+			"numberOfGates": 4,
+			"numberOfApartments": 19,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.44,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": true,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 97,
+				"groceryStore": 3
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": true,
+			"measurementFrom": null,
+			"measurementTo": null,
+			"energyUseHeating_kWh": {
+				"heatPumpGroundSource": 19774
+			},
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 10101
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 31796,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": true,
+			"pvArea_m2": 124,
+			"pvProductionYearly_kWh": 17997,
+			"city": null,
+			"energyConsumption_kWh": 61671,
+			"primaryEnergyConsumption_kWh": 111008,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 87,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": false,
+			"heatingSystemNominalPowerAssessmentBasis": "Märkplåt",
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": null,
+			"hasAC70kWOrLarger": false,
+			"ACNominalPowerAssessmentBasis": "Märkplåt",
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 30,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2011-01-24",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_energyEfficientLighting"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 14000,
+					"costPerSavedkWh": 0.1,
+					"description": "I dagsläget har fasadbelysningen en effekt på 42 W.\nDessa kan med fördel bytas till varmvita LED på endast 4 W. Mer ljus jämfört \nmed idag kan 6 W användas.\nNuförtiden finns det LED som påminner om nuvarande både utseende- och \nfärgmässigt. \nBeräkningsexemplet är baserat på att. 100 st byts(gäller samtliga hus).\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka \n5 gånger längre än nuvarande.\nUppskattat kostnad för nya ljuspunkter: Cirka 100 000kr . Eventuella \nkostnadsbesparingar för minskat underhåll och produktinköp tillkommer."
+				}
+			],
+			"hasOnSiteInspection": false,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": "Besiktning är utförd på Stapelsgatan 9",
+			"otherEnvironmentalMeasures": [
+				"En energiberäkning har upprättats eftersom att bergvärme och solcellerna inte\nhar varit i drift i 12 månader.\nNominella effekten på värmepumparna fördelas på alla byggnader, vilket\nunderstiger 70 kW.",
+				"Gårdsbelysningen består av delvis pollare med 36 W . Vår bedömning är att LED\npå 12 W skulle passa.\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka\n5 gånger längre än nuvarande.\nBeräknad besparing 2200 kWh/år\nKostnad för nya ljuspunkter: Svårbedömt\n-\nT8-lysrör som ej är bytta i allmänna utrymmen kan med fördel bytas till LED\nsom passar i befintliga armaturer. Besparing cirka 60 %. T8-lysrör kommer att\nfasas ut med start i år."
+			],
+			"certifierFirstName": "Christoffer",
+			"certifierLastName": "Gustafsson",
+			"certifierEmail": "info@energisam.se",
+			"certificateNumber": "SC0084-15",
+			"certifierBody": "RISE",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Energisam AB"
+		}
+	},
+	{
+		"epc_id": 1172937,
+		"year": 2021,
+		"property_owner": "Bostadsrättsföreningen Sjöstadspiren",
+		"property_name": "Skärgårdsbåten 4",
+		"house_numbers": "{5}",
+		"json_data": {
+			"conversionErrors": [
+				"ventilation_and_radon: heatingSystemIsInspectionRequired: Could not find block with label 'Omfattas byggnaden av inspektionsskyldighet?'",
+				"ventilation_and_radon: heatingSystemIsSizeAppropriate: Could not find block with label 'Är värmegeneratorns storlek och verkningsgrad lämplig för byggnadens behov?'",
+				"ventilation_and_radon: heatingSystemInspectionExemptionReasons: Could not find block with label 'Markera vilket/vilka undantag som åberopas'"
+			],
+			"hasFullData": true,
+			"mainStreetAddress": "Jan Inghes Torg 22",
+			"energyPerformanceCertificateId": 1172937,
+			"datePerformed": "2021-03-10",
+			"dateValidTo": "2031-03-10",
+			"constructionYear": 2010,
+			"energyPerformance_kWh_per_m2": 50,
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"specificEnergyUse_kWh_per_m2": 28,
+			"heatingSystems": [
+				"heatPumpGroundSource"
+			],
+			"energyClass": "B",
+			"energyPerformanceCertificateVersion": "2.8",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Skärgårdsbåten 4",
+			"ownName": "Hus 5",
+			"buildings": [
+				{
+					"houseNumber": "5",
+					"prefixBuildingId": "2",
+					"buildingId": "401844",
+					"addresses": [
+						{
+							"fullStreetAddress": "Jan Inghes Torg 22",
+							"streetAddress": "Jan Inghes Torg",
+							"streetNumber": "22",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": true
+						},
+						{
+							"fullStreetAddress": "Stapelgatan 5",
+							"streetAddress": "Stapelgatan",
+							"streetNumber": "5",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Stapelgatan 7",
+							"streetAddress": "Stapelgatan",
+							"streetNumber": "7",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Stapelgatan 9",
+							"streetAddress": "Stapelgatan",
+							"streetNumber": "9",
+							"postalCode": "12071",
+							"city": "Stockholm",
+							"isMainAddress": false
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 3130,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 6,
+			"numberOfGates": 4,
+			"numberOfApartments": 29,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.44,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": true,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 95,
+				"restaurant": 5
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": true,
+			"measurementFrom": null,
+			"measurementTo": null,
+			"energyUseHeating_kWh": {
+				"heatPumpGroundSource": 27577
+			},
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 14782
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 44133,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": true,
+			"pvArea_m2": 171,
+			"pvProductionYearly_kWh": 24980,
+			"city": null,
+			"energyConsumption_kWh": 86492,
+			"primaryEnergyConsumption_kWh": 155686,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 92,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": false,
+			"heatingSystemNominalPowerAssessmentBasis": "Märkplåt",
+			"heatingSystemIsInspectionRequired": null,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": null,
+			"hasAC70kWOrLarger": false,
+			"ACNominalPowerAssessmentBasis": "Märkplåt",
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 47,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2011-04-11",
+			"performedEnergyEfficiencyMeasures": [],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_energyEfficientLighting"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 14000,
+					"costPerSavedkWh": 0.1,
+					"description": "I dagsläget har fasadbelysningen en effekt på 42 W.\nDessa kan med fördel bytas till varmvita LED på endast 4 W. Mer ljus jämfört \nmed idag kan 6 W användas.\nNuförtiden finns det LED som påminner om nuvarande både utseende- och \nfärgmässigt. \nBeräkningsexemplet är baserat på att. 100 st byts(gäller samtliga hus).\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka \n5 gånger längre än nuvarande.\nUppskattat kostnad för nya ljuspunkter: Cirka 100 000kr . Eventuella \nkostnadsbesparingar för minskat underhåll och produktinköp tillkommer."
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": "Besiktning är utförd på Stapelsgatan 9",
+			"otherEnvironmentalMeasures": [
+				"En energiberäkning har upprättats eftersom att bergvärme och solcellerna inte\nhar varit i drift i 12 månader.\nNominella effekten på värmepumparna fördelas på alla byggnader, vilket\nunderstiger 70 kW.",
+				"Gårdsbelysningen består av delvis pollare med 36 W . Vår bedömning är att LED\npå 12 W skulle passa.\nBeräkningen är utförd med brinntiden 10 h/dygn i snitt. Livslängden är cirka\n5 gånger längre än nuvarande.\nBeräknad besparing 2200 kWh/år\nKostnad för nya ljuspunkter: Svårbedömt\n-\nT8-lysrör som ej är bytta i allmänna utrymmen kan med fördel bytas till LED\nsom passar i befintliga armaturer. Besparing cirka 60 %. T8-lysrör kommer att\nfasas ut med start i år."
+			],
+			"certifierFirstName": "Christoffer",
+			"certifierLastName": "Gustafsson",
+			"certifierEmail": "info@energisam.se",
+			"certificateNumber": "SC0084-15",
+			"certifierBody": "RISE",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Energisam AB"
+		}
+	},
+	{
+		"epc_id": 1621699,
+		"year": 2025,
+		"property_owner": "Bostadsrättsföreningen Strandkanten",
+		"property_name": "Klabben 4",
+		"house_numbers": "{1,2}",
+		"json_data": {
+			"conversionErrors": [],
+			"hasFullData": true,
+			"mainStreetAddress": "Midskeppsgatan 19",
+			"energyPerformanceCertificateId": 1621699,
+			"datePerformed": "2025-07-07",
+			"dateValidTo": "2035-07-07",
+			"constructionYear": 2004,
+			"energyPerformance_kWh_per_m2": 73,
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"specificEnergyUse_kWh_per_m2": 41,
+			"heatingSystems": [
+				"heatPumpGroundSource"
+			],
+			"energyClass": "C",
+			"energyPerformanceCertificateVersion": "3.0",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Klabben 4",
+			"ownName": null,
+			"buildings": [
+				{
+					"houseNumber": "1",
+					"prefixBuildingId": "2",
+					"buildingId": "45964",
+					"addresses": [
+						{
+							"fullStreetAddress": "Midskeppsgatan 19",
+							"streetAddress": "Midskeppsgatan",
+							"streetNumber": "19",
+							"postalCode": "12066",
+							"city": "Stockholm",
+							"isMainAddress": true
+						},
+						{
+							"fullStreetAddress": "Midskeppsgatan 21",
+							"streetAddress": "Midskeppsgatan",
+							"streetNumber": "21",
+							"postalCode": "12066",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Midskeppsgatan 23",
+							"streetAddress": "Midskeppsgatan",
+							"streetNumber": "23",
+							"postalCode": "12066",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Midskeppsgatan 27",
+							"streetAddress": "Midskeppsgatan",
+							"streetNumber": "27",
+							"postalCode": "12066",
+							"city": "Stockholm",
+							"isMainAddress": false
+						}
+					]
+				},
+				{
+					"houseNumber": "2",
+					"prefixBuildingId": "2",
+					"buildingId": "45965",
+					"addresses": [
+						{
+							"fullStreetAddress": "Midskeppsgatan 25A",
+							"streetAddress": "Midskeppsgatan",
+							"streetNumber": "25A",
+							"postalCode": "12066",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Midskeppsgatan 25B",
+							"streetAddress": "Midskeppsgatan",
+							"streetNumber": "25B",
+							"postalCode": "12066",
+							"city": "Stockholm",
+							"isMainAddress": false
+						},
+						{
+							"fullStreetAddress": "Midskeppsgatan 29",
+							"streetAddress": "Midskeppsgatan",
+							"streetNumber": "29",
+							"postalCode": "12066",
+							"city": "Stockholm",
+							"isMainAddress": false
+						}
+					]
+				}
+			],
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 4355,
+			"heatedGarageArea_m2": null,
+			"numberOfBasementFloors": 1,
+			"numberOfFloorsAboveGround": 6,
+			"numberOfGates": 3,
+			"numberOfApartments": 50,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 0.35,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": true,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 100
+			},
+			"buildingUseAreaOtherLabel": null,
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2024-01",
+			"measurementTo": "2024-12",
+			"energyUseHeating_kWh": {
+				"heatPumpGroundSource": 87013
+			},
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 28202
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 54561,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": false,
+			"pvArea_m2": null,
+			"pvProductionYearly_kWh": null,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 176654,
+			"primaryEnergyConsumption_kWh": 317976,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 113,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"F_with_recycling",
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": true,
+			"hasHeatingSystem70kWOrLarger": false,
+			"heatingSystemNominalPowerAssessmentBasis": "Märkplåt",
+			"heatingSystemIsInspectionRequired": false,
+			"heatingSystemInspectionExemptionReasons": [
+				"buildingAutomationControlSystem"
+			],
+			"heatingSystemIsSizeAppropriate": null,
+			"heatingSystemNominalPower_kW": null,
+			"heatingSystemServedArea_m2": null,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": null,
+			"hasAC70kWOrLarger": false,
+			"ACNominalPowerAssessmentBasis": "Saknas",
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 60,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2014-05-07",
+			"performedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_replacementOrInstallationOfHeatPump"
+					],
+					"year": 2020,
+					"description": "Utbyte av värmekälla från fjärrvärme och F-vent till FX-vent där \nvärmeåtervinning sker med värmepump som kombinerar geoenergi med FX-vent."
+				}
+			],
+			"suggestedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"ventilation_demandControlledVentilation"
+					],
+					"reducedYearlyEnergyConsumption_kWh": 1,
+					"costPerSavedkWh": 1.0,
+					"description": "Optimering av luftflöde och temperatur i garage. Vid platsbesök upplevdes \ngarageventilation vara mer än nödvändning. Behöver utredas vidare för att \nkunna bedöma besparingspotential. I korthet styra på luftkvalitet i form av \nCO/CO2, temperatur och luftfuktighet. Garaget saknar golvbrunnar så det blir \nviktigt att ventilationsaggregatets luftflöde kan torka smältvatten från \nbilarna vintertid i garaget."
+				}
+			],
+			"hasOnSiteInspection": true,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": null,
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Max",
+			"certifierLastName": "Lundqvist",
+			"certifierEmail": "max.lundqvist@bengtdahlgren.se",
+			"certificateNumber": "CEX09205",
+			"certifierBody": "Kiwa Swedcert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "Bengt Dahlgren Stockholm AB"
+		}
+	},
+	{
+		"epc_id": 1354344,
+		"year": 2023,
+		"property_owner": "Bostadsrättsföreningen Sundet",
+		"property_name": "Sundet 2",
+		"house_numbers": "{1,2}",
+		"json_data": {
+			"city": "Stockholm",
+			"hasPv": true,
+			"county": "Stockholm",
+			"ownName": null,
+			"typeCode": "320 - Hyreshusenhet, bostäder",
+			"buildings": [
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12068",
+							"streetNumber": "60",
+							"isMainAddress": true,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 60"
+						}
+					],
+					"buildingId": "579246",
+					"houseNumber": "1",
+					"prefixBuildingId": "1"
+				},
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12068",
+							"streetNumber": "62",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 62"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12068",
+							"streetNumber": "64",
+							"isMainAddress": false,
+							"streetAddress": "Sickla Kanalgata",
+							"fullStreetAddress": "Sickla Kanalgata 64"
+						}
+					],
+					"buildingId": "10523",
+					"houseNumber": "2",
+					"prefixBuildingId": "2"
+				}
+			],
+			"isComplex": false,
+			"pvArea_m2": 218,
+			"dateValidTo": "2033-02-27",
+			"energyClass": "B",
+			"hasFullData": true,
+			"buildingType": "detached",
+			"hasSolarHeat": false,
+			"municipality": "Stockholm",
+			"propertyName": "Sundet 2",
+			"certifierBody": "RISE",
+			"datePerformed": "2023-02-27",
+			"heatedArea_m2": 5594,
+			"measurementTo": "2023-01",
+			"numberOfGates": 3,
+			"certifierEmail": "per.edsbacker@aktea.se",
+			"certifierLevel": "Normal",
+			"heatingSystems": [
+				"heatPumpExhaustAir",
+				"heatPumpGroundSource"
+			],
+			"isRadonMeasured": true,
+			"measurementFrom": "2022-01",
+			"buildingCategory": "multiFamilyDwelling",
+			"certifierCompany": "Aktea",
+			"constructionYear": 2003,
+			"conversionErrors": [],
+			"protectionStatus": null,
+			"solarHeatArea_m2": null,
+			"ventilationTypes": [
+				"F_with_recycling"
+			],
+			"certificateNumber": "SC0674-16",
+			"certifierLastName": "Edsbäcker",
+			"dateRadonMeasured": "2017-01-30",
+			"hasAC12kWOrLarger": false,
+			"inspectionComment": "Byggnadens klimatskal och tekniska utrymmen har inventerats med representant från föreningen.",
+			"certifierFirstName": "Per",
+			"numberOfApartments": 39,
+			"districtCooling_kWh": null,
+			"hasOnSiteInspection": true,
+			"heatedGarageArea_m2": 0,
+			"hygienicAirFlowRate": null,
+			"energyUseHeating_kWh": {
+				"electricDirect": 22815,
+				"heatPumpExhaustAir": 44394,
+				"heatPumpGroundSource": 30781
+			},
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"energyConsumption_kWh": 153120,
+			"radonAmount_Bq_per_m3": 30,
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingUseAreaPercent": {
+				"housing": 100
+			},
+			"coolingElectricity_kWh": null,
+			"numberOfBasementFloors": 1,
+			"pvProductionYearly_kWh": 37300,
+			"businessElectricity_kWh": null,
+			"propertyElectricity_kWh": 20167,
+			"totalPropertyEnergy_kWh": 153120,
+			"energyUseTapHotWater_kWh": {
+				"hotWaterElectric": 34963
+			},
+			"hasMainlySmallApartments": false,
+			"householdElectricity_kWh": null,
+			"noOnSiteInspectionReason": null,
+			"numberOfFloorsAboveGround": 5,
+			"ventilationCheckedPercent": 100,
+			"isVentilationCheckApproved": true,
+			"otherEnvironmentalMeasures": [
+				"Värmeinjustering har inte utförts sedan byggåret 2003. Rekommenderar att detta utförs och att det monteras moderna termostatventiler på radiatorerna. Livslängd värmeinjustering och termostatventiler är cirka 15 år. Vid värmeinjustering säkerställs att värmen är jämn i hela byggnaden så att inte vissa lägenheter har för varmt och andra för kallt. Eftersom energianvändningen är mycket låg så är det dock svårt att räkna hem en värmeinjustering ekonomiskt.",
+				"\"El (direktverkande)\" avser uppskattad förbrukning för direktverkande elgolvvärme i våtrummen. Värdet har räknats fram genom att jämföra lägenheternas förbrukning (IMD) och Boverkets schablon för normal hushållsel. Skillnaden antas vara den direktverkande elgolvvärmen.",
+				"Fördelning mellan frånluftsvärmepump och bergvärmepump har uppskattats utifrån avläst driftdata på plats."
+			],
+			"energyPerformance_kWh_per_m2": 51,
+			"primaryEnergyConsumption_kWh": 288050,
+			"specificEnergyUse_kWh_per_m2": 29,
+			"solarHeatProductionYearly_kWh": null,
+			"energyPerformanceCertificateId": 1354344,
+			"needsRecurringVentilationCheck": true,
+			"performedEnergyEfficiencyMeasures": [
+				{
+					"year": 2020,
+					"measures": [
+						"building_additionalInsulationForAtticOrRoof"
+					],
+					"description": "I nummer 60 har vinden tilläggsisolerats med lösull."
+				},
+				{
+					"year": 2021,
+					"measures": [
+						"installation_replacementOrInstallationOfHeatPump",
+						"installation_replacementOrInstallationOfMoreEfficientHeatSource"
+					],
+					"description": "Bergvärmeinstallation. Ny frånluftsvärmepump. Ny värmeundercentral."
+				},
+				{
+					"year": 2021,
+					"measures": [
+						"installation_installationOfSolarPanels"
+					],
+					"description": "Solcellsinstallation. 218 kvm panelyta med beräknad årsproduktion på 37 000 kWh."
+				}
+			],
+			"suggestedEnergyEfficiencyMeasures": [],
+			"energyPerformanceCertificateVersion": "2.8",
+			"energyPerformanceNewBuilding_kWh_per_m2": 75,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": true
+		}
+	},
+	{
+		"epc_id": 1628761,
+		"year": 2025,
+		"property_owner": "Bostadsrättsföreningen The Village Sthlm i Stockholm",
+		"property_name": "Godsvagnen 11",
+		"house_numbers": "{1}",
+		"json_data": {
+			"conversionErrors": [
+				"ventilation_and_radon: heatingSystemInspectionExemptionReasons: Could not find block with label 'Markera vilket/vilka undantag som åberopas'"
+			],
+			"hasFullData": true,
+			"mainStreetAddress": "Heliosgatan 10B",
+			"energyPerformanceCertificateId": 1628761,
+			"datePerformed": "2025-06-19",
+			"dateValidTo": "2035-06-19",
+			"constructionYear": 2018,
+			"energyPerformance_kWh_per_m2": 34,
+			"energyPerformanceNewBuilding_kWh_per_m2": 76,
+			"specificEnergyUse_kWh_per_m2": 39,
+			"heatingSystems": [
+				"districtHeating",
+				"heatPumpGroundSource"
+			],
+			"energyClass": "A",
+			"energyPerformanceCertificateVersion": "3.0",
+			"county": "Stockholm",
+			"municipality": "Stockholm",
+			"propertyName": "Godsvagnen 11",
+			"ownName": null,
+			"buildings": [
+				{
+					"addresses": [
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "10A",
+							"isMainAddress": true,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 10A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "10B",
+							"isMainAddress": true,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 10B"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "12A",
+							"isMainAddress": false,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 12A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "12B",
+							"isMainAddress": false,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 12B"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "12C",
+							"isMainAddress": false,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 12C"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "12D",
+							"isMainAddress": false,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 12D"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "14A",
+							"isMainAddress": false,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 14A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "14B",
+							"isMainAddress": false,
+							"streetAddress": "Heliosgatan",
+							"fullStreetAddress": "Heliosgatan 14B"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "11",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 11"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "11A",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 11A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "13",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 13"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "13A",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 13A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "15",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 15"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "15A",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 15A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "17",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 17"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "17A",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 17A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "17B",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 17B"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "17C",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 17C"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "19A",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 19A"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "19B",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 19B"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "19C",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 19C"
+						},
+						{
+							"city": "Stockholm",
+							"postalCode": "12078",
+							"streetNumber": "19D",
+							"isMainAddress": false,
+							"streetAddress": "Virkesvägen",
+							"fullStreetAddress": "Virkesvägen 19D"
+						}
+					],
+					"buildingId": "993130",
+					"houseNumber": "1",
+					"prefixBuildingId": "6"
+				}
+			],
+			"typeCode": "321a - Hyreshusenhet, bostäder & lokaler (bostäder mer eller lika med 50%)",
+			"buildingCategoryString": "Flerbostadshus",
+			"buildingCategory": "multiFamilyDwelling",
+			"buildingType": "detached",
+			"isComplex": false,
+			"heatedArea_m2": 25899,
+			"heatedGarageArea_m2": 7626,
+			"numberOfBasementFloors": 2,
+			"numberOfFloorsAboveGround": 8,
+			"numberOfGates": 10,
+			"numberOfApartments": 226,
+			"hasMainlySmallApartments": false,
+			"hygienicAirFlowRate": 1.0,
+			"hasElectricHeatingOrHotWaterProductionOver10Wperm2": false,
+			"protectionStatus": null,
+			"buildingUseAreaPercent": {
+				"housing": 96,
+				"restaurant": 1,
+				"office": 1,
+				"healthcareDaytime": 1,
+				"other": 1
+			},
+			"buildingUseAreaOtherLabel": "Fotostudio och butik",
+			"hasEstimatedEnergyUse": false,
+			"measurementFrom": "2024-06",
+			"measurementTo": "2025-05",
+			"energyUseHeating_kWh": {
+				"districtHeating": 167325,
+				"heatPumpGroundSource": 95593
+			},
+			"energyUseTapHotWater_kWh": {
+				"districtHeating": 647475
+			},
+			"districtCooling_kWh": null,
+			"coolingElectricity_kWh": null,
+			"propertyElectricity_kWh": 62390,
+			"householdElectricity_kWh": null,
+			"businessElectricity_kWh": null,
+			"totalPropertyEnergy_kWh": null,
+			"hasSolarHeat": false,
+			"solarHeatArea_m2": null,
+			"solarHeatProductionYearly_kWh": null,
+			"hasPv": true,
+			"pvArea_m2": 720,
+			"pvProductionYearly_kWh": 102540,
+			"city": "Stockholm",
+			"energyConsumption_kWh": 1003199,
+			"primaryEnergyConsumption_kWh": 888186,
+			"energyPerformanceSimilarBuildings_kWh_per_m2": 80,
+			"needsRecurringVentilationCheck": true,
+			"ventilationTypes": [
+				"FTX"
+			],
+			"ventilationCheckedPercent": null,
+			"isVentilationCheckApproved": null,
+			"hasHeatingSystem70kWOrLarger": true,
+			"heatingSystemNominalPowerAssessmentBasis": "Leveransdata för fjärrvärme",
+			"heatingSystemIsInspectionRequired": true,
+			"heatingSystemInspectionExemptionReasons": null,
+			"heatingSystemIsSizeAppropriate": true,
+			"heatingSystemNominalPower_kW": 120,
+			"heatingSystemServedArea_m2": 25899,
+			"heatingSystemInspectionComment": null,
+			"hasAC12kWOrLarger": null,
+			"hasAC70kWOrLarger": false,
+			"ACNominalPowerAssessmentBasis": "Saknas",
+			"ACIsInspectionRequired": null,
+			"ACIsSizeAppropriate": null,
+			"ACNominalPower_kW": null,
+			"ACServedArea_m2": null,
+			"ACInspectionComment": null,
+			"isRadonMeasured": true,
+			"radonAmount_Bq_per_m3": 30,
+			"radonMeasurementType": "Långtidsmätning enligt SSM",
+			"dateRadonMeasured": "2020-01-17",
+			"performedEnergyEfficiencyMeasures": [
+				{
+					"measures": [
+						"installation_installationOfSolarPanels"
+					],
+					"year": 2024,
+					"description": "Installation av solceller"
+				}
+			],
+			"suggestedEnergyEfficiencyMeasures": [],
+			"hasOnSiteInspection": false,
+			"noOnSiteInspectionReason": null,
+			"inspectionComment": "Ingen besiktning har gjorts på plats då den har besiktigatstidigare och nu uppfyller energiklass A.",
+			"otherEnvironmentalMeasures": [],
+			"certifierFirstName": "Jonas",
+			"certifierLastName": "Hed",
+			"certifierEmail": "jonas.hed@franskabukten.se",
+			"certificateNumber": "6418",
+			"certifierBody": "Kiwa Swedcert",
+			"certifierLevel": "Kvalificerad",
+			"certifierCompany": "AB Franska Bukten"
+		}
+	}
+]

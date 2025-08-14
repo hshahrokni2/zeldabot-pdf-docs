@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "analysis_date": "2025-08-13T07:07:12.180445",
+    "total_brfs": 9,
+    "total_building_area_m2": 23525,
+    "analyst": "Claudette-Analyst"
+  },
+  "market_averages": {
+    "Cleaning": {
+      "mean_per_m2": 0.0,
+      "median_per_m2": 0.0,
+      "std_per_m2": 0.0,
+      "min_per_m2": 0.0,
+      "max_per_m2": 0.0
+    },
+    "Electricity": {
+      "mean_per_m2": 330.94259521548406,
+      "median_per_m2": 316.2211111111111,
+      "std_per_m2": 241.0296620876268,
+      "min_per_m2": 32.62419047619048,
+      "max_per_m2": 677.924
+    },
+    "Heating": {
+      "mean_per_m2": 292.0975052910053,
+      "median_per_m2": 203.72038095238096,
+      "std_per_m2": 297.397547209247,
+      "min_per_m2": 0.0,
+      "max_per_m2": 807.2055555555555
+    },
+    "Internet & TV": {
+      "mean_per_m2": 78.53558671369781,
+      "median_per_m2": 39.645,
+      "std_per_m2": 106.99933469437464,
+      "min_per_m2": 11.058285714285715,
+      "max_per_m2": 357.3722222222222
+    },
+    "Recycling": {
+      "mean_per_m2": 66.49924487857821,
+      "median_per_m2": 41.474,
+      "std_per_m2": 76.18568154778468,
+      "min_per_m2": 0.0,
+      "max_per_m2": 218.69333333333333
+    },
+    "Snow Removal": {
+      "mean_per_m2": 20.18245210961878,
+      "median_per_m2": 4.569444444444445,
+      "std_per_m2": 29.084207487732847,
+      "min_per_m2": 0.0,
+      "max_per_m2": 84.996
+    },
+    "Water": {
+      "mean_per_m2": 114.91087342287344,
+      "median_per_m2": 60.73777777777778,
+      "std_per_m2": 100.93103608800703,
+      "min_per_m2": 17.367619047619048,
+      "max_per_m2": 281.365
+    },
+    "Total": {
+      "mean_per_m2": 903.1682576312576,
+      "median_per_m2": 607.0184615384616,
+      "std_per_m2": 632.5338653854461,
+      "min_per_m2": 218.72166666666666,
+      "max_per_m2": 1768.078888888889
+    }
+  },
+  "brf_summary": [
+    {
+      "brf_name": "Brf Hammarby Kaj",
+      "building_id": "eghs_1",
+      "construction_year": 2002,
+      "energy_performance": 147.0,
+      "energy_class": "E",
+      "estimated_building_size_m2": 5250.0,
+      "estimated_apartments": 75,
+      "financial_performance_index": 48.27045266673009,
+      "performance_percentile": 77.77777777777779,
+      "costs": {
+        "total_per_m2": 309.57638095238093,
+        "electricity_per_m2": 32.62419047619048,
+        "heating_per_m2": 203.72038095238096,
+        "water_per_m2": 17.367619047619048
+      }
+    },
+    {
+      "brf_name": "Brf Havet",
+      "building_id": "eghs_2",
+      "construction_year": 2001,
+      "energy_performance": 93.0,
+      "energy_class": "D",
+      "estimated_building_size_m2": 1500.0,
+      "estimated_apartments": 25,
+      "financial_performance_index": 12.452830188679245,
+      "performance_percentile": 22.22222222222222,
+      "costs": {
+        "total_per_m2": 1681.062,
+        "electricity_per_m2": 677.924,
+        "heating_per_m2": 464.75266666666664,
+        "water_per_m2": 216.20533333333333
+      }
+    },
+    {
+      "brf_name": "Brf Holmen",
+      "building_id": "eghs_3",
+      "construction_year": 2002,
+      "energy_performance": 115.0,
+      "energy_class": "D",
+      "estimated_building_size_m2": 1200.0,
+      "estimated_apartments": 20,
+      "financial_performance_index": 8.301886792452834,
+      "performance_percentile": 11.11111111111111,
+      "costs": {
+        "total_per_m2": 1683.8933333333334,
+        "electricity_per_m2": 589.0783333333334,
+        "heating_per_m2": 653.8975,
+        "water_per_m2": 281.365
+      }
+    },
+    {
+      "brf_name": "Brf Sjöportalen 1",
+      "building_id": "eghs_4",
+      "construction_year": 2003,
+      "energy_performance": 155.0,
+      "energy_class": "F",
+      "estimated_building_size_m2": 2700.0,
+      "estimated_apartments": 45,
+      "financial_performance_index": 24.722811846873615,
+      "performance_percentile": 55.55555555555556,
+      "costs": {
+        "total_per_m2": 593.9222222222222,
+        "electricity_per_m2": 118.66148148148149,
+        "heating_per_m2": 361.84222222222223,
+        "water_per_m2": 60.73777777777778
+      }
+    },
+    {
+      "brf_name": "Brf Sjöstaden 2",
+      "building_id": "eghs_5",
+      "construction_year": 2003,
+      "energy_performance": 53.0,
+      "energy_class": "B",
+      "estimated_building_size_m2": 3500.0,
+      "estimated_apartments": 50,
+      "financial_performance_index": 24.66650372018362,
+      "performance_percentile": 44.44444444444444,
+      "costs": {
+        "total_per_m2": 842.9591428571429,
+        "electricity_per_m2": 522.3854285714285,
+        "heating_per_m2": 24.022,
+        "water_per_m2": 136.20885714285714
+      }
+    },
+    {
+      "brf_name": "Brf Sjöstadsesplanaden 1",
+      "building_id": "eghs_6",
+      "construction_year": 2009,
+      "energy_performance": 73.0,
+      "energy_class": "C",
+      "estimated_building_size_m2": 900.0,
+      "estimated_apartments": 15,
+      "financial_performance_index": 16.22641509433962,
+      "performance_percentile": 33.33333333333333,
+      "costs": {
+        "total_per_m2": 1768.078888888889,
+        "electricity_per_m2": 166.07111111111112,
+        "heating_per_m2": 807.2055555555555,
+        "water_per_m2": 218.73666666666668
+      }
+    },
+    {
+      "brf_name": "Brf Sjöstadspiren",
+      "building_id": "eghs_7",
+      "construction_year": 2010,
+      "energy_performance": 48.8,
+      "energy_class": "B",
+      "estimated_building_size_m2": 4875.0,
+      "estimated_apartments": 75,
+      "financial_performance_index": 43.745524476955396,
+      "performance_percentile": 66.66666666666666,
+      "costs": {
+        "total_per_m2": 607.0184615384616,
+        "electricity_per_m2": 470.07158974358975,
+        "heating_per_m2": 0.0,
+        "water_per_m2": 46.319384615384614
+      }
+    },
+    {
+      "brf_name": "Brf Strandkanten",
+      "building_id": "eghs_8",
+      "construction_year": 2004,
+      "energy_performance": 73.0,
+      "energy_class": "C",
+      "estimated_building_size_m2": 1800.0,
+      "estimated_apartments": 30,
+      "financial_performance_index": 69.27440583438002,
+      "performance_percentile": 100.0,
+      "costs": {
+        "total_per_m2": 218.72166666666666,
+        "electricity_per_m2": 85.44611111111111,
+        "heating_per_m2": 77.33833333333334,
+        "water_per_m2": 17.399444444444445
+      }
+    },
+    {
+      "brf_name": "Brf Sundet",
+      "building_id": "eghs_9",
+      "construction_year": 2003,
+      "energy_performance": 51.0,
+      "energy_class": "B",
+      "estimated_building_size_m2": 1800.0,
+      "estimated_apartments": 30,
+      "financial_performance_index": 57.57089601228362,
+      "performance_percentile": 88.88888888888889,
+      "costs": {
+        "total_per_m2": 423.28222222222223,
+        "electricity_per_m2": 316.2211111111111,
+        "heating_per_m2": 36.09888888888889,
+        "water_per_m2": 39.85777777777778
+      }
+    }
+  ]
+}

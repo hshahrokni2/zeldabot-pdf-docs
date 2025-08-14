@@ -1,0 +1,42 @@
+# BRF Peer Survey & Interactive Map Requirements
+
+# Core dependencies
+streamlit>=1.28.0
+folium>=0.14.0
+plotly>=5.17.0
+
+# Data processing
+pandas>=2.1.0
+numpy>=1.24.0
+
+# Survey and comparison system
+uuid>=1.30  # Usually built-in
+hashlib  # Built-in
+statistics  # Built-in  
+dataclasses  # Built-in (Python 3.7+)
+enum34>=1.1.10; python_version<"3.4"  # Built-in for Python 3.4+
+
+# Streamlit-Folium integration (optional but recommended)
+streamlit-folium>=0.13.0
+
+# Additional geospatial tools (optional)
+geopandas>=0.14.0
+shapely>=2.0.0
+
+# Database connectivity (if using PostgreSQL integration)
+psycopg2-binary>=2.9.0
+
+# Excel export functionality (optional)
+openpyxl>=3.1.0
+xlsxwriter>=3.1.0
+
+# JSON processing (usually included in Python)
+# json - built-in
+
+# Date and time handling (built-in)
+# datetime - built-in
+# timedelta - built-in
+
+# Development and testing (optional)
+pytest>=7.4.0
+black>=23.0.0

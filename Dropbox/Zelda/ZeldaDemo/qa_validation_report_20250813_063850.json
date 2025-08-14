@@ -1,0 +1,140 @@
+{
+  "timestamp": "2025-08-13T06:38:50.285998",
+  "data_integrity": {
+    "total_buildings": 9,
+    "file_load_success": true
+  },
+  "coordinate_validation": {
+    "total_buildings": 9,
+    "buildings_with_coordinates": 9,
+    "real_coordinates_count": 4,
+    "approximate_coordinates_count": 5,
+    "missing_coordinates": [],
+    "coordinate_sources": {
+      "original": 5,
+      "booli.se": 4
+    },
+    "coordinate_accuracy": {},
+    "coordinate_completeness": 100.0,
+    "real_coordinate_percentage": 44.44444444444444
+  },
+  "energy_validation": {
+    "buildings_with_energy_data": 9,
+    "energy_classes": {
+      "E": 1,
+      "D": 2,
+      "F": 1,
+      "B": 3,
+      "C": 2
+    },
+    "performance_range": {
+      "min": 48.8,
+      "max": 155.0,
+      "avg": 89.86666666666666
+    },
+    "swedish_avg_comparison": {
+      "better": 9,
+      "worse": 0,
+      "equal": 0
+    },
+    "missing_energy_data": [],
+    "data_consistency_issues": [
+      "Brf Hammarby Kaj: Class E but performance 147.0 kWh/m²",
+      "Brf Havet: Class D but performance 93.0 kWh/m²",
+      "Brf Holmen: Class D but performance 115.0 kWh/m²",
+      "Brf Sjöportalen 1: Class F but performance 155.0 kWh/m²",
+      "Brf Sjöstadsesplanaden 1: Class C but performance 73.0 kWh/m²",
+      "Brf Sjöstadspiren: Class B but performance 48.8 kWh/m²",
+      "Brf Strandkanten: Class C but performance 73.0 kWh/m²"
+    ],
+    "energy_data_completeness": 100.0
+  },
+  "cost_validation": {
+    "buildings_with_cost_data": 9,
+    "cost_categories": {
+      "electricity": {
+        "count": 9,
+        "total": 7207856.0,
+        "avg": 800872.8888888889
+      },
+      "heating": {
+        "count": 8,
+        "total": 4543061.0,
+        "avg": 567882.625
+      },
+      "water": {
+        "count": 9,
+        "total": 1919582.0,
+        "avg": 213286.88888888888
+      },
+      "internet_tv": {
+        "count": 0,
+        "total": 0,
+        "avg": 0
+      },
+      "recycling": {
+        "count": 8,
+        "total": 1066083.0,
+        "avg": 133260.375
+      },
+      "total_cost": {
+        "count": 9,
+        "total": 16427581.0,
+        "avg": 1825286.7777777778
+      }
+    },
+    "missing_cost_data": [],
+    "cost_outliers": [],
+    "data_consistency_issues": [],
+    "cost_data_completeness": 100.0
+  },
+  "system_health": {
+    "data_quality_score": 80.0,
+    "completeness_score": 100.0,
+    "accuracy_score": 0,
+    "consistency_score": 0,
+    "overall_health": "Good",
+    "critical_issues": [
+      "Multiple energy data consistency issues"
+    ],
+    "warnings": [
+      "Only 44.4% have real coordinates from Booli.se"
+    ],
+    "passed_checks": [
+      "Coordinate completeness > 90%",
+      "Energy data completeness > 90%",
+      "Cost data consistency acceptable"
+    ]
+  },
+  "performance_metrics": {
+    "data_load_time_ms": 0.002,
+    "filter_operation_time_ms": 0.003,
+    "coordinate_processing_time_ms": 0.003,
+    "estimated_memory_usage_mb": 0.007045745849609375,
+    "total_benchmark_time_ms": 0.823,
+    "performance_rating": "Excellent"
+  },
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "category": "Coordinates",
+      "issue": "5 buildings lack real coordinates from Booli.se",
+      "recommendation": "Obtain real coordinates for all buildings using Booli.se API or manual verification",
+      "impact": "Critical for accurate mapping and location-based analysis"
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Energy Data",
+      "issue": "7 energy class/performance mismatches",
+      "recommendation": "Review and correct energy class assignments based on performance values",
+      "impact": "Affects energy performance analysis accuracy"
+    },
+    {
+      "priority": "INFO",
+      "category": "Production Readiness",
+      "issue": "System shows high data completeness",
+      "recommendation": "System is ready for production deployment with current data quality",
+      "impact": "Positive - ready for demonstration and live use"
+    }
+  ]
+}

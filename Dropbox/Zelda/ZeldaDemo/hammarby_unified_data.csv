@@ -1,0 +1,13 @@
+building_id,name,latitude,longitude,energy_performance,energy_class,construction_year,property_owner,cost_cleaning,cost_electricity,cost_heating,cost_internet_and_tv,cost_recycling,cost_snow_removal,cost_water,total_cost,apartments,performance_score,address
+brf_0,Bådan 1,59.30158570773684,18.080124665837143,131,E,1997,Bostadsrättsföreningen Bådan 1,566010,567207,508731,180139,118179,83716,403089,2427071,83,49,"Bådan 1 Area, Hammarby Sjöstad"
+brf_1,Brf Hammarby Kaj,59.308967942461216,18.08030802766386,138,D,1998,Bostadsrättsföreningen Hammarby Kaj,0,171277,1069532,58056,235231,0,91180,1625276,61,42,"Hammarby Kaj Area, Hammarby Sjöstad"
+brf_2,Brf Havet,59.30596942479802,18.078531917644167,93,D,2001,Bostadsrättsföreningen Havet,0,1016886,697129,116280,239496,127494,324308,2521593,47,87,"Havet Area, Hammarby Sjöstad"
+brf_3,Brf Holmen,59.30815562405931,18.085736177722712,115,D,2002,"Bostadsrättsföreningen Holmen, Sickla Kaj.",0,706894,784677,47574,109546,34343,337638,2020672,82,65,"Holmen Area, Hammarby Sjöstad"
+brf_4,Brf Sjöstaden 2,59.30579311512021,18.078006746716618,124,E,2007,Bostadsrättsföreningen Sjöstaden 2,0,1828349,84077,258332,145159,157709,476731,2950357,81,56,"Sjöstaden 2 Area, Hammarby Sjöstad"
+brf_5,Brf Sjöportalen 1,59.30797423949023,18.09068934628508,123,E,1999,Bostadsrättsföreningen Sjöportalen 1,0,320386,976974,72305,69933,0,163992,1603590,86,57,"Sjöportalen 1 Area, Hammarby Sjöstad"
+brf_6,Brf Sjöstadsesplanaden 1,59.307153972726006,18.088709582024084,168,C,1998,Bostadsrättsföreningen Sjöstadsesplanaden 1,769259,619946,514374,165414,112949,94571,269261,2545774,100,20,"Sjöstadsesplanaden 1 Area, Hammarby Sjöstad"
+brf_7,Brf Sjöstadspiren,59.30786997969939,18.08648539181564,156,C,2005,Bostadsrättsföreningen Sjöstadspiren,0,2291599,0,288873,63247,89689,225807,2959215,119,24,"Sjöstadspiren Area, Hammarby Sjöstad"
+brf_8,Brf Strandkanten,59.307452735352044,18.090783816141172,141,D,2005,Bostadsrättsföreningen Strandkanten,0,153803,139209,69368,0,0,31319,393699,60,39,"Strandkanten Area, Hammarby Sjöstad"
+brf_9,Brf Sundet,59.307142201444094,18.091401759851898,51,B,2003,Bostadsrättsföreningen Sundet,0,569198,64978,41116,6647,8225,71744,761908,103,129,"Sundet Area, Hammarby Sjöstad"
+brf_10,Havet 1,59.30892737196323,18.091948351528313,93,D,2001,Bostadsrättsföreningen Havet,537716,743614,963613,85491,58588,68114,394295,2851431,93,87,"Havet 1 Area, Hammarby Sjöstad"
+brf_11,Holmen 2,59.303054753028775,18.08487816626105,115,D,2002,"Bostadsrättsföreningen Holmen, Sickla Kaj.",739773,465205,898120,132866,104711,46041,421603,2808319,67,65,"Holmen 2 Area, Hammarby Sjöstad"

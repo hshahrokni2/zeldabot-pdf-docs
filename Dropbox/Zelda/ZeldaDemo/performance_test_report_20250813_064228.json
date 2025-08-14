@@ -1,0 +1,135 @@
+{
+  "timestamp": "2025-08-13T06:42:17.539649",
+  "load_testing": {
+    "cold_load_times": [
+      0.09620795026421547,
+      0.08658412843942642,
+      0.08079223334789276,
+      0.07600011304020882,
+      0.07416633889079094
+    ],
+    "warm_load_times": [
+      0.0037909485399723053,
+      0.000500120222568512,
+      0.00016670674085617065,
+      0.00012479722499847412,
+      8.381903171539307e-05
+    ],
+    "large_dataset_simulation": {
+      "size": 90,
+      "load_time_ms": 1.0756668634712696,
+      "memory_usage_mb": 89.015625
+    },
+    "concurrent_load_test": {},
+    "memory_impact": {
+      "before_mb": 89.015625,
+      "after_mb": 89.015625,
+      "increase_mb": 0.0
+    }
+  },
+  "memory_profiling": {
+    "baseline_memory_mb": 88.65625,
+    "operations": [
+      {
+        "operation": "load_dataframe",
+        "execution_time_ms": 1.542625017464161,
+        "memory_before_mb": 89.59375,
+        "memory_after_mb": 89.609375,
+        "memory_cleanup_mb": 89.609375,
+        "memory_increase_mb": 0.015625,
+        "memory_retained_mb": 0.015625
+      },
+      {
+        "operation": "duplicate_data",
+        "execution_time_ms": 0.002500135451555252,
+        "memory_before_mb": 89.609375,
+        "memory_after_mb": 89.609375,
+        "memory_cleanup_mb": 89.609375,
+        "memory_increase_mb": 0.0,
+        "memory_retained_mb": 0.0
+      },
+      {
+        "operation": "create_large_array",
+        "execution_time_ms": 21.608833223581314,
+        "memory_before_mb": 89.609375,
+        "memory_after_mb": 97.359375,
+        "memory_cleanup_mb": 97.359375,
+        "memory_increase_mb": 7.75,
+        "memory_retained_mb": 7.75
+      },
+      {
+        "operation": "json_serialization",
+        "execution_time_ms": 1.8667499534785748,
+        "memory_before_mb": 97.359375,
+        "memory_after_mb": 97.359375,
+        "memory_cleanup_mb": 97.359375,
+        "memory_increase_mb": 0.0,
+        "memory_retained_mb": 0.0
+      },
+      {
+        "operation": "coordinate_array",
+        "execution_time_ms": 1.4292090199887753,
+        "memory_before_mb": 97.359375,
+        "memory_after_mb": 97.5625,
+        "memory_cleanup_mb": 97.5625,
+        "memory_increase_mb": 0.203125,
+        "memory_retained_mb": 0.203125
+      }
+    ],
+    "peak_memory_mb": 97.5625,
+    "memory_leaks_detected": true,
+    "traced_current_mb": 0.0044193267822265625,
+    "traced_peak_mb": 7.634355545043945
+  },
+  "response_times": {
+    "filtering_operations": [
+      {
+        "time_ms": 0.8567092008888721,
+        "result_count": 6
+      },
+      {
+        "time_ms": 0.9957500733435154,
+        "result_count": 5
+      },
+      {
+        "time_ms": 0.15462515875697136,
+        "result_count": 7
+      },
+      {
+        "time_ms": 0.1204581931233406,
+        "result_count": 2
+      }
+    ],
+    "sorting_operations": [
+      {
+        "column": "energy_performance",
+        "time_ms": 1.1584158055484295
+      },
+      {
+        "column": "total_cost",
+        "time_ms": 0.12837490066885948
+      },
+      {
+        "column": "construction_year",
+        "time_ms": 0.071709044277668
+      },
+      {
+        "column": "brf_name",
+        "time_ms": 0.0988333486020565
+      }
+    ],
+    "aggregation_operations": [
+      {
+        "operation": "energy_performance_mean",
+        "time_ms": 0.1904587261378765,
+        "result": 89.86666666666666
+      },
+      {
+        "operation": "total_cost_sum",
+        "time_ms": 0.08124997839331627,
+        "result": 16427581.0
+      },
+      {
+        "operation": "construction_year_min",
+        "time_ms": 0.06616581231355667,
+        "result": 

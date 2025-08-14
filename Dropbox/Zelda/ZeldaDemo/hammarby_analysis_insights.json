@@ -1,0 +1,223 @@
+{
+  "key_findings": [
+    "Hammarby Sjöstad performs 20.1% better than the Swedish average energy consumption of 159 kWh/m².",
+    "The largest cost category is heating at 43.4% of total costs on average.",
+    "Data coverage: 1/12 buildings have energy performance data, 10/12 have cost data."
+  ],
+  "energy_analysis": {
+    "avg_performance_kwh_m2": 127.0,
+    "vs_swedish_benchmark": 79.9,
+    "best_performer": {
+      "brf_id": 2,
+      "brf_name": "BRF Hammarby Kaj",
+      "org_number": "769618-4321",
+      "location": {
+        "latitude": 59.3052,
+        "longitude": 18.1025,
+        "address": "Lugnets Allé 12",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 65"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 3588.93,
+        "energy_costs": 183984.2,
+        "water_costs": 129020.31,
+        "heating_costs": 354390.77,
+        "total_income": 2728292.52,
+        "total_expenses": 2988567.48,
+        "maintenance_fund": 1476262.28
+      },
+      "documents": [
+        {
+          "document_id": 5,
+          "type": "annual_report",
+          "name": "BRF Hammarby Kaj_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/2/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 21,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 4,
+          "type": "annual_report",
+          "name": "BRF Hammarby Kaj_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/2/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 98,
+            "status": "available"
+          }
+        }
+      ],
+      "energy_performance_kwh_m2": 127,
+      "energy_class": "E",
+      "construction_year": 2002,
+      "heated_area_m2": 4717,
+      "efficiency_vs_swedish_avg": 0.7987421383647799,
+      "efficiency_rating": "Good",
+      "epc_confidence": 1.0,
+      "epc_data_source": "EPC ID: 949317",
+      "cost_breakdown": {
+        "electricity": 171277.0,
+        "heating": 1069532.0,
+        "other": 293287.0,
+        "water": 91180.0,
+        "total": 1625276.0
+      },
+      "cost_confidence": 0.99,
+      "energy_metrics": {
+        "efficiency_vs_swedish_avg": 0.7987421383647799,
+        "efficiency_rating": "Good",
+        "annual_energy_cost_estimate": 718870.7999999999,
+        "carbon_intensity_estimate": 8.255
+      },
+      "cost_metrics": {
+        "cost_per_m2": {
+          "electricity": 36.31057875768497,
+          "heating": 226.73987704049185,
+          "other": 62.176595293618824,
+          "water": 19.33008267966928,
+          "total": 344.5571337714649
+        },
+        "cost_ratios": {
+          "electricity": 0.10538333181564238,
+          "heating": 0.6580617692010464,
+          "other": 0.18045365833249244,
+          "water": 0.056101240650818694
+        }
+      },
+      "bang_for_buck": {
+        "overall": 2.089759343314024,
+        "energy_efficiency": 0.38046745318347985
+      },
+      "performance_score": 68.2
+    },
+    "efficiency_distribution": {
+      "excellent": 0,
+      "good": 1,
+      "average": 0,
+      "below_average": 0,
+      "poor": 0
+    }
+  },
+  "cost_analysis": {
+    "buildings_with_cost_data": 10,
+    "avg_cost_breakdown_percent": {
+      "cleaning": 4.1,
+      "electricity": 24.7,
+      "heating": 43.4,
+      "other": 18.3,
+      "water": 10.8
+    },
+    "highest_cost_category": [
+      "heating",
+      43.4
+    ]
+  },
+  "performance_analysis": {
+    "avg_performance_score": 52.1,
+    "best_performer": {
+      "brf_id": 2,
+      "brf_name": "BRF Hammarby Kaj",
+      "org_number": "769618-4321",
+      "location": {
+        "latitude": 59.3052,
+        "longitude": 18.1025,
+        "address": "Lugnets Allé 12",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 65"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 3588.93,
+        "energy_costs": 183984.2,
+        "water_costs": 129020.31,
+        "heating_costs": 354390.77,
+        "total_income": 2728292.52,
+        "total_expenses": 2988567.48,
+        "maintenance_fund": 1476262.28
+      },
+      "documents": [
+        {
+          "document_id": 5,
+          "type": "annual_report",
+          "name": "BRF Hammarby Kaj_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/2/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 21,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 4,
+          "type": "annual_report",
+          "name": "BRF Hammarby Kaj_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/2/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 98,
+            "status": "available"
+          }
+        }
+      ],
+      "energy_performance_kwh_m2": 127,
+      "energy_class": "E",
+      "construction_year": 2002,
+      "heated_area_m2": 4717,
+      "efficiency_vs_swedish_avg": 0.7987421383647799,
+      "efficiency_rating": "Good",
+      "epc_confidence": 1.0,
+      "epc_data_source": "EPC ID: 949317",
+      "cost_breakdown": {
+        "electricity": 171277.0,
+        "heating": 1069532.0,
+        "other": 293287.0,
+        "water": 91180.0,
+        "total": 1625276.0
+      },
+      "cost_confidence": 0.99,
+      "energy_metrics": {
+        "efficiency_vs_swedish_avg": 0.7987421383647799,
+        "efficiency_rating": "Good",
+        "annual_energy_cost_estimate": 718870.7999999999,
+        "carbon_intensity_estimate": 8.255
+      },
+      "cost_metrics": {
+        "cost_per_m2": {
+          "electricity": 36.31057875768497,
+          "heating": 226.73987704049185,
+          "other": 62.176595293618824,
+          "water": 19.33008267966928,
+          "total": 344.5571337714649
+        },
+        "cost_ratios": {
+          "electricity": 0.10538333181564238,
+          "heating": 0.6580617692010464,
+          "other": 0.18045365833249244,
+          "water": 0.056101240650818694
+        }
+      },
+      "bang_for_buck": {
+        "overall": 2.089759343314024,
+        "energy_efficiency": 0.38046745318347985
+      },
+      "performance_score": 68.2
+    },
+    "score_distribution": {
+      "excellent": 0,
+      "good": 4,
+      "average": 6,
+      "below_average": 2,
+      "poor": 0
+    }
+  },
+  "recommendations": [
+    "Strong energy performance - consider sharing best practices with other buildings.",
+    "Analyze cost optimization opportunities in the highest spending categories.",
+    "Obtain EPC certificates for remaining buildings to enable comprehensive energy analysis."
+  ]
+}

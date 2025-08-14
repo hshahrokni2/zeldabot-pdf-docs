@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "created_at": "2025-08-13T05:30:49.433208",
+    "system_version": "1.0.0",
+    "test_data": true
+  },
+  "survey_response": {
+    "building_id": 2,
+    "building_name": "BRF Hammarby Kaj",
+    "respondent_id": "demo_user_456",
+    "completion_percentage": 92.0,
+    "unlock_level": "full",
+    "costs": {
+      "cleaning": 52000,
+      "maintenance": 78000,
+      "snow_removal": 18000,
+      "gardening": 41000,
+      "electricity": 135000,
+      "heating": 195000
+    },
+    "suppliers": {
+      "cleaning": "Stockholm Fastighetsstäd AB",
+      "maintenance": "Hammarby Fastighetsservice",
+      "snow_removal": "Vinterstaden AB",
+      "gardening": "Hammarby Trädgård & Park",
+      "electricity": "Stockholm Energioptimering",
+      "heating": "Hammarby VVS & Värme"
+    },
+    "satisfaction": {
+      "cleaning": 4,
+      "maintenance": 5,
+      "snow_removal": 3,
+      "gardening": 4,
+      "electricity": 3,
+      "heating": 4
+    },
+    "contact_info": {
+      "name": "Demo User",
+      "email": "demo@example.com",
+      "phone": "08-123 45 67",
+      "role": "Styrelseordförande"
+    }
+  }
+}

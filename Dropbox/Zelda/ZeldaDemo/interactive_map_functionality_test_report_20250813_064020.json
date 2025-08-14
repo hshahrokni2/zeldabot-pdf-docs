@@ -1,0 +1,65 @@
+{
+  "timestamp": "2025-08-13T06:40:20.722581",
+  "map_functionality": {
+    "map_creation_success": true,
+    "center_calculation": true,
+    "zoom_level_appropriate": true,
+    "tile_layers_added": true,
+    "coordinate_bounds_valid": true
+  },
+  "marker_tests": {
+    "markers_created": 9,
+    "markers_with_coordinates": 9,
+    "markers_with_popups": 9,
+    "energy_class_colors": {
+      "E": "#f97316",
+      "D": "#f59e0b",
+      "F": "#dc2626",
+      "B": "#84cc16",
+      "C": "#eab308"
+    },
+    "popup_content_complete": 9,
+    "tooltip_functionality": 9,
+    "coordinate_accuracy_issues": []
+  },
+  "selection_tests": {
+    "polygon_drawing_tools": true,
+    "circle_selection": true,
+    "rectangle_selection": true,
+    "point_in_polygon_algorithm": true,
+    "selection_accuracy_test": 9,
+    "multi_building_selection": true
+  },
+  "chart_tests": {
+    "energy_performance_chart": true,
+    "cost_analysis_chart": true,
+    "swedish_avg_comparison": true,
+    "chart_data_accuracy": 100.0,
+    "interactive_features": true,
+    "color_coding_consistency": true
+  },
+  "export_tests": {
+    "csv_export": true,
+    "json_export": true,
+    "filtered_data_export": true,
+    "selected_buildings_export": true,
+    "export_data_completeness": 0.0
+  },
+  "responsive_tests": {
+    "mobile_layout_considerations": true,
+    "map_size_flexibility": true,
+    "sidebar_responsiveness": true,
+    "chart_responsiveness": true,
+    "text_readability": true
+  },
+  "overall_results": {
+    "map_functionality_score": 100.0,
+    "marker_functionality_score": 100.0,
+    "selection_functionality_score": 233.33333333333334,
+    "chart_functionality_score": 1750.0,
+    "export_functionality_score": 80.0,
+    "responsive_design_score": 100.0,
+    "overall_functionality_score": 393.8888888888889,
+    "functionality_rating": "Excellent"
+  }
+}

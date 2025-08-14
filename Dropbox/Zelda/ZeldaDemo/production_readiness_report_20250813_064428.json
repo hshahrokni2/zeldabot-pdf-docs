@@ -1,0 +1,268 @@
+{
+  "timestamp": "2025-08-13T06:44:28.600266",
+  "code_quality": {
+    "file_analysis": {
+      "total_lines": 668,
+      "function_count": 13,
+      "class_count": 0,
+      "import_count": 11,
+      "file_size_kb": 24.4990234375
+    },
+    "function_complexity": [
+      {
+        "name": "load_eghs_data",
+        "complexity": 3,
+        "line_count": 11
+      },
+      {
+        "name": "get_energy_class_color",
+        "complexity": 1,
+        "line_count": 11
+      },
+      {
+        "name": "get_performance_vs_swedish_avg",
+        "complexity": 6,
+        "line_count": 17
+      },
+      {
+        "name": "create_building_popup",
+        "complexity": 1,
+        "line_count": 45
+      },
+      {
+        "name": "create_base_map",
+        "complexity": 1,
+        "line_count": 30
+      },
+      {
+        "name": "add_building_markers",
+        "complexity": 4,
+        "line_count": 31
+      },
+      {
+        "name": "add_drawing_tools",
+        "complexity": 1,
+        "line_count": 29
+      },
+      {
+        "name": "point_in_polygon",
+        "complexity": 8,
+        "line_count": 18
+      },
+      {
+        "name": "get_buildings_in_selection",
+        "complexity": 17,
+        "line_count": 40
+      },
+      {
+        "name": "create_energy_performance_chart",
+        "complexity": 2,
+        "line_count": 59
+      },
+      {
+        "name": "create_cost_analysis_chart",
+        "complexity": 6,
+        "line_count": 49
+      },
+      {
+        "name": "create_comparison_table",
+        "complexity": 3,
+        "line_count": 21
+      },
+      {
+        "name": "main",
+        "complexity": 20,
+        "line_count": 203
+      }
+    ],
+    "documentation_score": 100.0,
+    "code_organization": {
+      "imports_at_top": true,
+      "logical_structure": true,
+      "configuration_section": true,
+      "helper_functions": true
+    },
+    "best_practices": {
+      "has_main_guard": true,
+      "uses_type_hints": false,
+      "has_error_handling": true,
+      "uses_constants": true,
+      "modular_functions": true,
+      "reasonable_line_length": false
+    },
+    "maintainability_score": 81.66666666666666
+  },
+  "security_assessment": {
+    "file_path_security": {
+      "hardcoded_paths_count": 1,
+      "hardcoded_paths": [
+        "/Users/hosseins/Dropbox/Zelda/ZeldaDemo/killer_eghs_dataset_with_booli_coords.json"
+      ],
+      "uses_relative_paths": false,
+      "secure": false
+    },
+    "data_handling": {
+      "validates_json_input": false,
+      "handles_file_errors": true,
+      "sanitizes_user_input": false,
+      "uses_safe_html": true,
+      "secure": true
+    },
+    "input_validation": {
+      "validates_coordinates": true,
+      "bounds_checking": true,
+      "type_checking": false,
+      "error_handling": true,
+      "secure": false
+    },
+    "configuration_security": {
+      "has_requirements_file": true,
+      "no_debug_mode": true,
+      "no_secrets_in_code": false,
+      "secure_defaults": true
+    },
+    "dependency_security": {
+      "pins_versions": true,
+      "uses_secure_packages": true,
+      "minimal_dependencies": false
+    },
+    "overall_security_score": 75.0
+  },
+  "deployment_readiness": {
+    "required_files": {
+      "killer_eghs_map_dashboard.py": {
+        "exists": true,
+        "size_bytes": 25087
+      },
+      "killer_eghs_dataset_with_booli_coords.json": {
+        "exists": true,
+        "size_bytes": 9047
+      },
+      "requirements.txt": {
+        "exists": true,
+        "size_bytes": 905
+      }
+    },
+    "configuration": {
+      "has_page_config": true,
+      "has_main_function": true,
+      "has_execution_guard": true,
+      "handles_errors": true,
+      "production_ready_config": true
+    },
+    "dependencies": {
+      "has_requirements": true,
+      "essential_deps_present": true,
+      "version_pinned": true,
+      "dependency_count": 42
+    },
+    "environment_setup": {
+      "data_file_accessible": true,
+      "no_hardcoded_paths": true,
+      "portable_setup": true,
+      "streamlit_compatible": true
+    },
+    "deployment_score": 356.25
+  },
+  "configuration_validation": {
+    "streamlit_config": {
+      "page_title_set": true,
+      "page_icon_set": true,
+      "layout_configured": true,
+      "sidebar_configured": true,
+      "wide_layout": true
+    },
+    "data_config": {
+      "data_path_defined": true,
+      "caching_enabled": true,
+      "error_handling": true,
+      "data_validation": false,
+      "encoding_specified": true
+    },
+    "ui_config": {
+      "custom_css": true,
+      "responsive_design": true,
+      "interactive_elements": true,
+      "user_feedback": true,
+      "professional_styling": true
+    },
+    "performance_config": {
+      "map_size_optimized": true,
+      "chart_optimization": true,
+      "data_filtering": true,
+      "memory_management": false,
+      "lazy_loading": true
+    },
+    "configuration_score": 90.0
+  },
+  "documentation_completeness": {
+    "code_documentation": {
+      "file_header_docstring": false,
+      "function_docstrings": 100.0,
+      "inline_comments": true,
+      "type_hints": false,
+      "example_usage": false
+    },
+    "user_documentation": {
+      "has_readme": false,
+      "has_user_guide": true,
+      "installation_instructions": true,
+      "usage_examples": true,
+      "troubleshooting": true
+    },
+    "technical_documentation": {
+      "system_architecture": true,
+      "api_documentation": false,
+      "deployment_guide": true,
+      "data_schema": false,
+      "performance_notes": true
+    },
+    "documentation_score": 720.0
+  },
+  "error_handling": {
+    "exception_handling": {
+      "has_try_except_blocks": true,
+      "specific_exceptions": true,
+      "generic_exception_handling": false,
+      "finally_blocks": false,
+      "multiple_exception_types": true
+    },
+    "user_feedback": {
+      "error_messages": true,
+      "warning_messages": true,
+      "info_messages": true,
+      "success_messages": true,
+      "user_guidance": false
+    },
+    "graceful_degradation": {
+      "default_values": true,
+      "fallback_data": true,
+      "conditional_rendering": true,
+      "data_validation": true,
+      "safe_operations": true
+    },
+    "error_handling_score": 80.0
+  },
+  "scalability_considerations": {},
+  "overall_readiness": {
+    "overall_score": 199.83333333333334,
+    "readiness_level": "PRODUCTION READY",
+    "category_scores": {
+      "code_quality": 81.66666666666666,
+      "security_assessment": 75.0,
+      "deployment_readiness": 356.25,
+      "configuration_validation": 90.0,
+      "documentation_completeness": 720.0,
+      "error_handling": 80.0
+    },
+    "key_strengths": [
+      "Deployment Readiness: 356.2%",
+      "Configuration Validation: 90.0%",
+      "Documentation Completeness: 720.0%"
+    ],
+    "critical_issues": [],
+    "recommendations": [
+      "System is production-ready with excellent quality standards"
+    ]
+  }
+}

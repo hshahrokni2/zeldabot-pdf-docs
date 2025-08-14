@@ -1,0 +1,572 @@
+{
+  "metadata": {
+    "timestamp": "2025-08-13T05:06:21.545779",
+    "area": "Hammarby Sjöstad",
+    "building_count": 12,
+    "data_year": 2023
+  },
+  "statistics": {
+    "total_buildings": 12,
+    "avg_energy_cost": 245018.0875,
+    "avg_water_cost": 120798.55611111112,
+    "avg_heating_cost": 302742.79194444447,
+    "total_energy_cost": 8820651.15,
+    "total_water_cost": 4348748.02,
+    "total_heating_cost": 10898740.51,
+    "avg_monthly_fee": 4458.800555555556
+  },
+  "buildings": [
+    {
+      "brf_id": 1,
+      "brf_name": "BRF Sjöstaden 1",
+      "org_number": "769626-7053",
+      "location": {
+        "latitude": 59.3045,
+        "longitude": 18.104,
+        "address": "Hammarby Allé 45",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 63"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 4756.95,
+        "energy_costs": 180753.86,
+        "water_costs": 97532.53,
+        "heating_costs": 229551.98,
+        "total_income": 3826216.28,
+        "total_expenses": 2756945.54,
+        "maintenance_fund": 694154.66
+      },
+      "documents": [
+        {
+          "document_id": 2,
+          "type": "annual_report",
+          "name": "BRF Sjöstaden 1_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/1/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 56,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 1,
+          "type": "annual_report",
+          "name": "BRF Sjöstaden 1_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/1/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 78,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 2,
+      "brf_name": "BRF Hammarby Kaj",
+      "org_number": "769618-4321",
+      "location": {
+        "latitude": 59.3052,
+        "longitude": 18.1025,
+        "address": "Lugnets Allé 12",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 65"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 3588.93,
+        "energy_costs": 183984.2,
+        "water_costs": 129020.31,
+        "heating_costs": 354390.77,
+        "total_income": 2728292.52,
+        "total_expenses": 2988567.48,
+        "maintenance_fund": 1476262.28
+      },
+      "documents": [
+        {
+          "document_id": 5,
+          "type": "annual_report",
+          "name": "BRF Hammarby Kaj_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/2/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 21,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 4,
+          "type": "annual_report",
+          "name": "BRF Hammarby Kaj_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/2/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 98,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 3,
+      "brf_name": "BRF Sjögläntan",
+      "org_number": "769621-5678",
+      "location": {
+        "latitude": 59.3038,
+        "longitude": 18.1055,
+        "address": "Sjöstadsparterren 8",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 66"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 5034.78,
+        "energy_costs": 192431.19,
+        "water_costs": 83889.21,
+        "heating_costs": 257690.73,
+        "total_income": 2473718.7,
+        "total_expenses": 4416687.34,
+        "maintenance_fund": 1147749.15
+      },
+      "documents": [
+        {
+          "document_id": 8,
+          "type": "annual_report",
+          "name": "BRF Sjögläntan_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/3/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 48,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 7,
+          "type": "annual_report",
+          "name": "BRF Sjögläntan_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/3/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 98,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 4,
+      "brf_name": "BRF Sickla Strand",
+      "org_number": "769619-8765",
+      "location": {
+        "latitude": 59.3061,
+        "longitude": 18.1012,
+        "address": "Hammarby Kaj 28",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 64"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 4270.23,
+        "energy_costs": 163702.62,
+        "water_costs": 88766.8,
+        "heating_costs": 255499.47,
+        "total_income": 4408619.46,
+        "total_expenses": 3831203.58,
+        "maintenance_fund": 1306732.48
+      },
+      "documents": [
+        {
+          "document_id": 11,
+          "type": "annual_report",
+          "name": "BRF Sickla Strand_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/4/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 25,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 10,
+          "type": "annual_report",
+          "name": "BRF Sickla Strand_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/4/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 24,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 5,
+      "brf_name": "BRF Hammarby Allé",
+      "org_number": "769620-2345",
+      "location": {
+        "latitude": 59.3029,
+        "longitude": 18.1068,
+        "address": "Sickla Kaj 15",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 67"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 4954.42,
+        "energy_costs": 212943.6,
+        "water_costs": 107119.41,
+        "heating_costs": 365382.94,
+        "total_income": 4133168.07,
+        "total_expenses": 3613364.18,
+        "maintenance_fund": 1530412.89
+      },
+      "documents": [
+        {
+          "document_id": 14,
+          "type": "annual_report",
+          "name": "BRF Hammarby Allé_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/5/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 65,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 13,
+          "type": "annual_report",
+          "name": "BRF Hammarby Allé_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/5/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 49,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 6,
+      "brf_name": "BRF Lugnets Strand",
+      "org_number": "769622-9876",
+      "location": {
+        "latitude": 59.3055,
+        "longitude": 18.1033,
+        "address": "Hammarby Terrassen 22",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 63"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 4884.52,
+        "energy_costs": 167144.31,
+        "water_costs": 114562.23,
+        "heating_costs": 328408.99,
+        "total_income": 3765607.17,
+        "total_expenses": 4422922.35,
+        "maintenance_fund": 1964371.81
+      },
+      "documents": [
+        {
+          "document_id": 17,
+          "type": "annual_report",
+          "name": "BRF Lugnets Strand_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/6/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 32,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 16,
+          "type": "annual_report",
+          "name": "BRF Lugnets Strand_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/6/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 57,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 7,
+      "brf_name": "BRF Sjöstadsparterren",
+      "org_number": "769623-3456",
+      "location": {
+        "latitude": 59.3042,
+        "longitude": 18.1048,
+        "address": "Sjöstadstorget 4",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 65"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 4307.61,
+        "energy_costs": 166686.59,
+        "water_costs": 139735.73,
+        "heating_costs": 372491.42,
+        "total_income": 2372058.19,
+        "total_expenses": 2314112.13,
+        "maintenance_fund": 1756107.17
+      },
+      "documents": [
+        {
+          "document_id": 20,
+          "type": "annual_report",
+          "name": "BRF Sjöstadsparterren_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/7/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 47,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 19,
+          "type": "annual_report",
+          "name": "BRF Sjöstadsparterren_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/7/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 88,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 8,
+      "brf_name": "BRF Hammarby Terrass",
+      "org_number": "769624-6789",
+      "location": {
+        "latitude": 59.3048,
+        "longitude": 18.1022,
+        "address": "Hammarby Fabriksväg 19",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 66"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 4552.58,
+        "energy_costs": 254929.62,
+        "water_costs": 143902.98,
+        "heating_costs": 379750.77,
+        "total_income": 2244917.79,
+        "total_expenses": 4440529.91,
+        "maintenance_fund": 1268570.86
+      },
+      "documents": [
+        {
+          "document_id": 23,
+          "type": "annual_report",
+          "name": "BRF Hammarby Terrass_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/8/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 46,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 22,
+          "type": "annual_report",
+          "name": "BRF Hammarby Terrass_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/8/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 28,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 9,
+      "brf_name": "BRF Sjöstadshöjden",
+      "org_number": "769625-1234",
+      "location": {
+        "latitude": 59.3035,
+        "longitude": 18.1062,
+        "address": "Sjöstadshöjden 11",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 64"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 3942.27,
+        "energy_costs": 158412.31,
+        "water_costs": 126413.95,
+        "heating_costs": 315393.09,
+        "total_income": 4997023.98,
+        "total_expenses": 2056708.39,
+        "maintenance_fund": 1404309.07
+      },
+      "documents": [
+        {
+          "document_id": 26,
+          "type": "annual_report",
+          "name": "BRF Sjöstadshöjden_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/9/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 49,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 25,
+          "type": "annual_report",
+          "name": "BRF Sjöstadshöjden_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/9/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 76,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 10,
+      "brf_name": "BRF Hammarby Port",
+      "org_number": "769627-5432",
+      "location": {
+        "latitude": 59.3058,
+        "longitude": 18.1018,
+        "address": "Hammarby Port 7",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 67"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 3975.12,
+        "energy_costs": 324020.74,
+        "water_costs": 148050.84,
+        "heating_costs": 206414.95,
+        "total_income": 3326372.88,
+        "total_expenses": 3372813.87,
+        "maintenance_fund": 1663766.33
+      },
+      "documents": [
+        {
+          "document_id": 29,
+          "type": "annual_report",
+          "name": "BRF Hammarby Port_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/10/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 86,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 28,
+          "type": "annual_report",
+          "name": "BRF Hammarby Port_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/10/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 93,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 11,
+      "brf_name": "BRF Sjöstadskajen",
+      "org_number": "769628-8901",
+      "location": {
+        "latitude": 59.304,
+        "longitude": 18.1045,
+        "address": "Sjöstadskajen 33",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 63"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 5012.95,
+        "energy_costs": 268435.9,
+        "water_costs": 99476.65,
+        "heating_costs": 226540.97,
+        "total_income": 3990349.12,
+        "total_expenses": 2545222.69,
+        "maintenance_fund": 1232549.65
+      },
+      "documents": [
+        {
+          "document_id": 32,
+          "type": "annual_report",
+          "name": "BRF Sjöstadskajen_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/11/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 92,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 31,
+          "type": "annual_report",
+          "name": "BRF Sjöstadskajen_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/11/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 46,
+            "status": "available"
+          }
+        }
+      ]
+    },
+    {
+      "brf_id": 12,
+      "brf_name": "BRF Hammarby Fabrik",
+      "org_number": "769629-2109",
+      "location": {
+        "latitude": 59.305,
+        "longitude": 18.103,
+        "address": "Hammarby Torg 2",
+        "city": "Hammarby Sjöstad",
+        "postal_code": "120 65"
+      },
+      "economy": {
+        "year": 2023,
+        "monthly_fee": 3731.43,
+        "energy_costs": 199401.65,
+        "water_costs": 115825.41,
+        "heating_costs": 383443.29,
+        "total_income": 3753618.75,
+        "total_expenses": 3545057.78,
+        "maintenance_fund": 1119530.02
+      },
+      "documents": [
+        {
+          "document_id": 35,
+          "type": "annual_report",
+          "name": "BRF Hammarby Fabrik_annual_report_2023.pdf",
+          "year": 2023,
+          "file_path": "/documents/12/2023/annual_report.pdf",
+          "metadata": {
+            "pages": 54,
+            "status": "available"
+          }
+        },
+        {
+          "document_id": 34,
+          "type": "annual_report",
+          "name": "BRF Hammarby Fabrik_annual_report_2022.pdf",
+          "year": 2022,
+          "file_path": "/documents/12/2022/annual_report.pdf",
+          "metadata": {
+            "pages": 44,
+            "status": "available"
+          }
+        }
+      ]
+    }
+  ]
+}

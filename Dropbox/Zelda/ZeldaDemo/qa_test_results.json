@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-08-13T05:55:12.193158",
+  "overall_success": false,
+  "results": {
+    "Data Integrity": {
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    "Database Integration": {
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 1,
+      "skipped": 0,
+      "success_rate": 75.0
+    },
+    "Energy Analysis": {
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    "Interactive Map": {
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    "Survey System": {
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 3,
+      "success_rate": 100.0
+    },
+    "Performance": {
+      "tests_run": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "success_rate": 100.0
+    },
+    "Security": {
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "success_rate": 100.0
+    }
+  },
+  "environment": {
+    "python_version": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "darwin"
+  }
+}

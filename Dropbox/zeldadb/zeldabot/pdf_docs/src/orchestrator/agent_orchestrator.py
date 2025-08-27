@@ -51,11 +51,22 @@ class OrchestratorAgent:
         return d1
 
     async def _dispatch(self, session: aiohttp.ClientSession, name: str, prompt: str, images: List[str]) -> Dict:
-        payload={'model':'qwen-vl-chat','messages':[{'role':'user','content':[{'type':'text','text':prompt}] +                      [{'type':'image_url','image_url':{'url':f'data:image/jpeg;base64,{img}'}} for img in images]}],
+        model_name = os.getenv('QWEN_MODEL_TAG', 'qwen2.5vl:7b')
+        payload={'model':model_name,'messages':[{'role':'user','content':[{'type':'text','text':prompt}] +                      [{'type':'image_url','image_url':{'url':f'data:image/jpeg;base64,{img}'}} for img in images]}],
                  'max_tokens':2048,'temperature':0.0}
         try:
             async with session.post(QWEN_VL_API_URL,json=payload,timeout=180) as resp:
                 resp.raise_for_status(); content=(await resp.json())['choices'][0]['message']['content']
+                # Strip markdown code fences if present (handle text before fence)
+                if '```json' in content:
+                    import re
+                    match = re.search(r'```(?:json)?\s*\n(.*?)\n```', content, re.DOTALL)
+                    if match:
+                        content = match.group(1).strip()
+                elif content.strip().startswith('```'):
+                    lines = content.strip().split('\n')
+                    if len(lines) >= 3 and lines[0].startswith('```') and lines[-1] == '```':
+                        content = '\n'.join(lines[1:-1])
                 return json.loads(content)
         except Exception as e:
             logger.error(f"Task '{name}' failed: {e}"); return {'error': f'Task {name} failed: {e}'}

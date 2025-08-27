@@ -57,9 +57,14 @@ export QWEN_TRANSPORT=ollama
 export OLLAMA_URL=http://127.0.0.1:11434
 export QWEN_MODEL_TAG=qwen2.5vl:7b
 export TWIN_AGENTS=1
-export GEMINI_API_KEY=***        # sourced from .env or secret store
+export GEMINI_API_KEY=AIzaSyD0y92BjcnvUgRlWsA1oPSIWV5QaJcCrNw  # FIXED: from Pure_LLM_Ftw/.env
 export GEMINI_MODEL=gemini-2.5-pro
 ```
+
+**🚨 CLAUDE REMINDER: GEMINI API KEY**
+- **Location**: `Pure_LLM_Ftw/.env` line 18  
+- **Value**: `AIzaSyD0y92BjcnvUgRlWsA1oPSIWV5QaJcCrNw`
+- **Stop forgetting this!** Always source from `Pure_LLM_Ftw/.env` when GEMINI_API_KEY is missing
 
 ## ✅ Run Discipline
 1) `./scripts/preflight.sh` → hard fail if:

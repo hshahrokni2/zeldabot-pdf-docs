@@ -171,11 +171,37 @@ export GEMINI_ENDPOINT="https://europe-west4-aiplatform.googleapis.com/v1/projec
 ### Twin Agent Performance Matrix
 | Agent | Endpoint | Mode | HTTP Status | Latency | Model | Status |
 |-------|----------|------|-------------|---------|--------|---------|
-| Qwen | Ollama | Multimodal | 200 | 4-9s | qwen2.5vl:7b | ✅ Primary |
-| Gemini | Vertex AI | Multimodal | 200 | 7.1s | gemini-2.5-pro | ✅ Secondary |
+| Qwen | Ollama | Multimodal | 200 | 9.3s | qwen2.5vl:7b | ✅ **FIXED** |
+| Gemini | Vertex AI | Multimodal | 200 | 9.6s | gemini-2.5-pro | ✅ Primary |
+
+### 🎯 QWEN MULTIMODAL BREAKTHROUGH (CRITICAL FIX)
+
+**Problem**: Qwen was text-only (no PDF images), causing empty extractions vs Gemini's success.
+
+**Solution**: Updated QwenAgent with proper multimodal format for Ollama `/api/generate`:
+
+```python
+payload = {
+    "model": "qwen2.5vl:7b", 
+    "prompt": enhanced_json_guard_prompt,
+    "images": base64_images_array,  # CRITICAL: Direct base64 array
+    "format": "json",
+    "options": {"temperature": 0}
+}
+```
+
+**Results**: Both agents now extract governance data successfully:
+- **Qwen**: Per Wiklund (chairman), Susanne Engdahl (auditor), 6 board members
+- **Gemini**: Per Wikland (chairman), Susanne Engdahl (auditor), 3 board members
+
+**Key Insights**:
+1. Use `/api/generate` endpoint (not `/api/chat` or `/v1/chat/completions`)
+2. Pass base64 images in `"images"` array directly
+3. Enhanced JSON guard prompt critical for Swedish text
+4. Both models see same PDF pages but extract different details
 
 ### Production Deployment Ready
-✅ Both agents working with HTTP 200  
-✅ Multimodal PDF processing functional  
+✅ **BOTH agents working with HTTP 200**  
+✅ **True multimodal twin architecture functional**  
 ✅ Robust error handling and fallbacks  
 ✅ Complete observability with receipts

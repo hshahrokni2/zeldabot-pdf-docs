@@ -1,0 +1,1 @@
+{"timestamp": "2025-08-27T03:41:45.298998Z", "section": "balance_sheet", "failure_pattern": "assets_extraction", "coaching_action": "emphasize_total_assets_anchor", "delta_hash": "47bc0810", "prompt_addition": "\\nSärskild uppmärksamhet på: SUMMA TILLGÅNGAR och liknande rubriker för total assets.", "original_failure": "Assets: expected 301339818, got 300000000"}

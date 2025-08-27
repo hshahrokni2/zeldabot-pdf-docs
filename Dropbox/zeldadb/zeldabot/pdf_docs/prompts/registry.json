@@ -1,0 +1,18 @@
+{
+  "income_statement": {"template_path": "prompts/sections/income_statement.sv.tpl"},
+  "balance_sheet": {"template_path": "prompts/sections/balance_sheet.sv.tpl"},
+  "cash_flow": {"template_path": "prompts/sections/cash_flow.sv.tpl"},
+  "governance": {"template_path": "prompts/sections/governance.sv.tpl"},
+  "loans_debt": {"template_path": "prompts/sections/loans_debt.sv.tpl"},
+  "notes": {"template_path": "prompts/sections/notes.sv.tpl"},
+  "property": {"template_path": "prompts/sections/property.sv.tpl"},
+  "financial_statement": {"template_path": "prompts/sections/balance_sheet.sv.tpl"},
+  "general_property": {"template_path": "prompts/sections/property.sv.tpl"},
+  "maintenance": {"template_path": "prompts/sections/notes.sv.tpl"},
+  "multi_year_overview": {"template_path": "prompts/sections/notes.sv.tpl"},
+  "note_financial_loans": {"template_path": "prompts/sections/loans_debt.sv.tpl"},
+  "note_asset_depreciation": {"template_path": "prompts/sections/notes.sv.tpl"},
+  "note_pledged_assets": {"template_path": "prompts/sections/notes.sv.tpl"},
+  "note_revenue_breakdown": {"template_path": "prompts/sections/income_statement.sv.tpl"},
+  "note_cost_breakdown": {"template_path": "prompts/sections/income_statement.sv.tpl"}
+}

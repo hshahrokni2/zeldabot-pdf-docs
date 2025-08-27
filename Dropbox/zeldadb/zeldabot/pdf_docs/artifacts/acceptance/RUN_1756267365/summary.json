@@ -1,0 +1,15 @@
+{
+  "run_id": "RUN_1756267365",
+  "doc_id": "bf0d71f3-819f-4b46-922c-803840a64cdb",
+  "gates_passed": false,
+  "failures": [
+    "Assets: expected 301339818, got 0",
+    "Total debt: expected 99538124, got 0",
+    "Org no: expected 769606-2533, got "
+  ],
+  "results_sections": [
+    "balance_sheet",
+    "income_statement",
+    "brf_info"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "torch": "2.8.0+cu128",
+  "cuda": true,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "transformers": "4.56.0.dev0",
+  "python": "3.12.3"
+}

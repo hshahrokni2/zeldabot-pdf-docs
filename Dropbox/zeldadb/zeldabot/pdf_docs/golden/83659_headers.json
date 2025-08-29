@@ -1,0 +1,25 @@
+{
+  "headers": [
+    {"text": "Årsredovisning 2024", "level": 1, "page": 1, "start_page": 1, "end_page": 1},
+    {"text": "Förvaltningsberättelse", "level": 1, "page": 2, "start_page": 2, "end_page": 3},
+    {"text": "Resultaträkning", "level": 1, "page": 4, "start_page": 4, "end_page": 4},
+    {"text": "Balansräkning", "level": 1, "page": 5, "start_page": 5, "end_page": 6},
+    {"text": "Kassaflödesanalys", "level": 1, "page": 7, "start_page": 7, "end_page": 7},
+    {"text": "Noter", "level": 1, "page": 8, "start_page": 8, "end_page": 15},
+    {"text": "Not 1 Redovisningsprinciper", "level": 2, "page": 9, "start_page": 9, "end_page": 9},
+    {"text": "Not 2 Intäkter", "level": 2, "page": 9, "start_page": 9, "end_page": 9},
+    {"text": "Not 3 Driftskostnader", "level": 2, "page": 10, "start_page": 10, "end_page": 10},
+    {"text": "Not 4 Underhållskostnader", "level": 2, "page": 10, "start_page": 10, "end_page": 10},
+    {"text": "Not 5 Förvaltningskostnader", "level": 2, "page": 11, "start_page": 11, "end_page": 11},
+    {"text": "Not 6 Övriga rörelsekostnader", "level": 2, "page": 11, "start_page": 11, "end_page": 11},
+    {"text": "Not 7 Finansiella intäkter", "level": 2, "page": 12, "start_page": 12, "end_page": 12},
+    {"text": "Not 8 Finansiella kostnader", "level": 2, "page": 12, "start_page": 12, "end_page": 12},
+    {"text": "Not 9 Byggnader och mark", "level": 2, "page": 13, "start_page": 13, "end_page": 13},
+    {"text": "Not 10 Inventarier", "level": 2, "page": 13, "start_page": 13, "end_page": 13},
+    {"text": "Not 11 Kortfristiga placeringar", "level": 2, "page": 14, "start_page": 14, "end_page": 14},
+    {"text": "Not 12 Kassa och bank", "level": 2, "page": 14, "start_page": 14, "end_page": 14},
+    {"text": "Not 13 Föreningsbidrag", "level": 2, "page": 15, "start_page": 15, "end_page": 15},
+    {"text": "Not 14 Övriga skulder", "level": 2, "page": 15, "start_page": 15, "end_page": 15},
+    {"text": "Revisionsberättelse", "level": 1, "page": 16, "start_page": 16, "end_page": 17}
+  ]
+}

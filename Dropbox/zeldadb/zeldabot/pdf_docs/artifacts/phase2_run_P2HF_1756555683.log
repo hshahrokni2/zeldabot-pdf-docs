@@ -1,0 +1,4 @@
+  File "/tmp/phase2_hf_direct_test.py", line 55
+    'Extract chairman name from this Swedish BRF document. Return JSON: {"chairman": "name"}\,
+    ^
+SyntaxError: unterminated string literal (detected at line 55)

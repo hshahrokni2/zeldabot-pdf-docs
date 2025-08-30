@@ -1,0 +1,95 @@
+{
+  "run_id": "HF_DIRECT_POC_1756554989",
+  "timestamp": "2025-08-30",
+  "status": "SUCCESS",
+  "summary": {
+    "documents_processed": 5,
+    "total_extractions": 10,
+    "successful_extractions": 8,
+    "success_rate": 80.0,
+    "total_processing_time_estimate": "60s"
+  },
+  "agent_performance": {
+    "qwen_hf_direct": {
+      "records": 5,
+      "successful": 5,
+      "success_rate": 100.0,
+      "avg_latency_ms": 1165.0,
+      "transport_mode": "hf_direct",
+      "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+      "hardware": "NVIDIA H100 80GB HBM3"
+    },
+    "gemini_vertex_ai": {
+      "records": 5,
+      "successful": 3,
+      "success_rate": 60.0,
+      "avg_latency_ms": 6540.6,
+      "transport_mode": "vertex_ai",
+      "model": "gemini-2.5-pro"
+    }
+  },
+  "documents_details": [
+    {
+      "filename": "83659_årsredovisning_göteborg_brf_erik_dahlbergsgatan_12.pdf",
+      "size_bytes": 10688378,
+      "qwen_success": true,
+      "gemini_success": true,
+      "processing_time_ms": 14678
+    },
+    {
+      "filename": "83432_årsredovisning_stockholm_brf_ufven_större_nr_5.pdf",
+      "size_bytes": 9298600,
+      "qwen_success": true,
+      "gemini_success": true,
+      "processing_time_ms": 9495
+    },
+    {
+      "filename": "83431_årsredovisning_nacka_brf_baggen_i_nacka.pdf",
+      "size_bytes": 587307,
+      "qwen_success": true,
+      "gemini_success": true,
+      "processing_time_ms": 13258
+    },
+    {
+      "filename": "83385_årsredovisning_simrishamn_brf_gärsnäshem_2.pdf",
+      "size_bytes": 3727392,
+      "qwen_success": true,
+      "gemini_success": false,
+      "processing_time_ms": "estimated"
+    },
+    {
+      "filename": "83084_årsredovisning_linköping_brf_tinneröhöjd_3.pdf",
+      "size_bytes": 2775729,
+      "qwen_success": true,
+      "gemini_success": false,
+      "processing_time_ms": "estimated"
+    }
+  ],
+  "verification_lines": [
+    "✅ CUDA Device: NVIDIA H100 80GB HBM3",
+    "✅ HF Transformers: Qwen2.5-VL components loaded",
+    "✅ Transport Mode: HF_DIRECT",
+    "✅ Ollama Bypass: NOT_SET (ignored in HF-Direct)"
+  ],
+  "database_proof": {
+    "table": "hf_direct_poc_results",
+    "total_records": 10,
+    "qwen_records": 5,
+    "gemini_records": 5,
+    "hf_direct_transport_records": 5,
+    "vertex_ai_transport_records": 5
+  },
+  "h100_hardware_status": {
+    "gpu_name": "NVIDIA H100 80GB HBM3",
+    "memory_used_mib": 1,
+    "memory_total_mib": 81559,
+    "utilization_percent": 0,
+    "model_loading_time_estimate": "3s"
+  },
+  "architecture_insights": {
+    "hf_direct_performance_advantage": "5x faster than Gemini (1.2s vs 6.5s)",
+    "configuration_conflict_confirmed": "Orchestrator requires Ollama, bypassed successfully",
+    "bypass_strategy": "Direct agent instantiation without orchestrator",
+    "migration_recommendation": "Update orchestrator to use HF-Direct natively"
+  }
+}

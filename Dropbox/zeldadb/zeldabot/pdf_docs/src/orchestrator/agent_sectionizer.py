@@ -7,7 +7,7 @@ import fitz, requests
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger('SectionizerAgent')
 
-QWEN_VL_API_URL = os.getenv('QWEN_VL_API_URL', 'http://127.0.0.1:5000/v1/chat/completions')
+QWEN_VL_API_URL = os.getenv('QWEN_VL_API_URL', f"{os.getenv('OLLAMA_URL','http://127.0.0.1:11434')}/v1/chat/completions")
 SECTIONIZER_MODE = os.getenv('SECTIONIZER_MODE', 'heuristic').strip().lower()
 
 def _sectionizer_system_prompt() -> str:

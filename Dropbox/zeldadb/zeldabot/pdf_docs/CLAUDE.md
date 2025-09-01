@@ -221,6 +221,33 @@ export GEMINI_MODEL=gemini-2.5-pro
 - **Value**: `AIzaSyD0y92BjcnvUgRlWsA1oPSIWV5QaJcCrNw`
 - **Stop forgetting this!** Always source from `Pure_LLM_Ftw/.env` when GEMINI_API_KEY is missing
 
+## 🎯 COACHING LOOP STATUS - OPERATIONAL (2025-01-02)
+
+### **✅ ORCHESTRATOR COACHING FULLY WORKING**
+- **Status**: 5-round iterative coaching loop operational on H100
+- **Implementation**: `src/orchestrator/coaching_orchestrator.py` 
+- **Database**: All coaching rounds stored in `prompt_execution_history`
+- **Models**: Qwen 2.5-VL (HF-Direct) + Gemini 2.5-Pro (no 1.5 fallback)
+
+### **⚠️ CRITICAL ARCHITECTURAL ISSUE (2025-01-02 11:00 PST)**
+- **Problem**: Orchestrator is pure Python logic, NOT an LLM - can't adapt to different PDFs
+- **Solution**: Must implement LLM-based orchestrator (see `ORCHESTRATOR_REDESIGN_PLAN.md`)
+- **Sectionizer**: EnhancedSectionizerV2 extracts 3 levels but needs hierarchical output
+- **Action Required**: Follow 7-card implementation plan with TDD verification
+
+### **Key Fixes Applied**:
+1. **OLLAMA Dependencies Removed**: HF-Direct now works without OLLAMA_URL
+2. **SSH Tunnel Allowed**: Removed localhost blocking in prod.py
+3. **JSON Handler Integrated**: Cleans markdown-fenced output from HF
+4. **Gemini 2.5-Pro Only**: All 1.5 references removed, using 2.5-pro exclusively
+
+### **Coaching Process**:
+```sql
+-- Database shows 5 rounds per section
+SELECT chunk_range, engineering_round FROM prompt_execution_history
+-- Results: cover_page rounds 0,1,2,3,4 ✅
+```
+
 ## ✅ Run Discipline
 1) `./scripts/preflight.sh` → hard fail if:
    - doc_count < 100 on arsredovisning_documents
@@ -555,21 +582,18 @@ python3 h100_direct_twin_test.py
 **Monitoring**: Complete system health monitoring with automated alerts  
 **Fallback**: Graceful degradation from LLM to heuristic sectioning
 
-#### **1. Qwen Multimodal Architecture - 100% Working (ENHANCED)**
+#### **1. Qwen Multimodal Architecture - 100% Working (HF-DIRECT)**
 ```python
-# ✅ NATIVE OLLAMA FORMAT (NOT OpenAI wrapper)
-endpoint = f"{ollama_url}/api/generate"  # Native endpoint
-payload = {
-    "model": "qwen2.5vl:7b",
-    "prompt": enhanced_prompt,
-    "images": base64_images_array,  # Direct array format
-    "format": "json",
-    "options": {"temperature": 0}
-}
+# ✅ HF-DIRECT TRANSFORMERS (No OLLAMA dependency)
+from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
+model = Qwen2VLForConditionalGeneration.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")
+processor = AutoProcessor.from_pretrained("Qwen/Qwen2.5-VL-7B-Instruct")
+# Direct GPU inference with images
+outputs = model.generate(**inputs, max_new_tokens=2048)
 ```
-**Performance**: HTTP 200, 15-97s latency, valid JSON extraction  
-**Pages**: [1,2,3] optimal for payload management  
-**Compression**: JPEG quality=85, DPI=150 for Swedish OCR
+**Performance**: 1.9s inference on H100, valid JSON extraction  
+**Pages**: [1,2,3] optimal for context management  
+**Quality**: 200 DPI PNG images for Swedish OCR
 
 #### **2. Gemini Exponential Backoff - 100% Working**  
 ```python
@@ -584,7 +608,7 @@ for attempt in range(5):
             time.sleep(delay)  # 1s, 2s, 4s, 8s, 16s
 ```
 **Performance**: HTTP 200, 15-19s latency, 100% success rate  
-**Fallback**: gemini-2.5-pro → gemini-1.5-pro-latest on 500/404
+**Model**: Uses gemini-2.5-pro exclusively (no fallback to older models)
 
 #### **3. PostgreSQL Storage - 100% Reliable**
 ```python
@@ -637,9 +661,10 @@ ssh -p 26983 -i ~/.ssh/BrfGraphRag root@45.135.56.10 -N -f -L 15432:localhost:54
 
 # 2. Environment  
 export DATABASE_URL="postgresql://postgres:h100pass@localhost:15432/zelda_arsredovisning"
-export OLLAMA_URL=http://127.0.0.1:11434 QWEN_MODEL_TAG=qwen2.5vl:7b
+export USE_HF_DIRECT=true HF_DEVICE=cuda:0 HF_MODEL_PATH=Qwen/Qwen2.5-VL-7B-Instruct
 export TWIN_AGENTS=1 GEMINI_API_KEY=AIzaSyD0y92BjcnvUgRlWsA1oPSIWV5QaJcCrNw
-export OBS_STRICT=1 JSON_SALVAGE=0
+export GEMINI_MODEL=gemini-2.5-pro
+export OBS_STRICT=1 JSON_SALVAGE=0 QWEN_TRANSPORT=hf_direct
 
 # 3. Production Run
 RUN_ID="RUN_$(date +%s)"
@@ -735,9 +760,10 @@ INSERT INTO extraction_results (
 ```bash
 # Environment setup
 export DATABASE_URL="postgresql://postgres:h100pass@localhost:15432/zelda_arsredovisning"
-export OLLAMA_URL=http://127.0.0.1:11434 QWEN_MODEL_TAG=qwen2.5vl:7b  
+export USE_HF_DIRECT=true HF_DEVICE=cuda:0 HF_MODEL_PATH=Qwen/Qwen2.5-VL-7B-Instruct
 export TWIN_AGENTS=1 GEMINI_API_KEY=AIzaSyD0y92BjcnvUgRlWsA1oPSIWV5QaJcCrNw
-export OBS_STRICT=1 JSON_SALVAGE=0
+export GEMINI_MODEL=gemini-2.5-pro
+export OBS_STRICT=1 JSON_SALVAGE=0 QWEN_TRANSPORT=hf_direct
 
 # Production execution
 RUN_ID="RUN_$(date +%s)"

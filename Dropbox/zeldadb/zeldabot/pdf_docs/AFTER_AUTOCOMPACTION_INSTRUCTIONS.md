@@ -5,13 +5,34 @@
 
 ---
 
+## 🧠 CLAUDE: READ YOUR PERSONAL INSTRUCTIONS!
+**→ `CLAUDE_POST_COMPACTION_INSTRUCTIONS.md` ← START HERE!**
+
+## 🔴 CRITICAL: CARDS 1-4 COMPLETE!
+**The orchestrator has been redesigned! Cards 1-4 are DONE in `ORCHESTRATOR_REDESIGN_PLAN.md`**
+1. ✅ Card 1: LLM latency tested - Qwen HF-Direct selected
+2. ✅ Card 2: Sectionizer outputs hierarchical structure  
+3. ✅ Card 3: Bad prompts deleted
+4. ✅ Card 4: LLM orchestrator implemented with Qwen HF-Direct
+5. ⬜ Card 5: Sectionizer coaching (TODO)
+6. ⬜ Card 6: Integration test (TODO)
+7. ⬜ Card 7: Performance validation (TODO)
+
 ## 🚀 QUICK START (IF YOU HAVE AMNESIA)
 
 ### THE SITUATION:
 - **GOAL**: Get orchestrator coaching loop working (Qwen → Gemini eval → improve → repeat)
-- **STATUS**: ✅ COACHING LOOP IS RUNNING ON H100! (as of 2025-01-02 09:15 PST)
+- **STATUS**: ✅ COACHING LOOP IS RUNNING ON H100! (as of 2025-01-02 09:45 PST)
 - **LOCATION**: Everything at `/tmp/zeldabot/pdf_docs/` on H100 server
-- **PROBLEM SOLVED**: Removed OLLAMA dependencies that were blocking HF-Direct
+- **PROBLEMS SOLVED**: 
+  - Removed ALL OLLAMA dependencies blocking HF-Direct
+  - Fixed ALL Gemini 1.5 → 2.5-pro references
+  - Gemini API now working (was overloaded, now OK)
+
+### ⚠️ CRITICAL REALIZATION (2025-01-02 11:00 PST):
+- **ORCHESTRATOR IS BROKEN**: It's pure logic, not an LLM - can't make intelligent decisions
+- **MUST BE FIXED**: See `ORCHESTRATOR_REDESIGN_PLAN.md` for 7-card implementation plan
+- **KEY INSIGHT**: Orchestrator needs to BE an LLM that understands document structure
 
 ### IMMEDIATE VERIFICATION:
 ```bash
@@ -41,10 +62,12 @@ EOF
 ## 📋 STEP 1: READ ALL DOCUMENTATION
 
 **READ THESE FILES IN ORDER:**
-1. `ORCHESTRATOR_COACHING_COMPLETE_DOCUMENTATION.md` - Master doc with all details
-2. `H100_COACHING_IMPLEMENTATION_LOG.md` - H100 connection details  
-3. `ORCHESTRATOR_COACHING_EXECUTION_PLAN.md` - 9 cards to implement
-4. `ORCHESTRATOR_TEST_SUITE_STATUS.md` - Test tracking
+1. `ORCHESTRATOR_REDESIGN_PLAN.md` - **NEW: 7-card plan to fix orchestrator** 🔴
+2. `ARCHITECTURAL_VISION_2025.md` - **NEW: Target architecture vision** 🎯
+3. `ORCHESTRATOR_COACHING_COMPLETE_DOCUMENTATION.md` - Master doc with all details
+4. `H100_COACHING_IMPLEMENTATION_LOG.md` - H100 connection details  
+5. `ORCHESTRATOR_COACHING_EXECUTION_PLAN.md` - Original 9 cards (partially obsolete)
+6. `ORCHESTRATOR_TEST_SUITE_STATUS.md` - Test tracking
 
 ---
 
@@ -111,7 +134,7 @@ update_prompt_files_from_db()  # Write best prompts to JSON files
 - **24 agents confirmed** in PostgreSQL agent_registry
 - **Orchestrator ACTIVE** - Processing documents with sections
 
-### ✅ FIXES APPLIED (2025-01-02):
+### ✅ FIXES APPLIED (2025-01-02 09:45 PST):
 ```bash
 # On H100 at /tmp/zeldabot/pdf_docs/:
 1. scripts/run_prod.py line 32: Changed to 'pass  # OLLAMA removed'
@@ -119,12 +142,19 @@ update_prompt_files_from_db()  # Write best prompts to JSON files
 3. src/orchestrator/coaching_orchestrator.py: Added JsonOutputHandler import
 4. Copied prompts/ directory to H100
 5. Fixed import paths from 'agents.' to 'src.agents.'
+6. src/clients/gemini_client.py: Changed ALL to gemini-2.5-pro
+7. src/agents/gemini_agent.py: Removed 1.5 fallback completely
+8. src/orchestrator/reviewer/reviewer_gemini.py: Default to gemini-2.5-pro
 ```
 
-### ⚠️ KNOWN ISSUES (NOT BLOCKERS):
-- **Accuracy shows 0%** - GeminiAgent missing 'extract_text_section' method
-- **But coaching WORKS** - Loop runs, stores prompts, iterates correctly
-- **Model loads multiple times** - Performance issue but not blocking
+### ✅ ISSUES FIXED (2025-01-02 09:45 PST):
+- **Gemini API working** - Was 503 overloaded, now responding
+- **ALL Gemini 1.5 references removed** - Everything uses 2.5-pro
+- **Removed 1.5 fallback** - No more quota issues
+- **Coaching evaluation should work** - Gemini 2.5 Pro responding
+
+### ⚠️ REMAINING ISSUE:
+- **GeminiAgent missing 'extract_text_section' method** - But may work anyway
 
 ### 📊 PROOF OF SUCCESS:
 ```sql

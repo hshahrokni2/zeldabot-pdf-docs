@@ -5,10 +5,13 @@ from typing import List, Dict, Any, Optional
 from pathlib import Path
 import fitz, aiohttp
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-logger = logging.getLogger('OrchestratorAgent_Final')
+# Import HF sectioning improvements
+from .header_postfilter import HeaderPostFilter
 
-QWEN_VL_API_URL = os.getenv('QWEN_VL_API_URL','http://127.0.0.1:5000/v1/chat/completions')
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger('OrchestratorAgent_Enhanced')
+
+QWEN_VL_API_URL = os.getenv('QWEN_VL_API_URL', f"{os.getenv('OLLAMA_URL','http://127.0.0.1:11434')}/v1/chat/completions")
 ORCH_DPI = int(os.getenv('ORCH_DPI','200'))
 
 def load_prompts(path: str) -> Dict[str, str]:
@@ -37,6 +40,12 @@ def load_prompts(path: str) -> Dict[str, str]:
 class OrchestratorAgent:
     def __init__(self, pdf_path: str, prompts: Dict[str, str]):
         self.pdf_path=pdf_path; self.doc=fitz.open(pdf_path); self.prompts=prompts
+        
+        # Initialize HF sectioning improvements
+        self.post_filter = HeaderPostFilter()
+        self.enable_hf_sectioning = os.getenv("ENABLE_HF_SECTIONING", "false").lower() == "true"
+        
+        logger.info(f"🔧 Orchestrator initialized with HF sectioning: {self.enable_hf_sectioning}")
 
     def _page_images_b64(self, start: int, end: int) -> List[str]:
         return [base64.b64encode(self.doc[i].get_pixmap(dpi=ORCH_DPI).tobytes('jpeg')).decode('utf-8') for i in range(start-1,end)]
@@ -102,6 +111,132 @@ class OrchestratorAgent:
             batches=await asyncio.gather(*tasks)
             for b in batches: results=self._deep_merge(results,b)
         self.doc.close(); return results
+    
+    def extract_enhanced_sectioning(self, qwen_agent) -> Dict[str, Any]:
+        """
+        Extract document sections using HF sectioning improvements.
+        Uses bounded prompts, hierarchical post-filtering, and HMAC receipts.
+        """
+        if not self.enable_hf_sectioning:
+            logger.info("🔍 HF sectioning disabled, using heuristic mode")
+            return self._fallback_to_heuristic_sectioning()
+        
+        logger.info("🚀 Starting enhanced HF sectioning extraction...")
+        
+        # Get headers using enhanced QwenAgent
+        sectioning_result = qwen_agent.get_sectioning_headers(self.pdf_path)
+        
+        if not sectioning_result.get("headers"):
+            logger.warning("⚠️  No headers found, falling back to heuristic")
+            return self._fallback_to_heuristic_sectioning()
+        
+        # Apply post-filtering with hierarchical logic
+        processed_result = self.post_filter.process_extraction_result({
+            "success": True,
+            "data": sectioning_result["headers"]
+        })
+        
+        if not processed_result.get("success"):
+            logger.error("❌ Post-filtering failed, falling back to heuristic")
+            return self._fallback_to_heuristic_sectioning()
+        
+        # Convert processed headers to section map format
+        section_map = self._headers_to_section_map(processed_result["data"])
+        
+        logger.info(f"✅ Enhanced sectioning complete: {len(section_map)} sections identified")
+        
+        return {
+            "section_map": section_map,
+            "raw_headers": sectioning_result["headers"],
+            "processed_headers": processed_result["data"],
+            "stats": processed_result.get("post_filter_stats", {}),
+            "method": "hf_enhanced"
+        }
+    
+    def _headers_to_section_map(self, headers: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+        """Convert hierarchical headers to section map format compatible with existing pipeline"""
+        section_map = {}
+        
+        # Group headers by section type and page ranges
+        current_section = None
+        section_start = 1
+        
+        for i, header in enumerate(headers):
+            page = header.get("page", 1)
+            text = header.get("text", "").lower()
+            level = header.get("level", 2)
+            
+            # Determine canonical section name based on header text
+            canonical_name = self._map_header_to_canonical_section(text)
+            
+            # If this is a major section header (level 1), start a new section
+            if level == 1 and canonical_name != "other":
+                # Close previous section
+                if current_section and current_section in section_map:
+                    section_map[current_section]["end_page"] = page - 1
+                
+                # Start new section
+                section_key = f"{canonical_name}_{page}"
+                section_map[section_key] = {
+                    "start_page": page,
+                    "end_page": page,  # Will be updated later
+                    "canonical_name": canonical_name
+                }
+                current_section = section_key
+                section_start = page
+            
+            # Update end page for current section
+            elif current_section and current_section in section_map:
+                section_map[current_section]["end_page"] = page
+        
+        # Ensure last section ends at document end
+        if current_section and current_section in section_map:
+            section_map[current_section]["end_page"] = len(self.doc)
+        
+        # Handle case where no major sections were found - create a general section
+        if not section_map:
+            section_map["document_1"] = {
+                "start_page": 1,
+                "end_page": len(self.doc),
+                "canonical_name": "management_report"
+            }
+        
+        return section_map
+    
+    def _map_header_to_canonical_section(self, text: str) -> str:
+        """Map Swedish header text to canonical section names"""
+        text = text.lower().strip()
+        
+        if any(word in text for word in ['förvaltningsberättelse', 'verksamhetsberättelse']):
+            return 'management_report'
+        elif any(word in text for word in ['resultaträkning', 'resultat']):
+            return 'income_statement'  
+        elif any(word in text for word in ['balansräkning', 'balans']):
+            return 'balance_sheet'
+        elif 'kassaflöde' in text:
+            return 'cash_flow_statement'
+        elif 'flerårs' in text:
+            return 'multi_year_overview'
+        elif 'noter' in text:
+            return 'notes'
+        elif 'revision' in text:
+            return 'auditors_report'
+        elif any(word in text for word in ['innehåll', 'förteckning']):
+            return 'table_of_contents'
+        else:
+            return 'other'
+    
+    def _fallback_to_heuristic_sectioning(self) -> Dict[str, Any]:
+        """Fallback to simple heuristic sectioning if HF method fails"""
+        from .agent_sectionizer import SectionizerAgent
+        
+        sectionizer = SectionizerAgent(self.pdf_path, mode='heuristic')
+        section_map = sectionizer.analyze_document()
+        
+        return {
+            "section_map": section_map,
+            "method": "heuristic_fallback"
+        }
 
 if __name__=='__main__':
     import argparse, asyncio as _asyncio
